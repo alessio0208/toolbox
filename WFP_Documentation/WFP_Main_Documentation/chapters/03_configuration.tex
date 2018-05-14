@@ -1,0 +1,180 @@
+%!TEX root = ../documentation.tex
+\chapter{Configuration}
+\label{chap:configuration}
+
+\textit{First, please copy the complete folder \texttt{WFP\_Implementation/} to your home directory. This makes handling paths easier. Different paths have to be adjusted in \texttt{WFP\_config}.}
+
+This guide is written for Ubuntu-based operating systems. The presented scripts and programs should work on both 32- and 64-bit operating systems. % However, the included Tor Browser is a 32-bit version. Appendix \ref{subsec:tbb_patch} shows how to run 32-bit \ac{TBB}-4.x on 64-bit \ac{OS}.
+
+To execute our \ac{WFP} toolbox, the following software packages should be installed:
+\vspace{-5mm}
+\begin{itemize}
+\item Software packages needed for general use:
+\vspace{-5mm}
+\begin{verbatim}
+# sudo apt-get install python python-dev make -y
+
+% for easier python package installation
+# sudo apt-get install python-pip -y
+
+% used for outlier-removal, feature generation, etc.
+# sudo apt-get install python-numpy -y
+
+% used to take a screenshot of a webpage
+# sudo apt-get install python-pil -y
+\end{verbatim}
+\item Software packages needed for \texttt{tcpdump}:
+\vspace{-5mm}
+\begin{verbatim}
+# sudo apt-get install apparmor-utils -y
+\end{verbatim}
+\vspace{-5mm}
+Needed due to \texttt{tcpdump} problems with \texttt{sudo}. This is Ubuntu-specific solution.
+\item Software packages needed for \texttt{tcpflow}:
+\vspace{-5mm}
+\begin{verbatim}
+# sudo apt-get install libpcap-dev libboost-dev libcairo2-dev libssl-dev -y
+\end{verbatim}
+\item Software packages needed for \texttt{LibSVM}:
+\vspace{-5mm}
+\begin{verbatim}
+# sudo apt-get install gcc gnuplot -y
+\end{verbatim}
+\item Software packages needed for website list generation and evaluation:
+\vspace{-5mm}
+\begin{verbatim}
+% Execute: sudo tldextract -u afterwards !!!
+% natsort for proper sorting of glob output
+# sudo pip install tldextract natsort
+\end{verbatim}
+\item Software packages used for Tor Exit dump link list analysis:
+\vspace{-5mm}
+\begin{verbatim}
+# sudo apt-get install python-sklearn python-bloomfilter -y
+\end{verbatim}
+\item Software packages that are not mandatory, but good to have:
+\vspace{-5mm}
+\begin{verbatim}
+# sudo apt-get install screen openssh-server -y
+\end{verbatim}
+\end{itemize}
+\todo[inline]{Check up-to-dateness of some of the following packages. See comments in LaTeX File for more information!}
+% sudo apt-get install vino -y % vino should be removed. personal preference 
+% sudo apt-get install libtool -y % libtool is needed for ???
+% sudo apt-get install g++ -y % g++ is needed for ???
+% sudo apt-get install python-numpy-dev -y % python-numpy-dev for feature generation? But I'm not sure!
+% sudo apt-get install python-setuptools python-scipy libatlas-dev python-scapy -y % python-setuptools python-scipy libatlas-dev python-scapy are needed for ???
+
+In addition, our approach relies on the following programs:
+\begin{description}
+\item[tcpdump] A command-line network packet analyzer\footnote{\url{http://www.tcpdump.org/}}. \vspace{-3mm} \begin{verbatim}# sudo apt-get install tcpdump\end{verbatim}
+\item[Stem] Python controller library for Tor\footnote{\url{https://stem.torproject.org}}. \vspace{-3mm} \begin{verbatim}# sudo pip install stem\end{verbatim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Requirements for Website-Crawler
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item[Selenium-(latest $\mathbf{>=3.3}$)] A package which automates web browser interaction from Python\footnote{\url{https://pypi.python.org/pypi/selenium}}.\vspace{-3mm} \begin{verbatim}# sudo pip install selenium \end{verbatim}
+\item[Geckodriver v0.17.0] A proxy needed for (tor-browser-)selenium. Make sure you install the v0.17.0 version; newer or older versions will not be compatible with the current Tor Browser series. Geckodriver v0.17.0 can be downloaded by using \url{https://github.com/mozilla/geckodriver/releases/tag/v0.17.0}.\vspace{-3mm} \begin{verbatim}# wget https://github.com/mozilla/geckodriver/releases/download/
+v0.17.0/geckodriver-v0.17.0-linux64.tar.gz 
+		# sudo sh -c 'tar -x geckodriver -zf 
+geckodriver-v0.17.0-linux64.tar.gz -O > /usr/bin/geckodriver'
+		# sudo chmod +x /usr/bin/geckodriver
+		# rm geckodriver-v0.17.0-linux64.tar.gz \end{verbatim}
+\item[Tor-browser-selenium-(latest \& patched)] A package which automates Tor browser interaction from Python. It is located in \texttt{Implementation/fingerprinting/ binary/tor-browser-selenium}.\vspace{-3mm} \begin{verbatim}# python setup.py build 
+		# sudo python setup.py install \end{verbatim}
+We use a modified version of tor-browser-selenium located in \url{https://github.com/webfp/tor-browser-selenium}. A tutorial on how to include our changes can be found in \texttt{TorBrowserSelenium\_Patch\_Tutorial.txt} in the repository.
+\item[Firefox-(latest)] A browser that can be automated by Selenium. If you experience problems, please check compatibility of Selenium with installed version of Firefox: \url{http://docs.seleniumhq.org/about/platforms.jsp}. This browser is used for the \ac{URL} link list generation only, \textbf{but not for the \ac{WFP} approach itself. For \ac{WFP}, we use \ac{TBB}!} For the link list generation, the following add-ons are recommend:
+\begin{itemize}
+\item \textbf{Adblock Plus}: Mitigates the risk of clicking on advertisement instead of valid links. \url{https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/}
+\item \textbf{NoScript}: Reduces the risk of encountering links Selenium cannot work with. \url{https://addons.mozilla.org/en-US/firefox/addon/noscript/}
+\end{itemize}
+\item[tcpflow-(latest)] A \ac{TCP} flow recorder located in \texttt{Implementation/fingerprinting/ binary/tcpflow-X.X.X} (see Figure \ref{fig:folderOrdering}, Chapter \ref{chap:folder_organization}). Install \textbf{tcpflow} through: \vspace{-3mm} \begin{verbatim}# ./configure
+		# make
+		# sudo make install \end{verbatim} \vspace{-3mm} For more details, see README in the tcpflow folder or visit the developer webpage \url{https://github.com/simsong/tcpflow}. We use a modified version of tcpflow to output timestamps of each record. A tutorial on how to include our changes can be found in \texttt{TCPFlow\_Patch\_Tutorial.txt} in the repository.
+\item[libsvm-(latest)] An integrated software for support vector classification, regression and distribution estimation located in \texttt{Implementation/fingerprinting/ \\evaluation/libsvm-X.XX} (see Figure \ref{fig:folderOrdering}, Chapter \ref{chap:folder_organization}). Install the latest \textbf{libsvm}, available under \url{http://www.csie.ntu.edu.tw/~cjlin/cgi-bin/libsvm.cgi?+http://www.csie.ntu.edu.tw/~cjlin/libsvm+zip}, through: \vspace{-3mm} \begin{verbatim}# make\end{verbatim} \vspace{-3mm}
+For open-world evaluation, we need a patched version of LibSVM. The classification results during cross-validation has to be outputted. Furthermore, we adjusted LibSVM to output the distance from a prediction to the hyperplane. This was necessary for a proper comparison with Wang's k-NN classifier. A tutorial on how to include our changes can be found in \texttt{LibSVM\_Patch\_Tutorial.txt} in the repository.
+\item[Tor Browser Bundle (TBB)] We use the latest stable version of the \ac{TBB} to conduct our experiments. Please, check \url{https://www.torproject.org/projects/torbrowser.html.en} for possible updates. % For successful integration with the existing tools, we recommend to download the 32-bit \ac{TBB}. If the reader uses a 64-bit \ac{OS}, Appendix \ref{subsec:tbb_patch} shows how to run a 32-bit \ac{TBB}-4.x on 64-bit \ac{OS}. 
+Additionally, the following adjustments have to be done in \texttt{about:config}:
+\begin{itemize}
+\item \texttt{extensions.torbutton.launch\_warning} = False
+\end{itemize}
+\begin{notExistingAnymore}
+\begin{itemize}
+\item \texttt{network.http.use-cache} = False (This might be neglected if the linklist is chosen carefully.) -\textcolor{red}{\textbf{This option does not exist in \ac{TBB} $>= 6.5.X$.}}
+\end{itemize}
+\end{notExistingAnymore}
+Replacement for \code{network.http.use-cache}:
+\begin{itemize}
+\item \code{browser.cache.disk.smart\_size.enabled = False}
+\item \code{browser.cache.memory.enable = False}
+\item \code{dom.caches.enabled = False}
+\end{itemize}
+\textcolor{red}{\textbf{These options do not exist in \ac{TBB} $>= 6.5.X$:}}
+\begin{notExistingAnymore}
+\begin{itemize}
+\item \texttt{extensions.torbutton.no\_updates} = True
+\item \texttt{extensions.torbutton.saved.app\_update} = False
+\item \texttt{extensions.torbutton.saved.auto\_update} = False
+\item \texttt{extensions.torbutton.saved.extension\_update} = False
+\item \texttt{extensions.torbutton.saved.search\_update} = False
+\end{itemize}
+\end{notExistingAnymore}
+Disable all update functions that might generate traffic:
+\begin{itemize}
+\item \texttt{app.update.enabled} = False
+\item \texttt{browser.search.update} = False
+\item \texttt{extensions.torbutton.versioncheck\_enabled} = False
+\item \texttt{extensions.update.enabled} = False
+\item \texttt{extensions.update.autoUpdateDefault} = False
+\item \texttt{lightweightThemes.update.enabled} = False
+\item \texttt{extensions.blocklist.enabled} = False (Disable blocklist updates)
+\item \texttt{extensions.torbutton.lastUpdateCheck = 0}
+\end{itemize}
+In addition, the ability to download files should be disabled in the Tor Browser. We are not interested in them, but we still could have this kind of links in our fetch list (e.g., redirects). The ``patch'' is stored under \texttt{Implementation/ fingerprinting/binary/tor-browser\_en-US/Misc/unknownContentType.xul}. The original mechanism to handle file downloads has to be replaced in the archive \texttt{Implementation/fingerprinting/binary/tor-browser\_en-US/ \\Browser/omni.ja} under the path \texttt{\textbackslash chrome\textbackslash toolkit\textbackslash content\textbackslash mozapps\textbackslash downloads}. The \texttt{xarchiver} application is capable of performing this replacement.\\
+The patches have been accumulated and automated in the \texttt{PatchTBB.sh} script which is located in \texttt{Implementation/ fingerprinting/binary/tor-browser\_en-US/Misc}. After execution, the configuration values should be adjusted and the download ``patch'' should be included. 
+\item[Add-ons for \ac{TBB}] We have to install the following plug-ins if they are not already installed:
+\begin{description}
+\item[HTTPS-Everywhere-(latest)] This plug-in usually is automatically installed in \ac{TBB}.
+\item[NoScript-(latest)] This plug-in is usually automatically installed in \ac{TBB}.
+\item[Greasemonkey-(latest compatible with your \ac{TBB} version)] We use this plug-in to create \emph{user} scripts. This means that all kind of dialogs/messages will be automatically closed. The plug-in can be installed from the following link: \url{https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/}. The necessary \emph{user} scripts (\texttt{BlockUnloadEvents.js} and \texttt{OverwriteAlert.js}) can be imported from the following directory: \texttt{Implementation/fingerprinting/binary/ \\tor-browser\_en-US/Misc/}. Appendix \ref{sec:greasymonkey_scripts} shows the used user scripts as well as how to integrate them from scratch into \ac{TBB}.\\
+\textcolor{red}{Issue: Although Greasemonkey version $>=$ 4.1 is compatible with \ac{TBB} $>=$ 7.5, the plug-in does not work correctly when installed in \ac{TBB}.}
+\end{description}
+\end{description}
+
+After installing the software packages, the following sudo-rights should be adjusted:
+\begin{itemize}
+\item Add the following line via \texttt{visudo}. This is highly recommended to enable webpage fetching without user interaction.~:
+\vspace{-3mm} 
+\begin{verbatim}
+Defaults timestamp_timeout=-1 
+\end{verbatim}
+\item Set \texttt{tcpdump} to complain mode. This requires app-armor to be installed and might be Ubuntu specific. If not adjusted, \texttt{tcpdump} does not work properly with \texttt{sudo}.~: 
+\vspace{-3mm}
+\begin{verbatim} 
+# sudo aa-complain /usr/sbin/tcpdump
+\end{verbatim}
+\end{itemize}
+
+In addition, it is important to ``source'' \texttt{WFP\_config} before running our \ac{WFP} approach in order to load the stored environmental variables which the scripts rely on.~:
+\vspace{-3mm}
+\begin{verbatim} 
+# source ~/WFP_Implementation/WFP_config
+\end{verbatim}
+This can be automated by adding the command (including the correct path) to \texttt{\~/.bashrc} (create if not existing). In addition, add the following alias to allow quick settings reloads.~:
+\vspace{-3mm}
+\begin{verbatim} 
+# source ~/WFP_Implementation/WFP_config
+# alias WFPConf='source ~/WFP_Implementation/WFP_config'
+\end{verbatim}
+
+Adjust the following variables within this configuration file to the user's configuration:
+\begin{description}
+\item [conf\_USER] The user name currently logged in the operation system.
+\item [conf\_ETHDEVICE] An interface which \texttt{tcpdump} listens on, e.g., "eth0", "wlan0".
+\item [dir\_MAIN] The main path containing all directories and files relevant for the execution of the website fingerprint attack. For more information about the default structure of our \ac{WFP} attack, we refer the readers to Chapter \ref{chap:folder_organization}.
+\end{description}
+
+The other configuration values stored in \texttt{WFP\_config} are specific to each task. Therefore, they will be introduced in the corresponding chapters.
+
+\textbf{We use the libraries that are built in the \ac{TBB}. If you still have any configuration problems after installing all packages, see Appendix \ref{sec:troubleshooting} for known troubleshooting.}
+

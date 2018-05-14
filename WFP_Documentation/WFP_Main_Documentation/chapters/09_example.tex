@@ -1,0 +1,172 @@
+%!TEX root = ../documentation.tex
+\chapter{Demo}
+\label{chap:example}
+
+\todo[inline]{The following chapter is completely outdated!}
+In this Chapter, we introduce a small demo of our \ac{WF} attack that demonstrates the main execution steps.
+
+First, we negotiate the parameters in the file \texttt{parameters.cfg} (see Appendix \ref{sec:config_file}) and load our configuration file \texttt{WFP\_config}.
+\begin{verbatim}
+# ./WFP_config
+\end{verbatim}
+Next, we start generating a valid \ac{URL} link list:
+\begin{verbatim}
+# cd websiteCrawlingUrls/
+\end{verbatim}
+We enter the following list of websites in the input file \texttt{URL\_Lists.txt}:\\[1mm]
+\url{http://rwth-aachen.de}\\
+\url{http://google.de}\\
+\url{http://www.torproject.org/}\\
+\url{http://heise.de}\\
+\url{http://golem.de}
+
+Afterwards, we start the script:
+\begin{verbatim}
+# python CrawlSite.py
+\end{verbatim}
+The script retrieves several subpages for each \ac{URL} and stores them in the corresponding output files:\\[1mm]
+fetches\_rwth-aachen.de.txt\\
+fetches\_google.de.txt\\
+fetches\_torproject.org.txt\\
+fetches\_heise.de.txt\\
+fetches\_golem.de.txt
+
+Finally, we merge these output files into one called \texttt{Urls.txt}:
+\begin{verbatim}
+# cat fetches_* > Urls.txt
+\end{verbatim}
+
+We copy the generated \ac{URL} link list into folder \texttt{crawling/} and move into \texttt{crawling/} to perform webpage fetching:
+\begin{verbatim}
+# cp Urls.txt ../crawling/
+# cd ../crawling/
+\end{verbatim}
+Then, we start the main script for webpage fetching:
+\begin{verbatim}
+# ./fetch-and-calculate.sh ../../WFP_config testRun 1 180 Urls.txt 
+\end{verbatim}
+All measurements are directly saved into folder \texttt{fetches/}. We move into folder \texttt{fetches/} and check the generated fetches for web failures:
+\begin{verbatim}
+# cd ../fetches/
+# cd scripts/
+# ./check-fetches.sh
+\end{verbatim}
+
+Afterwards, we merge all \ac{TCP}, respectively \ac{TLS}, instances for a given webpage into a single file:
+\begin{verbatim}
+# ./merge-input.sh
+\end{verbatim}
+The output files of \texttt{merge-input.sh} are located in the subfolders \texttt{output/}, \texttt{output-tls/}, \texttt{output-tls-legacy/}, \texttt{output-cells/}, \texttt{output-cells-sendme/} and \texttt{output-tls-no- sendme/} of folder \texttt{merged/}, as we have already described (see Section \ref{Merge instances}).
+
+Then, we execute \texttt{outlier-removal.py} to remove all outliers: 
+\begin{verbatim}
+# ./outlier-removal.py
+\end{verbatim}
+The output from this script is saved in folder(s) \texttt{<reference\_dir>-outlierfree/} and \texttt{<process\_dir>-outlierfree/} if \texttt{process\_dir} is previously defined (see Figure \ref{fig:fetchesOrdering}).
+
+Finally, we generate our features:
+\begin{verbatim}
+# ./generate-feature.py
+\end{verbatim}
+According to our configuration file (see Appendix \ref{sec:config_file}), our generated features are saved in folder \texttt{features/}.
+
+Having the features generated, we need to make sure that the instances are in the correct input files for classification. This usually means that the files containing the feature values need to be merged into one file that we use as training data. 
+
+\begin{verbatim}
+# cd ../features/output
+# cat * > merged_feature_files
+\end{verbatim}
+
+The file \texttt{merged\_feature\_files} can now be used for classification. For that we copy the file to the folder \texttt{evaluation/input/}. Then we change to the \texttt{tools/}-folder in which \texttt{easy.py} is located and let it run on \texttt{merged\_feature\_files}. Since the output files are create within \texttt{tools/} we finally move them up to the folder \texttt{evaluation/output/}.
+
+\begin{verbatim}
+# cp merged_feature_files ../../../evaluation/input/
+# cd ../../../evaluation/libsvm-3.20/tools/
+# ./easy.py ../../input/merged_feature_files 
+Scaling training data...
+Cross validation...
+Best c=0.03125, g=0.0078125 CV rate=0.0
+Training...
+Output model: merged_feature_files.model
+# mv merged_feature_files.* ../../output/
+\end{verbatim}
+
+%  \item Check the generated fetches for corrupt instances through:
+%\begin{verbatim}
+%cd fetches/scripts/
+%python check-fetches.py
+%\end{verbatim}
+%  \item To generate features we first need to set the input path in \textbf{parameters.cfg}, section [Features], to the newly created folder in \textbf{fetches/compiled}: 
+%  \begin{verbatim}
+%  input_path: /home/mitseva/Documents/Implementation/fingerprinting/
+%              fetches/compiled/20141020_173459_1_10_200_Urls/
+%  \end{verbatim}
+  
+%  Then generate features through:
+%\begin{verbatim}
+%python generate-feature.py
+%\end{verbatim}
+%The output of feature generation can be seen in a folder \textbf{fetches/features}. Using this output, we represent the generated features for the webpage \emph{http://rwth-aachen.de} graphically as shown in Figure \ref{fig:rwthaachen_tcp}.
+%\end{enumerate}
+
+%\begin{figure}
+% \centering
+%  \subfigure[Separate version]{
+%  \centering
+%   \begin{tikzpicture}[scale=1]
+%     \begin{axis}[
+%       height=7cm,
+%       width=8cm,
+%       xlabel={feature number},
+%       ylabel={feature value},
+%       legend pos=outer north east,
+%       enlarge x limits=false,
+%       scaled x ticks = false,
+%       xtick={1,25,50,75,100},
+%       xticklabel style={/pgf/number format/fixed},
+%       scaled y ticks = false,
+%       yticklabel style={/pgf/number format/fixed}]
+%       \addplot[color=red, mark=none] table [x=feature, y=1, col sep=comma]%{pictures/rwthAachen_sep_tcp.csv};
+%       \addplot[color=green, mark=none] table [x=feature, y=2, col sep=comma] {pictures/rwthAachen_sep_tcp.csv};
+%       \addplot[color=blue, mark=none] table [x=feature, y=3, col sep=comma] {pictures/rwthAachen_sep_tcp.csv};
+%       \addplot[color=cyan, mark=none] table [x=feature, y=4, col sep=comma] {pictures/rwthAachen_sep_tcp.csv};
+%       \addplot[color=magenta, mark=none] table [x=feature, y=5, col sep=comma] {pictures/rwthAachen_sep_tcp.csv};
+%       \addplot[color=orange, mark=none] table [x=feature, y=6, col sep=comma] {pictures/rwthAachen_sep_tcp.csv};
+%       \addplot[color=black, mark=none] table [x=feature, y=7, col sep=comma] {pictures/rwthAachen_sep_tcp.csv};
+%       \addplot[color=brown, mark=none] table [x=feature, y=8, col sep=comma] {pictures/rwthAachen_sep_tcp.csv};
+%       \addplot[color=lime, mark=none] table [x=feature, y=9, col sep=comma] {pictures/rwthAachen_sep_tcp.csv}; 
+%\end{axis}
+%\end{tikzpicture}
+%}
+%\subfigure[Cumulative version]{
+%  \centering
+%   \begin{tikzpicture}[scale=1]
+%     \begin{axis}[
+%       height=7cm,
+%       width=8cm,
+%       xlabel={feature number},
+%       ylabel={feature value},
+%       legend pos=outer north east,
+%       enlarge x limits=false,
+%       scaled x ticks = false,
+%       xtick={1,25,50,75,100},
+%       xticklabel style={/pgf/number format/fixed},
+%       scaled y ticks = false,
+%       yticklabel style={/pgf/number format/fixed}]
+%       \addplot[color=red, mark=none] table [x=feature, y=1, col sep=comma]%{pictures/rwthAachen_cum_tcp.csv};
+%       \addplot[color=green, mark=none] table [x=feature, y=2, col
+%sep=comma] {pictures/rwthAachen_cum_tcp.csv};
+%       \addplot[color=blue, mark=none] table [x=feature, y=3, col sep=comma] {pictures/rwthAachen_cum_tcp.csv};
+%       \addplot[color=cyan, mark=none] table [x=feature, y=4, col sep=comma] {pictures/rwthAachen_cum_tcp.csv};
+%       \addplot[color=magenta, mark=none] table [x=feature, y=5, col sep=comma] {pictures/rwthAachen_cum_tcp.csv};
+%       \addplot[color=orange, mark=none] table [x=feature, y=6, col sep=comma] {pictures/rwthAachen_cum_tcp.csv};
+%       \addplot[color=black, mark=none] table [x=feature, y=7, col sep=comma] {pictures/rwthAachen_cum_tcp.csv};
+%       \addplot[color=brown, mark=none] table [x=feature, y=8, col sep=comma] {pictures/rwthAachen_cum_tcp.csv};
+%       \addplot[color=lime, mark=none] table [x=feature, y=9, col sep=comma] {pictures/rwthAachen_cum_tcp.csv}; 
+%\end{axis}
+%\end{tikzpicture}
+%}
+%\caption{http://rwth-aachen.de}
+%\label{fig:rwthaachen_tcp}
+%\end{figure}
+

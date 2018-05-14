@@ -1,0 +1,17 @@
+500 Internal Server Error
+Internal Server Error
+502 Bad Gateway
+504 Gateway Time-out
+<h1 id=""errorTitleText"">Server not found</h1>
+503 Service Temporarily Unavailable
+<title>502 Proxy Error</title>
+<h1>Proxy Error</h1>
+503 Service Unavailable
+502 Server dropped connection
+Service Temporarily Unavailable
+No server is available to handle this request.
+<title>Proxy error: 502 Read from server failed: Timeout.</title>
+<h1>502 Read from server failed: Timeout</h1>
+<h1>504 Connect to
+<title>Proxy error: 504 Connect to
+SOCKS error: host unreachable

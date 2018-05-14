@@ -1,0 +1,5 @@
+<h1 id=""errorTitleText"">Unable to connect</h1>
+moz-neterror:page?e=error&u=url&d=desc
+chrome://browser/content/newtab/newTab.css
+<p id="errorShortDescText">Firefox can’t establish a connection to the server
+Unable to connect

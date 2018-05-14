@@ -1,0 +1,138 @@
+\newcommand{\hyperrefpdfauthor}{}
+\newcommand{\hyperrefpdftitle}{}
+\newcommand{\hyperrefpdfsubject}{}
+\newcommand{\hyperrefpdfkeywords}{}
+\newcommand{\hyperrefpdfborder}{0}
+\newcommand{\ToDo}[1]{\textcolor{red}{\textbf{TODO:} {#1}}}
+
+\documentclass{styles/wissdoc-kw-eng}
+
+\usepackage{hyperref}
+\usepackage{float}
+\floatstyle{ruled}
+\newfloat{listing}{htbp}{lop}[chapter]
+\floatname{listing}{Listing}
+
+% Disable single lines at the start of a paragraph (Schusterjungen)
+\clubpenalty = 10000
+%
+% Disable single lines at the end of a paragraph (Hurenkinder)
+\widowpenalty = 10000 \displaywidowpenalty = 10000
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{subfigure}
+\usepackage{hyperref} %table ref
+\usepackage[final]{listings}
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    tabsize=4,
+    numberstyle=\tiny\color{gray},
+    numbersep=5pt,
+    numbers=left,
+    captionpos=b,
+    abovecaptionskip=0pt,
+    belowcaptionskip=0pt,
+    aboveskip=10pt,
+    belowskip=0pt,
+    floatplacement=tbp,
+    frame=topline,
+    framerule=.1pt,
+    framesep = 3pt,
+    }
+
+\usepackage{float}
+\floatstyle{ruled}
+\newfloat{listing}{htbp}{lop}
+\floatname{listing}{Listing}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Andere Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{etex}
+\usepackage{color}
+\usepackage{fancyhdr} %%Fancy Kopf- und Fußzeilen
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{pstricks-add}
+%\usepackage{footnote}
+%\usepackage{savesym}
+%\savesymbol{l@addto@macro}
+%\usepackage{scrextend}
+%\restoresymbol{SCR}{l@addto@macro}
+\usepackage{hyphenat}
+\usepackage{setspace}
+\usepackage{acronym}
+\usepackage{multirow}
+\usepackage{todonotes}
+\usepackage{dirtree}
+
+\newcommand{\code}{\texttt}
+\newenvironment{notExistingAnymore}{\begin{gray}}{\end{gray}}
+
+\usepackage{bbding}
+\setlength{\DTbaselineskip}{20pt}
+\DTsetlength{0.6em}{3em}{0.4em}{2pt}{4pt}
+
+\title{Documentation}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\ifnotdraft{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deckblatt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+\renewcommand{\familydefault}{\sfdefault}
+\include{chapters/00_title}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inhaltsverzeichnis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\cleardoublepage
+} % end ifnotdraft
+
+\listoftodos
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ab hier die Kopf-/Fusszeilen: headings / fancy / ...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+
+\mainmatter
+
+\include{chapters/01_introduction}
+\include{chapters/02_preprocessing}
+\include{chapters/03_configuration}
+\include{chapters/04_link_list_generation}
+\include{chapters/05_fetching}
+\include{chapters/06_feature_generation}
+\include{chapters/07_classification}
+\include{chapters/08_wang}
+\include{chapters/09_example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LITERATUR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+%\nocite{*}								
+\bibliography{literature/literature}
+\bibliographystyle{styles/acmurl}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ANHÄNGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\include{chapters/99_appendix_abb}
+\include{chapters/99_appendix_configuration}
+\include{chapters/99_appendix_fetchscript}
+\include{chapters/troubleshooting}
+
+\end{document}
+

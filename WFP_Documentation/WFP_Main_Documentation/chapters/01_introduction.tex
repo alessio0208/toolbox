@@ -1,0 +1,90 @@
+%!TEX root = ../documentation.tex
+\chapter{Introduction}
+\label{chap:introduction}
+
+Tor~\cite{tor_design_paper} is a circuit-based low-latency anonymization network that % focuses on sender anonymity allowing 
+allows users to connect to network resources without revealing their \ac{IP} address. By encrypting the traffic in layers and routing it over (at least) three nodes: \emph{entry}, \emph{middle}, and \emph{exit}, Tor ensures unlinkability between communication partners. Besides protecting users’ privacy, Tor also enables servers to operate anonymously by offering (location-) \emph{hidden services}. Following a special connection establishment procedure~\cite{rendezvous_spec}, the client can connect to a hidden service (\acs{HS}) without needing to know its public identity. The main purpose of Tor is to protect against a common form of Internet surveillance, called \emph{traffic analysis (\acs{TA})}. TA is a process to determine relevant characteristics of data transmissions or even the included content without breaking the encryption of the data transfer. Applying traffic analysis, an adversary is able to link multiple communications to or from a single user as well as to link two communication partners. Traffic analysis attacks rely on machine learning techniques to derive information about the transferred content.
+
+\emph{\ac{WFP}} is a special type of traffic analysis attack where an adversary attempts to identify which page a Tor user is visiting by analyzing patterns in its communication. The attacker is located between the user and the entry node or at the entry node itself. In general, first the attacker has to define a set of monitored pages before launching a \ac{WFP} attack. Afterwards, he has to collect a sufficient number of network traces\footnote{A trace is a timestamped sequence of network packets that are captured during a given page loading.} for each of these pages. To do this, he deploys own clients who visit the target pages and, thus, captures the network traces. In particular, the attacker attempts to emulate the network conditions of the clients that he wants to monitor. \textbf{In other words, when you perform experiments, all deployed clients must have the same speed of Internet connection and use Ethernet only. We never do experiments by using a wireless connection because this may influence the experiments! Furthermore, we never use virtual machines for the experiments, i.e., you need several physical machines for larger experiments!}
+
+Next, the adversary analyses the collected traces in order to extract unique patterns, called \emph{fingerprints}. Unique patterns are typically introduced due to the fact that the monitored pages have different \ac{HTML} structure and contain diverse resources such as images, style sheets and scripts. Multiple fingerprints belonging to a certain page are grouped into a \emph{class}. Once the attacker has generated (and stored) fingerprints, he applies a machine learning technique, called \emph{classifier}, in order to differentiate among them. An objective of the classifier is to match patterns of a page load trace to a previously known trace in order to reveal which page the user has been visiting. To achieve this, the generated fingerprints are typically divided onto \emph{training set} and \emph{testing set}. Whereas the relation between a fingerprint and a page link is known in the training set, the testing set consists of fingerprints whose corresponding page names are unknown. Afterwards, the attacker trains the classifier with the fingerprints from the training set in order to create a \emph{model}. A model is a representation that is applied to map an unknown fingerprint to an already predefined class of fingerprints. Finally, the classifier attempts to assign correctly the fingerprints from the testing set to some known class based on the generated model. % When a user visits a website and the attacker records the traffic data, he can probabilistically match it to an entry in his database and recover in that way which website the user called. The matching is done by a classifier.
+
+Typically, two threat models are studied: \emph{closed-world} and \emph{open-world} scenario. In closed-world scenario, there is only a certain number of pages which the user may visit and the attacker has already patterns (i.e., fingerprints) for these pages. On the other hand, in open-world scenario the user visits not only pages for that the adversary has already patterns (\emph{foreground pages}), but also the user is allowed to visit pages which have not been seen by the attacker before, i.e., the classifier has not been trained on these pages (\emph{background pages}). One of the big issues of the open-world scenario is the enormous variety of pages in the world wide web (\acs{WWW}). This leads to significant reducing the accuracy of the attack in practice~\cite{juarez2014critical, Panchenko2016}. 
+
+\todo[inline]{Why would \emph{website} fingerprinting be more realistic than \emph{webpage} fingerprinting~\cite{Panchenko2016}?}
+
+An objective of this work is to provide a technical overview of a website fingerprint attack already implemented by our research group. Our website fingerprint attack consists of four main parts: First, we automatically generate a \ac{URL} link list with accessible \acs{WWW} webpages (for hidden services, one needs to generate this list manually~\cite{Mitseva2015}). This guarantees that we always have a valid link list for our measurements. Next, we record separate network traces for each page in our \ac{URL} link list and extract the corresponding \ac{TCP}, \ac{TLS}, and Tor cell information. Afterwards, we generate \emph{features} (a definition for \emph{feature} is given below) from the data traces based on the timestamps, sizes, and send directions of \ac{TCP} packets, the \ac{TLS} records, and Tor cells. Finally, we use these features to classify recorded samples using a \ac{SVM} and attempt to determine which page we accessed. Our \ac{WFP} attack considers both closed-world and open-world scenarios.
+
+\begin{listing}[t]
+\centering
+\begin{minipage}[b]{.85\textwidth}
+\begin{description}
+	\item[Packet length:] Sizes of the transferred data packets (e.g., \ac{TCP} size, or \ac{TLS} record size)
+	\item[Packet length frequencies:] Occurrence of different packet lengths 
+	\item[Packet ordering:] Sequence, in which packets are recorded
+	\item[Inter-packet timing:] Time period that passes between the transmission of different packets (idle time)
+	\item[Packet direction:] Each packet can either be transferred from the client to the server or contrary
+	\item[Packet bursts:] A group of consecutive packets, which have smaller inter-packet timing than the packets before and after the burst\\
+\end{description}
+\end{minipage}
+\caption{Features in Website Fingerprinting (based on \cite{Pennekamp2014})}
+\label{lst:features}
+\end{listing}
+
+Before describing the operation of each part of our \ac{WFP} approach, we introduce some definitions relevant to the rest of this work (based on \cite{Landa2013}, \cite{Pennekamp2014}):
+\begin{description}
+\item[Trace] A single traffic flow which is recorded while fetching a webpage. For example, the traffic we record while accessing \url{http://www.facebook.com/}.
+\item[Feature] A repeating, comparable property of gathered data mapped onto a unique value. For example, the number of incoming packets while accessing \url{http://www.facebook.com/}. Common features considered in \ac{WFP} attacks are packet length, size, ordering, direction, bursts, and inter-packet timing (for details, see~Listing \ref{lst:features}).
+\item[Instance] A set of calculated features. For example, an instance describing the page access of \url{http://www.facebook.com/} can consist of two features: the number of incoming and the number of outgoing packets. These features should determine the instance uniquely.
+\item[Class] A class contains a set of instances that belong to the same page. For instance, multiple traces representing page loads of \url{http://www.facebook.com/} can be transformed into instances. All these instances belong to the same class.
+\item[Outlier] Instances, which show extreme observations in the considered features compared to other instances. In \ac{WFP}, this can occur on account of localized data, changing content and advertisement or network failures. We tend to remove these instances on basis of an algorithm if we are interested in identifying a respective class.
+\item[Model] A representation which is able to retrieve a classification for any instance. It defines a current instance which class it belongs to.
+\item[Classifier] A classifier is an algorithm which assigns an unlabeled instance to a class. It trains on instances of different classes to calculate a model which is able to distinguish between different classes. For example, we want to determine whether the accessed page was \url{http://www.facebook.com/} or \url{http://google.com/}.
+\item[Prediction] A prediction is a classification of a single instance to a class of the model. We use our model to determine for a new instance which class it belongs to.
+\item[Training Set] A training set is a data used to learn a mapping from input attributes, i.e., instances, to the corresponding output, i.e., the class, and thus, to calculate a model. % with a given classifier. 
+There are multiple instances in the training set and the class of each instance is known to the classifier. For example, we have multiple instances of \url{http://www.facebook.com/} and \url{http://google.com/}.
+\item[Testing Set] A test set is used with a generated model to evaluate the success of the generated model. The model is not aware of the class of the instances in the testing set and outputs a prediction. This prediction can be checked against the actual class of the instance.
+\item[Cross-Validation] \ac{CV} is an approach to estimate how accurate the generated model performs. All data (all available instances) is partitioned into k equal sized parts, called \emph{folds}. Then, k-1 parts are used as training set and 1 part is used as test set. The process is repeated k times such that each piece is used exactly once as test set. In the end, the results can be averaged in order to get a result which is more resilient against random outlier.
+\item[Confusion matrix] A matrix showing the predicted and actual classifications. In the binary classification case, the table entries can be categorized into true positives (\acs{TP}), false positives (\acs{FP}), true negatives (\acs{TN}), and false negatives(\acs{FN}). If we have a foreground class, called \emph{Class one}, and a background class, labeled as \emph{Class two}, the corresponding classification is shown in Table \ref{tab:confusion}.
+\item[Accuracy] An accuracy is the fraction of correct classifications (positive and negative) among the total number of cases examined. This means:\\ 
+Accuracy $= \frac{\acs{TP} + \acs{TN}}{\acs{TP} + \acs{TN} + \acs{FP} + \acs{FN}}$.
+\item[Recall] The probability that access to a foreground page is detected $(\frac{\acs{TP}}{\acs{TP} + \acs{FN}})$. However, it is still possible that different page accesses are classified incorrectly.
+\item[Precision] The amount of true positive predictions divided by all positive predictions $(\frac{\acs{TP}}{\acs{TP} + \acs{FP}})$. This metric takes account of the prior and the actual size of the universe. It corresponds to the probability that a classifier is actually correct in its decision when it claims to have detected a foreground page.
+\item[Webpage] A single page of a specific domain. Can either be the main page (e.g., \url{http://google.de}) or an arbitrary subpage (e.g., \url{http://www.google.de/search?q=Subpage}).
+\item[Website] A website consists of all webpages accessible over the same domain. For example, every search query of \url{http://google.de} belongs to the website.
+\end{description}
+
+\todo[inline]{Add definition for overfitting!}
+
+\todo[inline]{Explain when we consider accuracy and when not. What is the reason for that?}
+
+\textcolor{red}{TODO: At the moment, the toolbox does not contain any scripts with respect to the differentiation between website and webpage. Therefore, for the rest of this work we assume that webpage and website are synonyms as long as one explicitly defines this otherwise!}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{cc|c|c|}
+	\cline{3-4}
+	&&\multicolumn{2}{c|}{Predicted class}\\
+	\cline{3-4}
+	&&one&two\\
+	\hline 
+	\multicolumn{1}{|c|}{\multirow{2}{2.5cm}{Actual class}}&one&true positive (TP)&false negative (FN)\\
+	\cline{2-4}
+	\multicolumn{1}{|c|}{}&two&false positive (FP)& true negative (TN)\\
+	\hline
+\end{tabular}
+\caption{Confusion Matrix in Binary Classification Scenario (based on \cite{Pennekamp2014})}
+\label{tab:confusion}
+\end{table}
+
+The remainder of this work is structured as follows: 
+\begin{itemize}
+\item Chapter \ref{chap:folder_organization} introduces the folder organization of our \ac{WFP} approach.
+\item Chapter \ref{chap:configuration} presents all software packets that should be installed and the preprocessing requirements in order to execute the \ac{WFP} attack.
+\item Chapter \ref{chap:list_generation} describes how we generate automatically a \ac{URL} link list with accessible webpages.
+\item Chapter \ref{chap:webpage_fetching} presents our automated website fetching process used to gather network traces.
+\item Chapter \ref{chap:feature_generation} introduces our feature generation algorithm used to extract features from the fetches already recorded.
+\item Chapter \ref{chap:classification} describes how we classify recorded samples using \ac{SVM} and attempt to determine which page we accessed.
+\item Chapter \ref{chap:example} shows a small demo of our \ac{WFP} approach.
+\end{itemize}
+

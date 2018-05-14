@@ -1,0 +1,1259 @@
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch no-geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="en"><head><style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}
+</style><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}
+</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+</style>
+        <meta charset="utf-8">
+
+        <title>Research - University of Canberra</title>
+        <link rel="shortcut icon" href="https://www.canberra.edu.au/config/designs/global-combined-parse-squiz/favicon.ico" type="image/ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+<!-- AGLS schema //-->
+
+<!-- Attributes //-->
+<meta name="dcterms.title" content="Research">
+<meta name="dcterms.identifier" content="https://www.canberra.edu.au/research">
+<meta name="dcterms.creator" content="[Marketing] Rhys Martindale">
+<meta name="dcterms.publisher" content="University of Canberra">
+<meta name="dcterms.description" content="The University of Canberra has a collaborative, innovative and dynamic research culture, with a focus on producing high-quality and high-impact work that makes an early and significant difference to the world around us. We aim to deliver breakthroughs and be globally competitive.">
+<meta name="dcterms.rights" content="Copyright University of Canberra 2014">
+<meta name="dcterms.created" content="2014-05-20 12:40:49">
+<meta name="dcterms.modified" content="2017-07-11 15:22:14">
+<meta name="dcterms.subject" content="research">
+<meta name="dcterms.language" content="en-AU">
+
+<!-- Google+ //-->
+
+<!-- Attributes //-->
+<meta itemprop="name" content="Research">
+<meta itemprop="description" content="The University of Canberra has a collaborative, innovative and dynamic research culture, with a focus on producing high-quality and high-impact work.">
+<meta itemprop="image" content="">
+
+<!-- Metadata description tag //-->
+
+<!-- Attributes //-->
+<meta name="description" content="The University of Canberra has a collaborative, innovative and dynamic research culture, with a focus on producing high-quality and high-impact work.">
+
+<!-- Open Graph schema //-->
+
+<!-- Attributes //-->
+<meta property="og:title" content="Research">
+<meta property="og:type" content="article">
+<meta property="og:image" content="">
+<meta property="og:url" content="https://www.canberra.edu.au/research">
+<meta property="og:description" content="">
+<meta property="og:locale" content="en_AU">
+<meta property="og:sitename" content="University of Canberra">
+<meta property="og:locale:alternate" content="">
+<meta property="article:published_time" content="2014-05-20 12:40:49">
+<meta property="article:modified_time" content="2017-07-11 15:22:14">
+<meta property="article:section" content="">
+<meta property="article:tag" content="">
+
+<!-- Twitter cards small image summary //-->
+
+<!-- Attributes //-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@UniCanberra">
+<meta name="twitter:title" content="Research">
+<meta name="twitter:description" content="
+@media screen and (min-width: 1025px) {
+#media_card_nested_content {
+width: 100%;
+}
+}
+@media screen and (max-width: 1024px) {
+#media_card_nested_content {
+overflow: hidden;
+}
+}
+
+
+    
+
+">
+<meta name="twitter:creator" content="@UniCanberra">
+<meta name="twitter:image" content="">
+
+ 
+
+        
+
+
+        <link rel="stylesheet" href="https://www.canberra.edu.au/config/designs/footer-squiz/main.css">
+        <link rel="stylesheet" href="https://www.canberra.edu.au/__data/assets/css_file_folder/0015/1008231/css_folder.min.css"> <!-- UC CSS folder -->
+        <link rel="stylesheet" href="https://www.canberra.edu.au/__data/assets/css_file/0016/1015603/migrate.css"> <!-- Course Details styles -->
+
+        <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-PRQLQP"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="https://connect.facebook.net/signals/config/160882490933280?v=2.8.14&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" src="https://www.canberra.edu.au/__data/assets/js_file/0019/1008235/modernizr.min.js"></script> <!-- modernizr -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+           if (typeof jQuery == 'undefined') {
+              document.write(unescape("%3Cscript src='https://www.canberra.edu.au/__data/assets/js_file/0018/1008234/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+           }
+        </script>
+
+        <!--[if lte IE 8]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '160882490933280'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=160882490933280&ev=PageView&noscript=1" /></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+<!-- FB Pixel script for social garden -->
+        
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5231817-1', 'auto' , {'siteSpeedSampleRate': 50});
+  ga('send', 'pageview');
+</script>
+
+    
+<!--
+  Running Squiz Matrix
+  Developed by Squiz - http://www.squiz.net
+  Squiz, Squiz Matrix, MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd
+  Page generated: 10 May 2018 13:28:15
+-->
+
+
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/13/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/13/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/13/geocoder.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/13/map.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/13/marker.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/13/infowindow.js"></script><style type="text/css">.gm-style {
+        font: 400 11px Roboto, Arial, sans-serif;
+        text-decoration: none;
+      }
+      .gm-style img { max-width: none; }</style><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/13/onion.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/13/controls.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate?1shttps%3A%2F%2Fwww.canberra.edu.au%2Fresearch&amp;4sAIzaSyBePhNJzMw5tb56oMOm8545s-avxwJSsDE&amp;callback=_xdc_._tznmkj&amp;token=32867"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/13/stats.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/QuotaService.RecordEvent?1shttps%3A%2F%2Fwww.canberra.edu.au%2Fresearch&amp;3sAIzaSyBePhNJzMw5tb56oMOm8545s-avxwJSsDE&amp;7szz3np4&amp;10e1&amp;callback=_xdc_._hz12wp&amp;token=94287"></script></head>
+    <!--[if lt IE 7]><body class="no-js inside landing-page"  lt-ie9 lt-ie8 lt-ie7 lt-ie10"><![endif]-->
+    <!--[if IE 7]><body class="no-js inside landing-page"  lt-ie9 lt-ie8 lt-ie10"><![endif]-->
+    <!--[if IE 8]><body class="no-js inside landing-page"  lt-ie9 lt-ie10"><![endif]-->
+    <!--[if IE 9 ]><body class="no-js inside landing-page"  lt-ie10"><![endif]-->
+    <!--[if gt IE 8]><!-->
+
+    
+
+    <body class="inside landing-page js-enabled">
+    <!--<![endif]-->
+
+    
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PRQLQP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PRQLQP');</script>
+<!-- End Google Tag Manager -->
+
+    <div id="page-wrapper">
+    <!--noindex-->
+        <div id="top" class="skip-links" aria-hidden="true">
+    <ul class="skip-links__list">
+        <li class="skip-links__item"><a class="skip-links__link" href="#main">Skip to content</a></li>
+        <li class="skip-links__item"><a class="skip-links__link" href="#main-navigation">Skip to navigation</a></li>
+    </ul>
+</div><!--/.skip-links-->
+        <div class="header__wrap">
+            <header class="header clearfix" role="banner">
+                <a href="https://www.canberra.edu.au" title="University of Canberra" class="uc-logo">University of Canberra</a>
+                <div class="primary-nav-wrapper-outer">   
+<a href="javascript:void(0);" class="show-mobile-menu">Menu</a>                    
+    <div class="primary-nav-wrapper clearfix">
+            <nav class="primary-nav" id="main-navigation">
+                <ul class="secondary-links highlight">
+                    <li><a href="https://www.canberra.edu.au/current-students">Current Students</a></li>
+<!--                    <li><a href="">Staff</a></li>  -->  <!-- THIS CREATES IDENTITY PROVIDER ERROR-->
+                   <li><a href="https://www.canberra.edu.au/myuc-s">Staff</a></li>
+                    <!--<li><a href="https://learnonline.canberra.edu.au/login/index.php?noredirect=1">Staff</a></li>-->
+                </ul>
+                <ul class="secondary-links normal">
+                    <li><a href="https://www.canberra.edu.au/uc-college">UC College</a></li>
+                    <li><a href="https://www.canberra.edu.au/maps">Maps</a></li>
+                    <li><a href="https://www.canberra.edu.au/library">Library</a></li>
+                    <li><a href="https://www.canberra.edu.au/about-uc/contacts">Contact us</a></li>
+                    <li><a href="https://www.canberra.edu.au/about-uc/uc-foundation">Donate</a></li>
+                    <li><a href="https://www.canberra.edu.au/alumni/home">Alumni</a></li>
+                    <li><a href="https://www.canberra.edu.au/international">International</a></li>
+                </ul>
+
+                <div class="megamenu clearfix">
+                    <ul class="level1">
+
+                            <li>
+                                <a href="https://www.canberra.edu.au/future-students" class="has-mega-menu">Future Students</a>
+                                <div class="megamenu-content">
+                                    <div class="col1 col">
+    <ul>		
+	<li class="level2"><a href="https://www.canberra.edu.au/future-students/domestic-students/who-is-a-domestic-student">Am I a domestic or international student?</a></li>
+
+	<li class="level2"><a href="https://www.canberra.edu.au/future-students/domestic-students">Domestic students</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/credit">Credit for prior learning</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/courses/pathways">Pathways into UC (UC College)</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/courses/find-a-course">Course search</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/domestic-students/internationalise-your-degree">Internationalise your degree</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/apply-now">How to apply</a></li>
+		
+		
+	<li class="level2"><a href="https://www.canberra.edu.au/future-students/international-students">International students</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/current-students/canberra-students/international-students/life-and-study-assistance">Settling in Australia</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/international/uc-agents-and-international-representatives">Find an agent</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/uc-college/ielts">IELTS</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/courses/english-language/english-language-intensive-courses-for-overseas-students-elicos">ELICOS (English courses)</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/courses/pathways/international-students/diplomas">UC College diploma program</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/courses/find-a-course">Course search</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/apply-now">How to apply</a></li>
+               
+   </ul>
+</div>
+<div class="col2 col">
+   <ul>  
+    
+        <li class="level2"><a href="https://www.canberra.edu.au/future-students/courses/glossary/postgraduate">Postgraduate study</a></li>
+      
+    
+        <li class="level2"><a href="https://www.canberra.edu.au/future-students/research-students">Research degrees</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/research-students/beginning-a-research-degree">Beginning a research degree</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/courses/find-a-course">Search for a research course</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/apply-now">How to apply</a></li>
+        
+        <li class="level2"><a href="https://www.canberra.edu.au/future-students/Aboriginal-and-Torres-Strait-Islander-future-students">Indigenous students</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/Aboriginal-and-Torres-Strait-Islander-future-students/indigenous-student-support">Indigenous student support</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/current-students/canberra-students/student-support/ngunnawal-centre">Ngunnawal indigenous higher education centre</a></li>
+		
+        
+        <li class="level2"><a href="https://www.canberra.edu.au/uc-college">UC College</a></li>
+
+	
+
+		
+  </ul>
+</div>
+<div class="col3 col">
+   <ul>  	
+        <li class="level2"><a href="https://www.canberra.edu.au/future-students/key-dates">Key dates</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/key-dates/important-dates-for-applications-and-enrolments">Important dates for applications and enrolments</a></li>	
+    
+        <li class="level2"><a href="https://www.canberra.edu.au/future-students/apply-now">Apply now</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/apply-now">How to apply</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/apply-now/alternative-entry">Alternative entry</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/admissions-comparison-data">Admissions comparison data</a></li>
+
+    
+        <li class="level2"><a href="https://www.canberra.edu.au/current-students/canberra-students/student-support">Student support</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/current-students/canberra-students/student-support/study-skills">Academic support</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/financial-support">Financial support</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/current-students/canberra-students/student-support/inclusion-engagement">Inclusion and Engagement</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/transition-support">Transition support</a></li>
+    
+    
+	<li class="level2"><a href="https://www.canberra.edu.au/future-students/credit">Credit and recognition of prior learning</a></li>
+	<li class="level3"><a href="https://www.canberra.edu.au/future-students/credit/search">Search the credit transfer database</a></li>								        
+   </ul>
+</div>
+<div class="col4 col">
+   <ul> 		
+        
+        <li class="level2"><a href="https://www.canberra.edu.au/on-campus/accommodation">Accommodation</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/accommodation-guarantee">Accommodation guarantee</a></li>
+        
+        <li class="level2"><a href="https://www.canberra.edu.au/future-students/scholarships-and-financial-support">Scholarships</a></li>
+       
+<!--        <li class="level2"><a href="https://www.canberra.edu.au/current-students/canberra-students/orientation">O-Week</a></li>  -->
+        
+        <li class="level2"><a href="https://www.canberra.edu.au/future-students/frequently-asked-questions">Frequently Asked Questions</a></li>
+<!--
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/frequently-asked-questions/accordions/why-study-at-the-university-of-canberra">Why study at the University of Canberra?</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/frequently-asked-questions/accordions/what-is-campus-life-like">What is campus life like?</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/future-students/frequently-asked-questions/accordions/federal-budget-fees">Tertiary reforms: fees FAQ's</a></li>
+ 
+        <li class="level2"><a href="https://www.canberra.edu.au/on-campus">Campus life</a></li>
+ -->          
+       
+        
+   </ul>
+</div>
+<div class="col5 col">
+  <div class="links">
+     <ul>
+      <li><a href="https://www.canberra.edu.au/about-uc/campus-locations" class="action-link">Campus locations</a></li>
+      <li><a href="https://www.canberra.edu.au/future-students/courses/find-a-course" class="action-link">Find a course</a></li>
+      <li><a href="https://www.canberra.edu.au/future-students/courses/find-a-unit?unitsearch=units" class="action-link">Find a unit</a></li>
+      <li><a href="https://www.canberra.edu.au/future-students/apply-now" class="action-link">Apply now</a></li>
+      <li><a href="https://www.canberra.edu.au/future-students/accept-your-offer" class="action-link">Accept your offer</a></li>
+      <li><a href="https://www.canberra.edu.au/future-students/defer-your-offer" class="action-link">Defer your offer</a></li>
+      <li><a href="https://www.canberra.edu.au/future-students/enquire-online" class="action-link">Future students enquiries</a></li>
+<!--      <li><a href="https://www.canberra.edu.au/about-uc/contacts" class="action-link">Contact us</a></li>  -->
+    </ul>
+ </div>
+</div>
+
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <a href="https://www.canberra.edu.au/on-campus" class="has-mega-menu">On Campus</a>
+                                <div class="megamenu-content">
+                                    <div class="col1 col">
+	<ul>
+		<li class="level2"><a href="https://www.canberra.edu.au/on-campus/campus-tours">Campus tours</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/campus-tours/virtual-tours">Virtual tours</a></li>
+		
+		<li class="level2"><a href="https://www.canberra.edu.au/on-campus/accommodation">Accommodation</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/accommodation/campus-accommodation">Approved accommodation</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/accommodation/off-campus-accommodation">Off-campus accommodation</a></li>		
+                <li class="level3"><a href="http://www.ucevents.com.au/accomodation/" target="_blank">Visitor accommodation</a></li>
+                <li class="level3"><a href="https://www.canberra.edu.au/on-campus/accommodation/contact-us">Contact us</a></li>
+             
+                 
+		<li class="level2"><a href="http://www.ucevents.com.au/" target="_blank">Conference / Venue Hire</a></li>
+		<li class="level3"><a href="http://www.ucfit.com.au/facilities/" target="_blank">Bookings - sports facilities</a></li>
+
+		<li class="level2"><a href="https://www.canberra.edu.au/on-campus/campus-development">Campus development</a></li>
+  
+	</ul>
+</div>
+<div class="col2 col">
+	<ul>		
+		<li class="level2"><a href="https://www.canberra.edu.au/on-campus/facilities">Facilities</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/facilities/student-commons-student-study-areas">Student Commons (Student study areas)</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/facilities/sporting-commons">Sporting Commons</a></li>
+		<!-- <li class="level3"><a href="./?a=998694">Laboratories</a></li> -->
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/facilities/MootCourt">E-Court</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/facilities/research-facilities">Research facilities</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/facilities/campus-estate">Capital works projects</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/facilities/sporting-commons/facility-bookings-and-memberships">Facility bookings and memberships</a></li>
+                <li class="level3"><a href="http://www.ucfit.com.au/" target="_blank">Gym</a></li>
+	</ul>
+</div>
+<div class="col3 col">
+	<ul>		
+		<li class="level2"><a href="https://www.canberra.edu.au/on-campus/security">Security</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/security/location-and-hours-of-business">Location and hours of business</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/security/safety-on-campus">Safety on Campus</a></li>
+
+                <li class="level2"><a href="https://www.canberra.edu.au/on-campus/transport">Transport</a></li> 
+		
+		<li class="level2"><a href="https://www.canberra.edu.au/on-campus/parking">Parking</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/parking/parking-rates">Parking rates</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/parking/how-to-pay-for-parking">How to pay for parking</a></li>		
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/parking/accessible-parking">Accessible parking</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/parking/bus-bike-and-fleet-vehicles">Bus, bike &amp; fleet vehicles</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/parking/parking-faqs">Frequently Asked Questions</a></li>
+	</ul>
+</div>
+<div class="col4 col">
+	<ul>		
+		<li class="level2"><a href="https://www.canberra.edu.au/on-campus/health-and-childcare-services">Health and childcare services</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/health-and-childcare-services/medical-counselling">Medical and Counselling Centre</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/health-and-childcare-services/clinics">Faculty of Health Clinics</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/health-and-childcare-services/headspace-act">Headspace ACT</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/health-and-childcare-services/child-care">Child care</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/health-and-childcare-services/breastfeeding-facilities">Breastfeeding facilities</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/on-campus/health-and-childcare-services/tobacco-free-campus">Tobacco-free University</a></li>
+		<li class="level2"><a href="https://www.canberra.edu.au/on-campus/shopping">Shopping, banking and eating</a></li>
+	</ul>
+</div>
+<div class="col5 col">
+ <div class="links">
+     <ul>
+     <!--  
+      <li><a href="https://www.canberra.edu.au/future-students/courses/find-a-course" class="action-link">Find a course</a></li>
+      <li><a href="https://www.canberra.edu.au/future-students/courses/find-a-unit" class="action-link">Find a unit</a></li>
+       <li><a href="https://www.canberra.edu.au/future-students/apply-now" class="action-link">Apply now</a></li>
+       <li><a href="https://www.canberra.edu.au/future-students/accept-your-offer" class="action-link">Accept your offer</a></li>
+       <li><a href="https://www.canberra.edu.au/future-students/enquire-online" class="action-link">Future students enquiries</a></li>
+       <li><a href="https://www.canberra.edu.au/about-uc/media" class="action-link">Media and communications</a></li>
+       <li><a href="https://www.canberra.edu.au/about-uc/contacts" class="action-link">Contact us</a></li>
+       
+     -->
+       <li><a href="https://www.canberra.edu.au/on-campus/campus-development" class="action-link">Campus development</a></li>
+       <li><a href="https://www.canberra.edu.au/about-uc/campus-locations" class="action-link">Campus locations</a></li>
+       <li><a href="https://www.canberra.edu.au/on-campus/security" class="action-link">Security</a></li>
+       <li><a href="https://www.canberra.edu.au/maps" class="action-link">Maps</a></li>
+       <li><a href="https://www.canberra.edu.au/about-uc/contacts" class="action-link">Contact us</a></li>
+       <li><a href="https://www.canberra.edu.au/future-students/enquire-online" class="action-link">Future student enquiries</a></li>
+       
+    </ul>
+ </div>
+</div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <a href="https://www.canberra.edu.au/research" class="has-mega-menu">Research</a>
+                                <div class="megamenu-content">
+                                    <div class="col1 col">
+  <ul> 
+    <li class="level2"><a href="https://www.canberra.edu.au/research/research-focus">Our Research Focus</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/research-focus/communication">Communication</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/research-focus/education">Education</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/research-focus/environment">Environment</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/research-focus/governance">Governance</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/research-focus/health">Health</a></li>
+				
+    <li class="level2"><a href="https://www.canberra.edu.au/research/institutes">University Research Institutes</a></li>
+    <!-- External Sites-->
+    <li class="level3"><a href="https://www.canberra.edu.au/research/institutes/iae">Institute for Applied Ecology</a></li>
+    <li class="level3"><a title="Opens in a new window" href="http://www.governanceinstitute.edu.au/" target="_blank">Institute for Governance and Policy Analysis</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/institutes/ucrise">Research Institute for Sport and Exercise</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/institutes/health-research-institute">Health Research Institute</a></li>
+  </ul>
+</div>
+
+<div class="col2 col">
+  <ul>	
+    <li class="level2"><a href="https://www.canberra.edu.au/research/faculty-research-centres">Faculty Research Centres</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/faculty-research-centres/cccr">Centre for Creative and Cultural Research</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/faculty-research-centres/nmrc">News and Media Research Centre</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/faculty-research-centres/ceraph">Centre for Research and Action in Public Health</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/faculty-research-centres/crests">Centre for Research in Therapeutic Solutions</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/faculty-research-centres/stem-education-research-centre">STEM Education Research Centre</a></li>
+    <li class="level3"><a href="http://www.synergyresearch.edu.au/" target="_blank" title="Opens in a new window">SYNERGY Nursing and Midwifery Research Centre</a></li>
+     <li class="level3"><a href="https://www.canberra.edu.au/research/faculty-research-centres/nexus-centre-for-research">Nexus Research Centre</a></li>
+  </ul>
+</div>
+<div class="col3 col">
+  <ul>		
+    <li class="level2"><a href="https://www.canberra.edu.au/research/collaborations">Collaborative Research</a></li>
+    <li class="level3"><a href="http://www.curf.com.au/" title="Opens in a new window" target="_blank">Canberra Urban and Regional Futures</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/collaborations/ciri">Collaborative Indigenous Research Initiative</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/collaborations/murray-darling-crn">Murray-Darling Basin Futures Collaborative Research Network</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/collaborations/invasive-animals-collaborative-research-centre">Invasive Animals Cooperative Research Centre</a></li>
+  </ul>
+</div>
+
+<div class="col4 col">
+  <ul>		
+    <li class="level2"><a href="https://www.canberra.edu.au/research/graduate-research">Graduate Research</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/future-research-students">Future research students</a></li>
+    <li class="level3"><a href="https://www.canberra.edu.au/research/current-research-students">Current research students</a></li>
+    <li class="level2"><a href="https://www.canberra.edu.au/research/researcher-development">Researcher Development</a></li>
+    <li class="level2"><a href="https://www.canberra.edu.au/research/ucresearch">Research Support</a></li>
+    <li class="level2"><a href="https://www.canberra.edu.au/research/centenary-professors">Centenary Research Professors</a></li>
+  </ul>
+</div>
+
+<div class="col5 col">
+  <div class="links">
+    <ul>
+      <li><a href="https://canberra.pure.elsevier.com/en/" class="action-link" title="Opens in a new window" target="_blank">Researcher Profiles</a></li>
+      <li><a href="https://www.canberra.edu.au/research/future-research-students" class="action-link">Become a Higher Degree by Research student</a></li>
+      <li><a href="https://www.canberra.edu.au/research/news" class="action-link">Research news and insights</a></li>
+      <li><a href="https://www.canberra.edu.au/research/research-contacts" class="action-link">Research contacts</a></li>
+    </ul>
+  </div>
+</div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <a href="https://www.canberra.edu.au/about-uc" class="has-mega-menu">About UC</a>
+                                <div class="megamenu-content">
+                                    <div class="col1 col">
+	<ul>
+                <li class="level2"><a href="https://www.canberra.edu.au/about-uc/from-the-vice-chancellor">Vice-Chancellor</a></li>
+                <li class="level2"><a href="https://www.canberra.edu.au/about-uc/strategic-plan">Strategic plan</a></li>
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/strategic-plan/breakthrough-2013-17/uc-at-a-glance">UC at a Glance</a></li>
+		
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/campus-locations">Locations</a></li>		
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/campus-locations/queensland">Queensland</a></li>
+                <li class="level3"><a href="https://www.canberra.edu.au/about-uc/campus-locations/canberra">Canberra</a></li>
+                <li class="level3"><a href="https://www.canberra.edu.au/about-uc/campus-locations/international">International</a></li>
+                <li class="level3"><a href="https://www.canberra.edu.au/about-uc/campus-locations/melbourne">Melbourne</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/campus-locations/sydney">Sydney</a></li>
+			
+		
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/uc-group">UC Group</a></li>		
+                <li class="level3"><a href="https://www.canberra.edu.au/about-uc/uc-group/uc-union">UC Union</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/uc-college">UC College</a></li>
+                <li class="level3"><a href="https://www.canberra.edu.au/about-uc/uc-group/uc-schools">UC Schools</a></li>
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/senior-management">Senior Management</a></li>
+	
+	</ul>
+</div>
+<div class="col2 col">
+         
+
+	<ul>	
+
+        <li class="level2"><a href="https://www.canberra.edu.au/about-uc/faculties">Faculties</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/faculties/arts-design">Faculty of Arts &amp; Design</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/faculties/busgovlaw">Faculty of Business, Government and Law</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/faculties/education">Faculty of Education</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/faculties/health">Faculty of Health</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/faculties/SciTech">Faculty of Science and Technology</a></li>
+	
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/governance">Governance, committees and boards</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/governance/council">University Council</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/governance/academic-board">Academic Board</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/governance/other-committees">Committees and advisory groups</a></li>
+	
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/equity-diversity">Equity and diversity</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/equity-diversity/advisory-groups">Advisory groups</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/equity-diversity/student-equity-plan">Student equity plan</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/equity-diversity/staff-equity">Staff equity</a></li>
+
+        <li class="level2"><a href="https://www.canberra.edu.au/about-uc/widening-participation">Widening participation programs</a></li>
+
+	</ul>
+</div>
+<div class="col3 col">
+	<ul>
+
+        <li class="level2"><a href="https://www.canberra.edu.au/about-uc/office-of-aboriginal-and-torres-strait-islander-leadership-and-strategy">Office of Aboriginal and Torres Strait Islander Leadership and Strategy</a></li>
+       <!-- <li class="level3"><a href="https://www.canberra.edu.au/about-uc/reconciliation1/reconciliation-action-plan">Reconciliation Action Plan</a></li> -->
+
+        <li class="level2"><a href="https://www.canberra.edu.au/about-uc/sustainability">Sustainability</a></li>
+        <li class="level3"><a href="https://www.canberra.edu.au/about-uc/sustainability/sustainability-strategy">Sustainability strategy</a></li>
+
+        <li class="level2"><a href="https://www.canberra.edu.au/about-uc/learning-at-uc">Learning at UC</a></li>
+        <li class="level2"><a href="https://www.canberra.edu.au/about-uc/tl">Teaching &amp; Learning</a></li>
+        <li class="level2"><a href="https://www.canberra.edu.au/about-uc/quality">Quality at UC</a></li>
+        <li class="level2"><a href="https://www.canberra.edu.au/about-uc/work-at-uc">Work at UC</a></li>
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/policy-and-legislation">Policy and Legislation</a></li>
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/complaints-and-grievances">Complaints and Grievances</a></li>
+        <li class="level2"><a href="https://www.canberra.edu.au/about-uc/report-a-hazard-or-incident">Report an Incident or Hazard</a></li>
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/records-management">Records Management</a></li>
+	</ul>
+</div>
+<div class="col4 col">
+	<ul>		
+                <li class="level2"><a href="https://www.canberra.edu.au/about-uc/honorary-appointments">Honorary appointments</a></li>
+                
+		<li class="level2"><a href="https://www.canberra.edu.au/about-uc/competitions-and-awards">Competitions and awards</a></li>
+
+                <li class="level2"><a href="https://www.canberra.edu.au/about-uc/learning-at-uc/uc-book">UC book of the year</a></li>
+
+                <li class="level2"><a href="https://www.canberra.edu.au/about-uc/for-business">For business</a></li>
+                <li class="level3"><a href="https://www.canberra.edu.au/about-uc/for-business/tenders">Tenders</a></li>
+                <li class="level3"><a href="https://www.canberra.edu.au/about-uc/for-business/develop">University prospectus</a></li>
+
+                <li class="level2"><a href="https://www.canberra.edu.au/about-uc/uc-foundation">UC Foundation</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/uc-foundation/what-can-i-support">What you can support</a></li>
+		<li class="level3"><a href="https://www.canberra.edu.au/about-uc/uc-foundation/donate">Give today</a></li>
+
+                <li class="level2"><a href="https://www.canberra.edu.au/about-uc/sponsorships">Sponsorships</a></li>
+
+               
+                <li class="level2"><a href="https://www.canberra.edu.au/about-uc/uc-mobile">Mobile App</a></li>
+		
+		
+		
+
+		
+	</ul>
+</div>
+<div class="col5 col">
+  <div class="links">
+     <ul>
+      <li><a href="https://www.canberra.edu.au/about-uc/work-at-uc" class="action-link">Jobs at UC</a></li>
+       <li><a href="https://www.canberra.edu.au/future-students/apply-now" class="action-link">Apply now</a></li>
+       <li><a href="https://www.canberra.edu.au/future-students/accept-your-offer" class="action-link">Accept your offer</a></li>
+       <li><a href="https://www.canberra.edu.au/future-students/enquire-online" class="action-link">Future students enquiries</a></li>
+        <li><a href="https://www.canberra.edu.au/about-uc/media" class="action-link">Media and communications</a></li>
+        <li><a href="https://www.canberra.edu.au/about-uc/contacts" class="action-link">Contact us</a></li>
+    </ul>
+ </div>
+</div>  
+                                </div>
+                            </li>
+
+                    </ul>
+
+            </div><!--.mega_menu-->  
+           
+            </nav> <!--primary-nav-->
+
+        </div> <!--primary-nav-wrapper-->
+    </div> <!--primary-nav-wrapper-outer-->
+                                       
+                    <div class="global-search">
+                        <form class="global-search__form" role="search" method="get" action="//search.canberra.edu.au/s/search.html">
+                            <label for="global-search__query" class="global-search__label sr-only">Search</label>
+                            <input autocomplete="off" placeholder="Search this website" required="" value="" name="query" id="global-search__query" class="global-search__query" type="search">
+                           
+                            <input name="collection" value="UCMainWeb" type="hidden">
+                            <input name="form" value="uc-main-search" type="hidden">
+                            <input name="profile" value="_default" type="hidden">
+
+                            <button class="global-search__submit-button" type="submit" name="submit" title="Search"><span class="sr-only">Search</span>
+                            </button>
+                        </form>
+                        <!--.global-search__form-->
+                        <a class="global-search__toggle-link" href="javascript:void(0);"><span class="sr-only">Show or hide search</span></a>
+                    </div><!--.global-search-->
+            </header><!--/.header-->
+        </div>
+
+<!-- ./Global head end -->
+
+<!-- Main content area start -->
+
+                <!-- Start construction area -->
+
+
+    <!-- Start full width slideshow -->
+            <!-- End full width slideshow -->
+
+
+                    <!-- Start left hand navigation section label -->
+                        
+                    <!-- End left hand navigation section label -->
+
+
+                    <!-- Start left hand navigation walker -->
+                        		                    <!-- End left hand navigation walker -->
+
+
+
+                   <!-- Start bredcrumbs -->
+                        
+                    <!-- End bredcrumbs -->
+
+
+                    <!-- Start page contents -->
+                        
+                    <!-- End page contents -->
+
+
+                    <!-- Start inside page elements -->
+
+                        <!-- Start inside page show if tests -->
+                            <!-- Rich media area -->
+                                <!-- Is there a media folder? -->
+                                
+
+                                <!-- What is the rich media format? -->
+                                
+
+                                <!-- Slideshow or Image Gallery? -->
+                                
+
+                                <!-- What is the player format? -->
+                                                            <!-- End rich media area -->
+
+                            <!-- Start page content area -->
+
+                                <!-- Where is the standard content positioned? -->
+                                <!-- Is it first? -->
+                                
+                                <!-- Is it second? -->
+                                
+                                <!-- Is it last? -->
+                                
+                                <!-- Is there a document folder? -->
+                                
+                            <!-- End page content area -->
+
+                            <!-- Start content container area -->
+                                <!-- Is there a content folder -->
+                                
+
+                                <!-- What is the content format -->
+                                                            <!-- End content container area -->
+
+                            <!-- Start right side bar elements -->
+                                <!-- Display the call to action buttons? -->
+                                
+                                <!-- Is there a custom widget? -->
+                                
+
+                                <!-- Display the course and unit search? -->
+                                
+
+                                <!-- Display the AskUC button? -->
+                                
+
+                                <!-- Display the Google map? -->
+                                
+
+                                <!-- Related links -->
+                                                            <!-- End right side bar elements -->
+                        <!-- End inside page show if tests -->
+                    <!-- End inside page elements -->
+
+
+                    <!-- Start news item detail page elements -->
+
+                        <!-- Start news item detail page show if tests -->
+                            <!-- Top banner -->
+                                <!-- Article image or abstract image? -->
+                                
+                                
+
+                        <!-- End news item detail page show if tests -->
+                    <!-- End news item details page elements -->
+
+                <!-- End construction area -->
+
+
+  <!--
+  ======================
+   Start Display Are
+  ======================
+  --> 
+
+
+   <!-- Start Header Footer -->
+     
+  <!-- End Header Footer -->
+
+
+
+   <!-- Start Funnelback Header Footer Display -->
+     
+
+
+
+   <!-- Start Social Media Hub display -->
+      
+  <!-- End Social Media Hub display -->
+ 
+
+                    <!-- Start home page display -->
+
+                        
+
+                    <!-- End home page display -->
+
+                    <!-- Start landing page display -->
+
+                        
+
+            <div class="mobile-contact-us-maps-links">
+             <a href="https://www.canberra.edu.au/about-uc/contacts">Contact us</a> 
+             <a href="https://www.canberra.edu.au/maps">Maps</a>
+            </div>
+            <main class="main clearfix" id="main" role="main">
+
+                        <div class="landing-page-carousel">
+    <div class="carousel-top">
+        <div class="carousel-top__list slick-initialized slick-slider">
+            <div class="slick-list draggable" tabindex="0"><div class="slick-track" style="opacity: 1; width: 4935px; transform: translate3d(-987px, 0px, 0px);"><div class="carousel-top__item slick-slide slick-cloned" index="-1" style="width: 987px;">
+    <div class="carousel-top__item-img">
+        <!--<img src="https://www.canberra.edu.au/__data/assets/image/0006/1533642/Amazon-River-banner.jpeg" srcset="mysource_files/light-bulbs.jpg 640w, mysource_files/light-bulbs-for-slider-medium.jpg 1536w, https://www.canberra.edu.au/__data/assets/image/0006/1533642/Amazon-River-banner.jpeg 1600w" alt="" /> -->
+<img src="https://www.canberra.edu.au/__data/assets/image/0006/1533642/Amazon-River-banner.jpeg" alt="">
+    </div>
+    <div class="carousel-top__item-text">
+        <div class="carousel-top__item-text-inner">
+            <h3 class="carousel-top__item-title">Small streams key to biodiversity</h3>
+            <div class="carousel-top__item-description">
+                <p>A lesson learnt in the Amazon Basin could change the way we preserve water ecology in Australia, by focusing on small streams</p>
+                <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/january/small-streams-essential-to-freshwater-ecology-uc-expert" class="carousel-top__item-more-link">Read more<span class="sr-only"> about this slide</span></a>
+            </div>
+        </div>
+    </div>
+</div><div class="carousel-top__item slick-slide slick-active" index="0" style="width: 987px;">
+    <div class="carousel-top__item-img">
+        <!--<img src="https://www.canberra.edu.au/__data/assets/image/0015/1560003/Indigenous-Water-Banner2.jpg" srcset="mysource_files/light-bulbs.jpg 640w, mysource_files/light-bulbs-for-slider-medium.jpg 1536w, https://www.canberra.edu.au/__data/assets/image/0015/1560003/Indigenous-Water-Banner2.jpg 1600w" alt="" /> -->
+<img src="https://www.canberra.edu.au/__data/assets/image/0015/1560003/Indigenous-Water-Banner2.jpg" alt="">
+    </div>
+    <div class="carousel-top__item-text">
+        <div class="carousel-top__item-text-inner">
+            <h3 class="carousel-top__item-title">UC scientist shares water knowledge</h3>
+            <div class="carousel-top__item-description">
+                <p>Drawing on millennia of traditional knowledge about water, Brad Moggridge hopes to inform better water policies</p>
+                <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/march/water-dreaming-sees-uc-scientist-challenge-parliament" class="carousel-top__item-more-link">Read more<span class="sr-only"> about this slide</span></a>
+            </div>
+        </div>
+    </div>
+</div><div class="carousel-top__item slick-slide" index="1" style="width: 987px;">
+    <div class="carousel-top__item-img">
+        <!--<img src="https://www.canberra.edu.au/__data/assets/image/0006/1535649/Older-person-with-medication-banner-1.jpeg" srcset="mysource_files/light-bulbs.jpg 640w, mysource_files/light-bulbs-for-slider-medium.jpg 1536w, https://www.canberra.edu.au/__data/assets/image/0006/1535649/Older-person-with-medication-banner-1.jpeg 1600w" alt="" /> -->
+<img src="https://www.canberra.edu.au/__data/assets/image/0006/1535649/Older-person-with-medication-banner-1.jpeg" alt="">
+    </div>
+    <div class="carousel-top__item-text">
+        <div class="carousel-top__item-text-inner">
+            <h3 class="carousel-top__item-title">Supplements won’t save ageing minds</h3>
+            <div class="carousel-top__item-description">
+                <p>A review of 25 studies examining nutraceuticals has found taking some vitamins and supplements won’t prevent cognitive decline</p>
+                <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/january/researchers-bust-age-old-supplements-myth" class="carousel-top__item-more-link">Read more<span class="sr-only"> about this slide</span></a>
+            </div>
+        </div>
+    </div>
+</div><div class="carousel-top__item slick-slide" index="2" style="width: 987px;">
+    <div class="carousel-top__item-img">
+        <!--<img src="https://www.canberra.edu.au/__data/assets/image/0006/1533642/Amazon-River-banner.jpeg" srcset="mysource_files/light-bulbs.jpg 640w, mysource_files/light-bulbs-for-slider-medium.jpg 1536w, https://www.canberra.edu.au/__data/assets/image/0006/1533642/Amazon-River-banner.jpeg 1600w" alt="" /> -->
+<img src="https://www.canberra.edu.au/__data/assets/image/0006/1533642/Amazon-River-banner.jpeg" alt="">
+    </div>
+    <div class="carousel-top__item-text">
+        <div class="carousel-top__item-text-inner">
+            <h3 class="carousel-top__item-title">Small streams key to biodiversity</h3>
+            <div class="carousel-top__item-description">
+                <p>A lesson learnt in the Amazon Basin could change the way we preserve water ecology in Australia, by focusing on small streams</p>
+                <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/january/small-streams-essential-to-freshwater-ecology-uc-expert" class="carousel-top__item-more-link">Read more<span class="sr-only"> about this slide</span></a>
+            </div>
+        </div>
+    </div>
+</div><div class="carousel-top__item slick-slide slick-cloned" index="3" style="width: 987px;">
+    <div class="carousel-top__item-img">
+        <!--<img src="https://www.canberra.edu.au/__data/assets/image/0015/1560003/Indigenous-Water-Banner2.jpg" srcset="mysource_files/light-bulbs.jpg 640w, mysource_files/light-bulbs-for-slider-medium.jpg 1536w, https://www.canberra.edu.au/__data/assets/image/0015/1560003/Indigenous-Water-Banner2.jpg 1600w" alt="" /> -->
+<img src="https://www.canberra.edu.au/__data/assets/image/0015/1560003/Indigenous-Water-Banner2.jpg" alt="">
+    </div>
+    <div class="carousel-top__item-text">
+        <div class="carousel-top__item-text-inner">
+            <h3 class="carousel-top__item-title">UC scientist shares water knowledge</h3>
+            <div class="carousel-top__item-description">
+                <p>Drawing on millennia of traditional knowledge about water, Brad Moggridge hopes to inform better water policies</p>
+                <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/march/water-dreaming-sees-uc-scientist-challenge-parliament" class="carousel-top__item-more-link">Read more<span class="sr-only"> about this slide</span></a>
+            </div>
+        </div>
+    </div>
+</div></div></div>
+        </div>
+        <!--/.carousel-top__list-->
+        <div class="next-previous-buttons-wrapper">
+            <div class="next-previous-buttons"><button type="button" data-role="none" class="slick-prev" style="display: block;">Previous</button><button type="button" data-role="none" class="slick-next" style="display: block;">Next</button></div>
+        </div>
+        <div class="nav-controls-wrapper">
+            <div class="nav-controls"><ul class="slick-dots" style="display: block;"><li class="slick-active"><button type="button" class="slide-nav" data-role="none">UC scientist shares water knowledge</button><div class="controls-description">
+                <p>Drawing on millennia of traditional knowledge about water, Brad Moggridge hopes to inform better water policies</p>
+                <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/march/water-dreaming-sees-uc-scientist-challenge-parliament" class="carousel-top__item-more-link">Read more<span class="sr-only"> about this slide</span></a>
+            </div></li><li><button type="button" class="slide-nav" data-role="none">Supplements won’t save ageing minds</button><div class="controls-description">
+                <p>A review of 25 studies examining nutraceuticals has found taking some vitamins and supplements won’t prevent cognitive decline</p>
+                <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/january/researchers-bust-age-old-supplements-myth" class="carousel-top__item-more-link">Read more<span class="sr-only"> about this slide</span></a>
+            </div></li><li><button type="button" class="slide-nav" data-role="none">Small streams key to biodiversity</button><div class="controls-description">
+                <p>A lesson learnt in the Amazon Basin could change the way we preserve water ecology in Australia, by focusing on small streams</p>
+                <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/january/small-streams-essential-to-freshwater-ecology-uc-expert" class="carousel-top__item-more-link">Read more<span class="sr-only"> about this slide</span></a>
+            </div></li></ul></div>
+        </div>
+    </div>
+    <!--.carousel-top-->
+</div>    <!--endnoindex-->
+                                    <style>
+@media screen and (min-width: 1025px) {
+#media_card_nested_content {
+width: 100%;
+}
+}
+@media screen and (max-width: 1024px) {
+#media_card_nested_content {
+overflow: hidden;
+}
+}
+</style>
+<div class="landing-page-intro">
+    <div class="landing-page-intro__inner">
+<div class="landing-page-intro__col 2-columns" id="intro_main_2_col">
+<h1>Our Research Focus</h1><div class="landing-page-intro__content columns-2"><p>The University of Canberra has a collaborative, innovative and dynamic research culture, with a focus on producing high-quality and high-impact work that makes an early and significant difference to the world around us.</p><p>We aim to deliver breakthroughs and be globally competitive in the main areas of:</p><ul><li><a href="https://www.canberra.edu.au/research/research-focus/governance">Governance</a></li><li><a href="https://www.canberra.edu.au/research/research-focus/environment">Environment</a></li><li><a href="https://www.canberra.edu.au/research/research-focus/communication">Communication</a></li><li><a href="https://www.canberra.edu.au/research/research-focus/health">Health</a></li><li><a href="https://www.canberra.edu.au/research/research-focus/education">Education</a></li></ul></div>
+</div>
+
+<div class="landing-page-intro__col" id="intro_side_2_col">
+<div class="landing-page-intro__content columns-2"><h2>Research Foundation&nbsp;Plan</h2><p>The University of Canberra aims to be recognised as one of Australia's most innovative tertiary institutions, focusing our research on some of the big challenges facing our society and the world.</p><p><a class="landing-page-intro__button styled-button" href="https://www.canberra.edu.au/research/research-focus/research-foundation-plan-2013-2017">Learn more about our plan</a></p><h2>Considering a degree by research?</h2><p>Become a Higher Degree by Research (HDR) candidate and make a world of difference.</p><p><a class="landing-page-intro__button styled-button" href="https://www.canberra.edu.au/courseguide/research">Create my personalised Research Course Guide</a></p></div>
+</div>
+    </div>
+</div>
+<div class="main-inner">
+    <div class="left-col"><div class="sub-navigation js-accordion">
+    <span class="sub-navigation__mobile-nav-label">In this section</span>
+    <div class="sub-navigation-content">
+        <ul class="sub-navigation__sub-nav-links uber-accordion">
+            <li class="active"><a href="https://www.canberra.edu.au/research/research-focus">Our Research Focus<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button uber-accordion__button-active" data-target="#accordion-target-0" role="button" aria-controls="accordion-target-0">collapse</button></a>
+<ul id="accordion-target-0" class="uber-accordion__target uber-accordion__target-active" role="region" aria-expanded="true">
+    <li><a href="https://www.canberra.edu.au/research/research-focus/research-foundation-plan-2013-2017">Research Foundation Plan 2013-2017</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/institutes">University Research Institutes<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-1" role="button" aria-controls="accordion-target-1">expand</button></a>
+<ul id="accordion-target-1" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/institutes/health-research-institute">Health Research Institute</a></li><li><a href="https://www.canberra.edu.au/research/institutes/institute-for-governance-and-policy-analysis">Institute for Governance and Policy Analysis</a></li><li><a href="https://www.canberra.edu.au/research/institutes/iae">Institute for Applied Ecology</a></li><li><a href="https://www.canberra.edu.au/research/institutes/ucrise">Research Institute for Sport and Exercise</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/faculty-research-centres">Faculty Research Centres<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-2" role="button" aria-controls="accordion-target-2">expand</button></a>
+<ul id="accordion-target-2" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/faculty-research-centres/cccr">Centre for Creative and Cultural Research </a></li><li><a href="https://www.canberra.edu.au/research/faculty-research-centres/nmrc">News and Media Research Centre</a></li><li><a href="https://www.canberra.edu.au/research/faculty-research-centres/ceraph">Centre for Research and Action in Public Health</a></li><li><a href="https://www.canberra.edu.au/research/faculty-research-centres/crests">Centre for Research in Therapeutic Solutions</a></li><li><a href="https://www.canberra.edu.au/research/faculty-research-centres/stem-education-research-centre">STEM Education Research Centre (SERC)</a></li><li><a href="https://www.canberra.edu.au/research/faculty-research-centres/nexus-centre-for-research">neXus Research Centre (BGL)</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/centenary-professors">Centenary Professors</a>
+</li><li class="inactive"><a href="https://www.canberra.edu.au/research/collaborations">Collaborative Research<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-4" role="button" aria-controls="accordion-target-4">expand</button></a>
+<ul id="accordion-target-4" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/collaborations/murray-darling-crn">Murray-Darling Basin Futures Collaborative Research Network </a></li><li><a href="https://www.canberra.edu.au/research/collaborations/invasive-animals-collaborative-research-centre">Invasive Animals Cooperative Research Centre</a></li><li><a href="https://www.canberra.edu.au/research/collaborations/ciri">Collaborative Indigenous Research Initiative</a></li><li><a href="https://www.canberra.edu.au/research/collaborations/canberra-urban-and-regional-futures">Canberra Urban and Regional Futures</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/graduate-research">Graduate Research<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-5" role="button" aria-controls="accordion-target-5">expand</button></a>
+<ul id="accordion-target-5" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/graduate-research/future-research-students2">Future Research Students</a></li><li><a href="https://www.canberra.edu.au/research/graduate-research/current-research-students">Current Research Students</a></li><li><a href="https://www.canberra.edu.au/research/graduate-research/researcher-development">Researcher Development</a></li><li><a href="https://www.canberra.edu.au/research/graduate-research/research-contacts">Research Contacts</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/researcher-development">Researcher Development<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-6" role="button" aria-controls="accordion-target-6">expand</button></a>
+<ul id="accordion-target-6" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/researcher-development/graduate-researchers">Graduate Researchers</a></li><li><a href="https://www.canberra.edu.au/research/researcher-development/education-program">Researcher Development Workshops</a></li><li><a href="https://www.canberra.edu.au/research/researcher-development/opportunities">Opportunities</a></li><li><a href="https://www.canberra.edu.au/research/researcher-development/researcher-development-skills-framework">Researcher Development Skills Framework</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/future-research-students">Future Research Students<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-7" role="button" aria-controls="accordion-target-7">expand</button></a>
+<ul id="accordion-target-7" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/future-research-students/faq">Commencing a degree - Frequently Asked Questions</a></li><li><a href="https://www.canberra.edu.au/research/future-research-students/types-of-research-degrees">Research Degrees</a></li><li><a href="https://www.canberra.edu.au/research/future-research-students/how-to-apply">How to Apply</a></li><li><a href="https://www.canberra.edu.au/research/future-research-students/fees">Research Degree Fees</a></li><li><a href="https://www.canberra.edu.au/research/future-research-students/contact-us">Contact Us</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/current-research-students">Current Research Students</a>
+</li><li class="inactive"><a href="https://www.canberra.edu.au/research/news">Research News</a>
+</li><li class="inactive"><a href="https://www.canberra.edu.au/research/ucresearch">Research Services<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-10" role="button" aria-controls="accordion-target-10">expand</button></a>
+<ul id="accordion-target-10" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/ucresearch/research-funding">Research Funding</a></li><li><a href="https://www.canberra.edu.au/research/ucresearch/e-research">e-Research</a></li><li><a href="https://www.canberra.edu.au/research/ucresearch/integrityandethics">Research Ethics and Integrity</a></li><li><a href="https://www.canberra.edu.au/research/ucresearch/era">Excellence in Research for Australia</a></li><li><a href="https://www.canberra.edu.au/research/ucresearch/contact-details2">Contact Details</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/research-contacts">Research Contacts<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-11" role="button" aria-controls="accordion-target-11">expand</button></a>
+<ul id="accordion-target-11" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/research-contacts/research-services">Research Services</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/pitch-for-funds">Pitch for Funds<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-12" role="button" aria-controls="accordion-target-12">expand</button></a>
+<ul id="accordion-target-12" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/pitch-for-funds/enter-ucs-p4f-competition">Enter UC's P4F Competition</a></li><li><a href="https://www.canberra.edu.au/research/pitch-for-funds/training-schedule-for-p4f">Training Schedule for P4F</a></li>
+</ul></li><li class="inactive"><a href="https://www.canberra.edu.au/research/3mt2">Three Minute Thesis<button class="js-accordion-expand sub-navigation__accordion-expand uber-accordion__button" data-target="#accordion-target-13" role="button" aria-controls="accordion-target-13">expand</button></a>
+<ul id="accordion-target-13" class="uber-accordion__target" role="region" aria-expanded="false">
+    <li><a href="https://www.canberra.edu.au/research/3mt2/what-is-3mt">What is the Three Minute Thesis?</a></li><li><a href="https://www.canberra.edu.au/research/3mt2/enter-ucs-3mt-competition">Enter UC's 3MT Competition</a></li><li><a href="https://www.canberra.edu.au/research/3mt2/training-schedule-for-3mt">Training Schedule for 3MT</a></li><li><a href="https://www.canberra.edu.au/research/3mt2/3-minute-thesis-previous-results">3 Minute Thesis Previous Results </a></li>
+</ul></li>
+        </ul>
+    </div><!--.sub-navigation-content-->
+</div><!--.sub-navigation-->
+<div id="new_content_container_1023367">
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBePhNJzMw5tb56oMOm8545s-avxwJSsDE&amp;sensor=false" type="text/javascript"></script>
+			<script type="text/javascript">
+			//<![CDATA[
+								var popup_html		= '<div id="content_container_975491">University of Canberra - <br><strong>University Dr, Bruce ACT, Australia</strong><strong>Street access via:</strong>Ginninnderra Drive (North)Haydon Drive (East)College Street (South)<strong>Web: </strong><a href="http://www.canberra.edu.au">www.canberra.edu.au</a></div>';
+								var centerLatitude	= -35.238104;
+				var centerLongitude	= 149.084083;
+				var desc			= 'defaultlocation';
+				var zoomLevel		= 17;
+				var map_type		= google.maps.MapTypeId.ROADMAP;
+				var icon_url		= '';
+				var icon_width		= 25;
+				var icon_height		= 25;
+
+				// The MAP
+				var map;
+				var myPano;				// The street view object
+				var overlay				= null;
+				var geocoder			= null;
+				var allMarkerList		= {};
+				var allDisplayingMarker	= {};
+				var markerTypes			= {};
+				var markerRootNodes		= {};
+				var addressList			= [];
+				var cache_home_url		= 'https://www.canberra.edu.au/research/landing-page-content/landing-page-map-squiz';
+				var	cache_key			= '0c88e28e238bc1c081fc09c08adcf9ba';
+
+				var current_marker		= null;
+				var current_listener	= null;
+				var current_listener_name = 'navigate_tool';
+
+
+								geocoder = new google.maps.Geocoder();
+							//]]>
+			</script>
+			<script type="text/javascript" src="https://www.canberra.edu.au/__data/asset_types/google_map/js/map_lib.js"></script>
+
+
+		<div class="widgets-group__widget uc-map" style="height: auto;" id="map-wrapper">
+<div id="map" style="width: 100%; height: 250px; border: 0px solid; position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;" class="gm-style"><div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default;" tabindex="0"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -220, -166);"><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -220, -166);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -220, -166);"><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i17!2i119816!3i79261!4i256!2m3!1e0!2sm!3i421120632!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=23671"></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i17!2i119815!3i79261!4i256!2m3!1e0!2sm!3i421120848!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=67000"></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i17!2i119815!3i79260!4i256!2m3!1e0!2sm!3i421120848!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=62179"></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i17!2i119816!3i79260!4i256!2m3!1e0!2sm!3i421120632!3m9!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e0!23i1301875&amp;token=18850"></div></div></div></div><div style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;" class="gm-style-pbc"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"><div style="z-index: 1; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"></div><div style="z-index: 4; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0.01; left: -14px; top: -43px; z-index: 0;" class="gmnoprint"><img style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="University_of_Canberra" style="cursor: pointer;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: medium none;" src="about:blank" frameborder="0"></iframe><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a style="position: static; overflow: visible; float: none; display: inline;" target="_blank" href="https://maps.google.com/maps?ll=-35.238104,149.084083&amp;z=17&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Click to see this area on Google Maps"><div style="width: 66px; height: 26px; cursor: pointer;"><img style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png" draggable="false"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto,Arial,sans-serif; color: rgb(34, 34, 34); box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2); z-index: 10000002; display: none; width: 176px; height: 148px; position: absolute; left: 5px; top: 35px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2018 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false"></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 69px; bottom: 0px; width: 121px;"><div draggable="false" style="-moz-user-select: none; height: 14px; line-height: 14px;" class="gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer; display: none;">Map Data</a><span>Map data ©2018 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto,Arial,sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2018 Google</div></div><div class="gmnoprint gm-style-cc" style="z-index: 1000001; -moz-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;" draggable="false"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);" href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank">Terms of Use</a></div></div><button style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; margin: 10px 14px; padding: 0px; position: absolute; cursor: pointer; -moz-user-select: none; width: 25px; height: 25px; overflow: hidden; top: 0px; right: 0px;" draggable="false" title="Toggle fullscreen view" aria-label="Toggle fullscreen view" type="button"><img style="position: absolute; left: -52px; top: -86px; width: 164px; height: 175px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/sv9.png" draggable="false" class="gm-fullscreen-control"></button><div draggable="false" style="-moz-user-select: none; height: 14px; line-height: 14px; display: none; position: absolute; right: 0px; bottom: 0px;" class="gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_blank" rel="noopener" title="Report errors in the road map or imagery to Google" style="font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;" href="https://www.google.com/maps/@-35.238104,149.084083,17z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3">Report a map error</a></div></div><div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" style="margin: 10px; -moz-user-select: none; position: absolute; bottom: 107px; right: 28px;" draggable="false" controlwidth="28" controlheight="93"><div class="gmnoprint" style="position: absolute; left: 0px; top: 38px;" controlwidth="28" controlheight="55"><div draggable="false" style="-moz-user-select: none; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 28px; height: 55px;"><button style="background: transparent none repeat scroll 0% 0%; display: block; border: 0px none; margin: 0px; padding: 0px; position: relative; cursor: pointer; -moz-user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;" draggable="false" title="Zoom in" aria-label="Zoom in" type="button"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img style="position: absolute; left: 0px; top: 0px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false"></div></button><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div><button style="background: transparent none repeat scroll 0% 0%; display: block; border: 0px none; margin: 0px; padding: 0px; position: relative; cursor: pointer; -moz-user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;" draggable="false" title="Zoom out" aria-label="Zoom out" type="button"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img style="position: absolute; left: 0px; top: -15px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false"></div></button></div></div><div class="gm-svpc" style="background-color: rgb(255, 255, 255); box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-radius: 2px; width: 28px; height: 28px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; position: absolute; left: 0px; top: 0px;" controlwidth="28" controlheight="28"><div style="position: absolute; left: 1px; top: 1px;"></div><div style="position: absolute; left: 1px; top: 1px;"><div style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px;" aria-label="Street View Pegman Control"><img style="position: absolute; left: -147px; top: -26px; width: 215px; height: 835px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5.png" draggable="false"></div><div style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;" aria-label="Pegman is on top of the Map"><img style="position: absolute; left: -147px; top: -52px; width: 215px; height: 835px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5.png" draggable="false"></div><div style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;" aria-label="Street View Pegman Control"><img style="position: absolute; left: -147px; top: -78px; width: 215px; height: 835px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5.png" draggable="false"></div></div></div><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;"><div style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-radius: 2px; cursor: pointer; display: none;" title="Rotate map 90 degrees"><img style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false"></div><div style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-radius: 2px; top: 0px; cursor: pointer;" class="gm-tilt"><img style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false"></div></div></div><div class="gmnoprint" style="margin: 10px; z-index: 0; position: absolute; cursor: pointer; left: 0px; top: 0px;"><div style="float: left; position: relative;" class="gm-style-mtc"><div role="button" tabindex="0" title="Show street map" aria-label="Show street map" aria-pressed="true" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; background-clip: padding-box; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); min-width: 20px; font-weight: 500;" draggable="false">Map</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); position: absolute; left: 0px; top: 29px; text-align: left; display: none;"><div style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;" draggable="false" title="Show street map with terrain"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;" alt="" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div></div></div><div style="float: left; position: relative;" class="gm-style-mtc"><div role="button" tabindex="0" title="Show satellite imagery" aria-label="Show satellite imagery" aria-pressed="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-clip: padding-box; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); min-width: 37px; border-left: 0px none;" draggable="false">Satellite</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); position: absolute; right: 0px; top: 29px; text-align: left; display: none;"><div style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;" draggable="false" title="Show imagery with street names"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;" alt="" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div></div>
+<script type="text/javascript">
+gmap_init();
+</script> 
+<div class="related-links">
+<ul>
+<li><a href="javascript:getInfo('1012987');">University of Canberra</a></li>
+</ul>
+</div>
+</div>
+				<script type="text/javascript">
+				//<![CDATA[
+					var lat;
+					var lng;
+
+					var newMarkers		= [];
+					var newPolylines	= [];
+					// Now we are listing new markers, but we have to store them in a central array.
+
+								markerTypes['google_map_location'] = { toggle:true };
+										markerTypes['data_record'] = { toggle:true };
+											var marker = addMarker('University_of_Canberra' ,-35.238104, 149.084083, '', '<br /><div id="content_container_975491"><br />University of Canberra - <br><strong>University Dr, Bruce ACT, Australia</strong><br /><strong>Street access via:</strong><br />Ginninnderra Drive (North)<br />Haydon Drive (East)<br />College Street (South)<br /><strong>Web: </strong><a href="http://www.canberra.edu.au">www.canberra.edu.au</a><br /></div><br />', false);
+						
+							allMarkerList['1012987'] = marker;
+														markerTypes['google_map_location']['1012987'] = marker;
+								//]]>
+				</script>
+			
+</div>
+    </div><!--.left-col-->
+    <div class="center-col content"><p>
+</p><div id="content_container_1415629">
+<p><a href="https://www.canberra.edu.au/research/landing-page-content/research-for-the-future/2017-Research-Publication.PDF" title="Read 'Research for the Future' publication (opens in a new window - PDF, 10766.28 KB)" target="_blank"><img style="float:right" src="https://www.canberra.edu.au/__data/assets/image/0007/1415635/research-pub-thumb.png" alt="Front cover of Research for the Future publication"></a></p><h2>Research for the future</h2><p>The University of Canberra is riding a wave of success across its research areas and with significant new projects underway, there’s a growing sense that our research is making a difference in the world around us.</p><p>Read about the high-quality work being delivered by our world-leading and emerging researchers in a variety of fields.</p><p><a class="styled-button" href="https://www.canberra.edu.au/research/landing-page-content/research-for-the-future/2017-Research-Publication.PDF" title="Opens in a new window" target="_blank">READ PUBLICATION</a></p>
+</div>
+<p></p><hr>
+<div id="pubs_nested_content">
+                    <div class="news-list">
+                        <h2 class="news-list__h h1">News</h2>
+                        <ol class="news-list__list">
+<li class="news-list__item h-entry">
+    <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/may/uc-led-research-to-help-lifeline-help-others" class="news-list__img-link">
+        <picture class="news-list__img u-photo">
+            <source media="(min-width: 60em)" srcset="https://www.canberra.edu.au/__data/assets/image/0011/1569044/varieties/feature-thumbx320.jpg">
+            <source media="(min-width: 37.5em)" srcset="https://www.canberra.edu.au/__data/assets/image/0011/1569044/varieties/feature-thumbx320.jpg">
+            <img src="https://www.canberra.edu.au/__data/assets/image/0011/1569044/varieties/feature-thumbx320.jpg" alt="Image of a woman sitting on a park bench on the phone">
+        </picture>
+    </a>
+    <div class="news-list__summary">
+        <h3 class="news-list__title p-name"><a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/may/uc-led-research-to-help-lifeline-help-others" class="u-url news-list__title-link">UC-led research to help Lifeline help others</a>
+        </h3>
+        <div class="news-list__description p-summary">
+            <p>A new $3 million research partnership between the University of Canberra and Lifeline aims to improve the Australian crisis support service</p>
+        </div>
+        <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/may/uc-led-research-to-help-lifeline-help-others" class="news-list__more-link">More<span class="sr-only"> on UC-led research to help Lifeline help others</span></a>
+        <time class="news-list__pubdate dt-published" datetime="2014-08-14">08 May 2018 — Monitor News</time>
+    </div>
+</li><li class="news-list__item h-entry">
+    <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/april/uc-partners-with-nrl-to-train-female-refs" class="news-list__img-link">
+        <picture class="news-list__img u-photo">
+            <source media="(min-width: 60em)" srcset="https://www.canberra.edu.au/__data/assets/image/0009/1566756/varieties/feature-thumbx320.jpg">
+            <source media="(min-width: 37.5em)" srcset="https://www.canberra.edu.au/__data/assets/image/0009/1566756/varieties/feature-thumbx320.jpg">
+            <img src="https://www.canberra.edu.au/__data/assets/image/0009/1566756/varieties/feature-thumbx320.jpg" alt="Image">
+        </picture>
+    </a>
+    <div class="news-list__summary">
+        <h3 class="news-list__title p-name"><a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/april/uc-partners-with-nrl-to-train-female-refs" class="u-url news-list__title-link">UC partners with NRL to train female refs</a>
+        </h3>
+        <div class="news-list__description p-summary">
+            <p>The University of Canberra has partnered with the National Rugby League to deliver training programs at its Bruce campus aimed at helping aspiring referees, particularly females, reach the top level</p>
+        </div>
+        <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/april/uc-partners-with-nrl-to-train-female-refs" class="news-list__more-link">More<span class="sr-only"> on UC partners with NRL to train female refs</span></a>
+        <time class="news-list__pubdate dt-published" datetime="2014-08-14">27 Apr 2018 — Monitor News</time>
+    </div>
+</li><li class="news-list__item h-entry">
+    <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/april/uc-academic-a-global-leader-in-sociology-research" class="news-list__img-link">
+        <picture class="news-list__img u-photo">
+            <source media="(min-width: 60em)" srcset="https://www.canberra.edu.au/__data/assets/image/0007/1565809/varieties/feature-thumbx320.jpg">
+            <source media="(min-width: 37.5em)" srcset="https://www.canberra.edu.au/__data/assets/image/0007/1565809/varieties/feature-thumbx320.jpg">
+            <img src="https://www.canberra.edu.au/__data/assets/image/0007/1565809/varieties/feature-thumbx320.jpg" alt="DL">
+        </picture>
+    </a>
+    <div class="news-list__summary">
+        <h3 class="news-list__title p-name"><a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/april/uc-academic-a-global-leader-in-sociology-research" class="u-url news-list__title-link">UC academic a global leader in sociology research</a>
+        </h3>
+        <div class="news-list__description p-summary">
+            <p>University of Canberra Centenary Professor Dr Deborah Lupton is a global research leader in two branches of sociology, according to new data</p>
+        </div>
+        <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/april/uc-academic-a-global-leader-in-sociology-research" class="news-list__more-link">More<span class="sr-only"> on UC academic a global leader in sociology research</span></a>
+        <time class="news-list__pubdate dt-published" datetime="2014-08-14">23 Apr 2018 — Monitor News</time>
+    </div>
+</li><li class="news-list__item h-entry">
+    <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/april/uc-partners-in-$200m-digital-health-initiative" class="news-list__img-link">
+        <picture class="news-list__img u-photo">
+            <source media="(min-width: 60em)" srcset="https://www.canberra.edu.au/__data/assets/image/0010/1564777/varieties/feature-thumbx320.jpg">
+            <source media="(min-width: 37.5em)" srcset="https://www.canberra.edu.au/__data/assets/image/0010/1564777/varieties/feature-thumbx320.jpg">
+            <img src="https://www.canberra.edu.au/__data/assets/image/0010/1564777/varieties/feature-thumbx320.jpg" alt="digital health">
+        </picture>
+    </a>
+    <div class="news-list__summary">
+        <h3 class="news-list__title p-name"><a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/april/uc-partners-in-$200m-digital-health-initiative" class="u-url news-list__title-link">UC partners in $200m digital health initiative</a>
+        </h3>
+        <div class="news-list__description p-summary">
+            <p>The new Digital Health Cooperative Research Centre will bring together research and industry to develop and test health solutions to improve Australians health and healthcare</p>
+        </div>
+        <a href="https://www.canberra.edu.au/about-uc/media/monitor/2018/april/uc-partners-in-$200m-digital-health-initiative" class="news-list__more-link">More<span class="sr-only"> on UC partners in $200m digital health initiative</span></a>
+        <time class="news-list__pubdate dt-published" datetime="2014-08-14">17 Apr 2018 — Monitor News</time>
+    </div>
+</li>
+                        </ol>
+                    </div>
+
+
+<p style="margin-top:20px;"><a href="https://www.canberra.edu.au/about-uc/media/monitor?classification=research&amp;faculty=&amp;research_centre=" class="styled-button">Read more</a></p>
+</div>
+
+<div id="insights_nested_content">
+
+</div>
+<hr>
+<div id="events_nested_content">
+<p><em>Watch this space.</em></p>
+<p><a href="http://www.canberra.edu.au/events" class="home-section__events-more-link">See all UC events &gt;</a></p>
+</div>
+ </div> <!-- center col -->
+</div>
+            </main><!--/#main-->
+
+<div class="back-to-top">
+<a href="#page-wrapper" title="scroll back to top" class="back-to-top__link">Back to top</a>
+</div>
+
+                        
+
+                    <!-- End landing page display -->
+
+                    <!-- Start inside page display -->
+
+                        
+                    <!-- End inside page display -->
+
+
+                    <!-- Start Research Centre landing page display -->
+
+                        
+
+                    <!-- End Research Centre landing page display -->
+
+
+                    <!-- Start Monitor landing page display -->
+
+                        
+
+                    <!-- End Monitor landing page display -->
+
+                    <!-- Start Media Centre landing page display -->
+
+                        
+
+                    <!-- End Media Centre landing page display -->
+
+
+                    <!-- Start news item details page display -->
+
+                        
+
+                    <!-- End news item details page display -->
+
+
+                    <!-- Start course details page display -->
+
+                        
+
+                    <!-- End course details page display -->
+
+                <!-- End display area -->
+
+
+<!-- ./Main content area end -->
+
+<!-- Global footer start -->
+
+<!--noindex-->
+
+        <footer class="footer" role="contentinfo">
+
+  <!-- footer title-->
+          <div class="footer-section__title-wrapper">
+             <div class="footer-section__title">
+                <h2 class="footer-section__header footer-section__header-top-right"><a class="label_link" href="https://www.canberra.edu.au/current-students/study-abroad/travel-os">Study Abroad</a></h2>
+             </div>
+         </div>
+  <!-- close footer title-->
+ <img class="banner" src="https://www.canberra.edu.au/__data/assets/image/0016/1008340/section_header_footer.jpg?v=0.2.2" alt="Footer image">
+
+
+
+
+
+<div class="footer-nav">
+    <div class="footer-links-group active">
+        <h3>Quick Links</h3>
+        <ul>
+  <li><a href="https://www.canberra.edu.au/future-students/courses/find-a-course">Find a Course</a></li>
+  <li><a href="https://www.canberra.edu.au/future-students/courses/find-a-unit">Find a Unit</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/reconciliation1">Reconciliation</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/uc-foundation">Donate</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/media/monitor">Information for Journalists</a></li>
+  <li><a href="https://www.canberra.edu.au/directory/" target="_blank" title="Opens in a new window">Find a Staff Member</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/learning-at-uc">Learning at UC</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/work-at-uc/vacancies">Jobs at UC</a></li>
+</ul>
+    </div> <!--.footer-links-group-->
+    <div class="footer-links-group">
+        <h3>Contacts</h3>
+        <ul>
+  <li>
+    <a href="https://www.canberra.edu.au/future-students">Domestic Future Students</a><br>
+    <a href="https://www.canberra.edu.au/future-students/enquire-online" target="_blank">Enquire</a>
+  </li>
+  <li>
+    <a class="white" href="https://www.canberra.edu.au/international">International Future Students</a><br>
+    <!--<a href="mailto:international@canberra.edu.au?subject=Enquiry">Email</a><br />-->
+    <a href="https://www.canberra.edu.au/future-students/enquire-online" target="_blank">Enquire</a>
+  </li>
+  <li>
+    <a href="https://www.canberra.edu.au/current-students">Current Students</a><br>
+    1300 301 727<br>
+    <a href="mailto:student.centre@canberra.edu.au?subject=Enquiry">Email</a>
+  </li>
+</ul>
+    </div> <!--.footer-links-group-->
+    <div class="footer-links-group">
+        <h3>The UC Group</h3>
+        <ul>
+  <li><a href="https://www.canberra.edu.au/about-uc">About the University of Canberra</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/uc-group/uc-schools">UC Schools</a></li>
+  <li><a href="https://www.canberra.edu.au/uc-college">UC College (UCC)</a></li>
+  <li><a href="https://www.canberra.edu.au/uc-college/uccelc">UCC English Language Centre</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/uc-group/uc-union">UC Union</a></li>
+</ul>
+    </div> <!--.footer-links-group-->
+    <div class="footer-links-group">
+        <h3>Our Faculties</h3>
+        <ul>
+  <li><a href="https://www.canberra.edu.au/about-uc/faculties/arts-design">Arts and Design</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/faculties/busgovlaw">Business, Government and Law</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/faculties/education">Education</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/faculties/health">Health</a></li>
+  <li><a href="https://www.canberra.edu.au/about-uc/faculties/SciTech">Science and Technology</a></li>
+</ul>
+
+    </div> <!--.footer-links-group-->
+    <div class="footer-links-group">
+        <h3>Our Research Institutes</h3>
+        <ul>
+    <li><a href="https://www.canberra.edu.au/research/institutes/health-research-institute">Health Research Institute</a></li>
+   <li><a href="https://www.canberra.edu.au/research/institutes/iae">Institute for Applied Ecology</a></li>
+   <li><a href="http://www.governanceinstitute.edu.au/" target="_blank" title="Opens in a new window">Institute for Governance and Policy Analysis</a></li>
+   <li><a href="https://www.canberra.edu.au/research/institutes/ucrise">Research Institute for Sport and Exercise</a></li>
+   <li><a href="https://www.canberra.edu.au/research">More About Our Research</a></li>
+</ul>
+    </div>
+</div><!--.footer-nav-->
+
+<div class="footer-base">
+
+    <div class="social-icons">
+        <a class="facebook" href="https://www.facebook.com/UniversityOfCanberra" target="_blank">Facebook</a> 
+        <a class="twitter" href="https://twitter.com/UniCanberra" target="_blank">Twitter</a> 
+        <a class="instagram" href="http://instagram.com/unicanberra" target="_blank">Instagram</a> 
+        <a class="youtube" href="https://www.youtube.com/user/uniofcanberra" target="_blank">YouTube</a>         
+    </div>
+
+    <div class="copyright-wrapper"> 
+        <ul class="quick-links">
+            <!--<li><a href="" class="web-feedback">Website Feedback</a></li>-->
+            <li><a href="https://www.canberra.edu.au/about-uc/policy-and-legislation/disclaimer-copyright-privacy-accessibility">Copyright / Disclaimer / Privacy</a></li>
+            <li><a href="https://www.canberra.edu.au/sitemap">Sitemap</a></li>
+        </ul>
+        <div class="copyright">
+           <p>University of Canberra, ACT 2601 Australia, Switchboard +61 2 6201 5111, © 2017 University of Canberra<br>
+              The University of Canberra Bruce campus is located on Ngunnawal Country </p>
+           <p>CRICOS number: University of Canberra / University of Canberra College #00212K</p>
+        </div>
+    </div><!--.copyright-wrapper-->
+</div>
+        </footer><!--/.footer-->
+    <!--endnoindex-->
+    </div><!--/#page-wrapper-->
+
+    <!-- scripts folder -->
+    <script type="text/javascript" src="https://www.canberra.edu.au/__data/assets/js_file_folder/0008/992663/scripts_folder.min.js"></script>
+    
+    
+    
+    
+
+
+    
+    <!-- Munchkin script for social garden -->
+    
+
+    <!-- Master of Information Technology and Systems(973AA.4) -->
+    
+
+    
+
+    
+
+
+</body></html>

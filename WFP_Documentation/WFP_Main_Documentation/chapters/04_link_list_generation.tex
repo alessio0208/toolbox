@@ -1,0 +1,93 @@
+%!TEX root = ../documentation.tex
+\chapter{Link List Generation}
+\label{chap:list_generation}
+
+In order to fetch data sets for our \ac{WFP} attack, we need a valid link list of these data sets. For that purpose, there is a script automatically generating a \ac{URL} link list with accessible webpages, located in \texttt{websiteCrawlingUrls/}:
+\begin{verbatim}
+usage: python CrawlSite.py
+\end{verbatim} 
+Its goal is to retrieve and store as an output a certain number of subpages for each \ac{URL} listed in an input file that correspond to a realistic browsing pattern. This means that for each website given in the input file a new output file is generated containing the \ac{URL} of the website as well as the \ac{URL}s of a certain number of subpages. The number of the subpages (\texttt{conf\_SUBPAGES}) is predefined via \texttt{WFP\_config}. Furthermore, each generated output file is named \texttt{fetches\_[WEBSITE-URL].txt} where \texttt{[WEBSITE-URL]} denotes the corresponding website. The number of clicks performed on the website are chosen randomly with the following probabilities: 50 \% chance to perform 1 click; 25 \% chance to perform 2 clicks; 12.5 \% chance to perform 3 clicks and 6.25 \% chance each to perform 4 or 5 clicks. The terminal output shows the depth for the current ``session'' and outputs the number of the link on the page that has been chosen together with the count of existing links on the webpage.\\
+Note that the script exists in an early stage, meaning that not all errors or special cases are detected or handled correctly. Furthermore, the scripts tends to crash occasionally. However, the website crawling can be started simultaneously in different directories in order to parallelize the task.
+\todo[inline]{Add Norbert's Link list generation scripts}
+
+All parameters relevant to this script are located in the configuration file \texttt{WFP\_config} (see Appendix \ref{sec:config_file}), and can be adjusted before executing the script:
+\begin{description}
+\item [dir\_FF\_PROFILE] A firefox profile used for crawling webpages. It is usually located in \texttt{\$HOME/.mozilla/firefox/}. Information on profile creation, restoring, and manipulation can be found in the official Mozilla documentaton under \url{https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles}. A specific profile might be reasonable for website crawling, because enabled ad-blocking and strict NoScript settings reduce the number of external redirects through clicks significantly.
+\item [file\_URLList] An input text file containing a list with \ac{URL}s of different websites.
+\item [conf\_SUBPAGES] Defines the number of subpages retrieved for each \ac{URL} in the link list.
+\item [conf\_PAGELOAD\_TIMEOUT] Indicates how much time in seconds we wait for a page load.
+\end{description}
+
+In case that you receive the following error:
+\vspace{-2mm}
+\begin{verbatim}
+selenium.common.exceptions.WebDriverException: Message: 
+'geckodriver' executable needs to be in PATH
+\end{verbatim}
+\vspace{-2mm}
+Then, you need to download geckodriver (\url{https://github.com/mozilla/geckodriver/releases}) and copy it in /usr/local/bin.
+
+After executing the script, all output files should be merged into one that we use in the next step - fetching (for details, see~Chapter \ref{chap:webpage_fetching}):
+\begin{verbatim}
+# cat fetches_* > Urls.txt
+\end{verbatim}
+Note that the links included in that list might include duplicate, broken, or external links that we do not want to include in our evaluation. Therefore, if the list should be used for a closed-world evaluation or the foreground in an open-world evaluation, checking the list is necessary and highly recommended! 
+
+To illustrate the operation of our script, we consider a small example: we enter the following list of websites in an input file, called \texttt{URL\_Lists.txt}:\\[1mm]
+\url{http://rwth-aachen.de}\\
+\url{http://google.de}\\
+\url{http://www.torproject.org/}\\
+\url{http://heise.de}\\
+\url{http://golem.de}
+
+After adjusting the corresponding parameters in the configuration file, we start the script:
+\begin{verbatim}
+# python CrawlSite.py
+\end{verbatim} 
+
+The script starts retrieving several subpages for each of the \ac{URL}s which are stored in the corresponding output files:\\[1mm]
+fetches\_rwth-aachen.de.txt\\
+fetches\_google.de.txt\\
+fetches\_torproject.org.txt\\
+fetches\_heise.de.txt\\
+fetches\_golem.de.txt
+
+At the end, we merge these output files into one called \texttt{Urls.txt}:
+\begin{verbatim}
+# cat fetches_* > Urls.txt
+\end{verbatim}
+
+The input and output files for this example can be found in the folder \texttt{websiteCrawling- Urls/}. 
+
+\todo[inline]{They are not anymore there. Check this example and reconstruct it in a way (if necessary) that we do not need to permanently store dummy files in the repository.}
+
+Appendix \ref{sec:config_file} shows the configuration file that we use.
+
+\section{Example files}
+%\lstinputlisting[breaklines=true,language=Python,firstline=n1,lastline=n2, firstnumber=n3]{code/FILE}
+
+\subsection{Input files}
+
+As input file, we create a file \texttt{URL\_List.txt} that contains those \ac{URL}s which shall be visited and from which subpages shall be collected. Its content is shown in Listing \ref{lst:URLList}.
+
+\begin{listing}[h!]
+\caption{Input: \texttt{URL\_List.txt}}
+\lstinputlisting[breaklines=true,language=Python]{code/URL_List.txt}
+\label{lst:URLList}
+\end{listing}
+
+\subsection{Output files}
+For each \ac{URL} specified in \texttt{URL\_List.txt}, \texttt{CrawlSite.py} creates an output file consisting of the \ac{URL} and as many subpages as we specified in \texttt{WFP\_config}. For \texttt{torproject.org}, the content is shown in Listing \ref{lst:torprojectURLs}.
+
+\begin{listing}[h!]
+\caption{Output: \texttt{fetches\_torproject.org.txt}}
+\lstinputlisting[breaklines=true,language=Python]{code/fetches_torproject.org.txt}
+\label{lst:torprojectURLs}
+\end{listing}
+
+For the next step (webpage fetching), we need a single file that contains all \ac{URL}s that shall be fetched. We merged all files we got into one file \texttt{Urls.txt}. Listing \ref{lst:inputUrls} shows its content.
+\begin{listing}[h!]
+\caption{Output: \texttt{Urls.txt}}
+\lstinputlisting[breaklines=true,language=Python]{code/Urls.txt}
+\label{lst:inputUrls}
+\end{listing}

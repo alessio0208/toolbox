@@ -1,0 +1,313 @@
+%!TEX root = ../documentation.tex
+\chapter{Feature Generation}
+\label{chap:feature_generation}
+
+The feature generation is the essential part for our approach since we will not achieve good results with bad features during the classification. Our classifier can only work with the information it gets and the information that is available at that point in a real setting. Therefore, improving the features is more important than improving the classifier. In this chapter, we show how we generate features using the fetches already recorded. First, we introduce the organization of the folder \texttt{fetches/}. Then, we describe the operation of our feature generation algorithm and show a small example.
+
+\section{Folder Organization}
+\label{sec:feature_folder}
+
+Our approach for generating features is located in the folder \texttt{fetches/}. Figure \ref{fig:fetchesOrdering} shows its organization. Folder \texttt{fetches/} consists of:
+
+\begin{figure}
+\dirtree{%
+.1 \HandRight \, fetches.
+.2 \HandRight \, features.
+.3 \HandRight \, feature-<format>.
+.4 \HandRight \, <webpage\_url>.
+.3 $\star$ <dataSet>\_<format>.
+.3 $\star$ list\_<dataSet>\_<format>.txt.
+.2 \HandRight \, input.
+.3 \HandRight \, <data>\_<runidentifier>\_<timeout>\_<urllist>.
+.4 \HandRight \, <format>.
+.5 \HandRight \, <webpage\_url>.
+.2 \HandRight \, merged.
+.3 \HandRight \, <format>.
+.4 \HandRight \, <webpage\_url>.
+.2 \HandRight \, outlierfree.
+.3 \HandRight \, <format>-outlierfree.
+.4 \HandRight \, <webpage\_url>.
+.2 \HandRight \, scripts.
+.3 $\star$ check-fetches.py.
+.3 $\star$ clean-fetches-input.py.
+.3 $\star$ generate-feature.py.
+.3 $\star$ merge-input.sh.
+.3 $\star$ outlier-removal.py.
+.3 $\star$ Patterns.txt.
+.2 \HandRight \, scriptsWang.
+.3  $\star$  create-wang-cells-from-tls.py.
+.3  $\star$  create-wang-cells-from-tls-legacy.py.
+.2 \HandRight \, wang.
+.3 \HandRight \, <format>-wang.
+.4  $\star$  <webpage\_number>\_<instance\_number>.
+.3  $\star$ Matching.txt.
+.2 $\star$ TxtdumpErrors.txt.
+}
+\caption{Structure of folder \texttt{fetches/}}
+\label{fig:fetchesOrdering}
+\end{figure}
+
+\todo[inline]{Add newly added formats and adjust fetches (incl. storage)!}
+\begin{description}
+\item[compiled/] A folder where the \ac{TCP} and \ac{TLS} instances generated during our webpage fetching process (see Chapter \ref{chap:webpage_fetching}) are saved. For that purpose, a new subdirectory with the name \texttt{<date>\_<runidentifier>\_<runs>\_<timeout>\_<urlfile>} is created for each fetching execution. Then, the folders \texttt{output/}, \texttt{output-tls/} and \texttt{output-tls-legacy/} with the corresponding files are copied from \texttt{crawling/} into this subdirectory.
+\item [raw/] A folder where all subdirectories that contain collected and computed data from our webpage fetching algorithm are saved. Similar to \texttt{compiled/}, a new subdirectory with the name \texttt{<date>\_<runidentifier>\_<runs>\_<timeout>\_<urlfile>} is created for each fetching execution. Then, all folders with relevant information are copied from \textbf{crawling/} into this subdirectory (see Figure \ref{fig:fetchesOrdering}).
+%\item[input/] This folder was manually created for merge-input.sh
+\item[scripts/] A folder that contains all relevant scripts used for feature generation:
+\begin{description}
+\item[check-fetches.py] Verifies the webpage sources extracted during our webpage fetching algorithm (in the folder \texttt{txtdumps/}) for errors. For that reason, the \ac{HTML} code of each webpage is checked for predefined patterns that indicate a web failure. If any web failures are found, the corresponding \ac{TCP} and \ac{TLS} instances are removed.
+\item[merge-input.sh] Merges \ac{TCP} and \ac{TLS} instances for a given webpage which are created by several fetching executions into a single file.
+\item[outlier-removal.py] Removes outliers (see Section \ref{sec:feature_operation} for details).
+\item[generate-feature.py] Generates features from the \ac{TCP} and \ac{TLS} instances previously prepared (see Section \ref{sec:feature_operation} for details).
+\item[Patterns.txt] A text file that contains patterns for obvious transmission
+errors. It is used by \texttt{check-fetches.py} to check the extracted webpage sources for web failures.
+\item[TxtdumpErrors.txt] A text file that is generated only if the script \texttt{check-fet- ches.py} has removed any corrupted instances. It contains the name of the files where these instances were saved.
+\end{description}
+\item[features/] A folder used to store the generated features.
+\item[merged/] A folder for the output of \texttt{merge-input.sh}, contains merged data from \texttt{compiled/}.
+\begin{description}
+\item[output/] A folder where the file(s) containing merged \ac{TCP} instances (merged by \texttt{merge-input.sh}) for a given webpage, which are created by several fetching executions, are saved.
+\item[output-tls/] A folder where the file(s) containing merged \ac{TLS} instances with reordering (merged by \texttt{merge-input.sh}) for a given webpage, which are created by several fetching executions, are saved.
+\item[output-tls-legacy/] A folder where the file(s) containing merged \ac{TLS} instances without reordering (merged by \texttt{merge-input.sh}) for a given webpage, which are created by several fetching executions, are saved.
+\end{description}
+\item[<reference\_dir>-outlierfree/] A directory containing the files that outlier removal shall be performed on.
+\item[<process\_dir>-outlierfree/] If the user wants to remove all representation of faulty instances (see Section \ref{sec:feature_operation} for details), then a process directory has to be also defined. The process directory points to the folder(s) where the other formats of the corrupted instances are saved.
+\end{description}
+
+\section{Operation}
+\label{sec:feature_operation}
+
+Listing \ref{lst:generate_features} shows a summary of our feature generation approach. 
+
+\begin{listing}[t]
+Feature Generation Steps:
+\begin{enumerate}
+    \item Check extracted webpage sources for obvious transmission errors and remove corrupted \ac{TCP} and \ac{TLS} instances (\texttt{check-fetches.py}).
+    %\item Copy all information from folder \texttt{compiled/} into folder \texttt{input/}. %No longer neccessary!
+    \item Merge several \ac{TCP}, respectively \ac{TLS} instances for a given webpage into a single file (\texttt{merge-input.sh}).
+    \item Remove outliers from merged files (\texttt{outlier-removal.py}).
+    \item Generate features on outlier-free merged files (\texttt{generate-feature.py}).
+\end{enumerate}
+\caption{Summary of the feature generation approach}
+\label{lst:generate_features}
+\end{listing}
+
+\subsection{Check fetches}
+First, the webpage sources extracted during webpage fetching are verified for obvious transmission errors or page loads we do not want to use (\texttt{check-fetches.py}). For that purpose, we use predefined patterns (\texttt{Patterns.txt}) which indicate a possible web failure. \texttt{check-fetches.py} checks the content of a webpage source against our current patterns list. The script scans all instances located in the \texttt{storage/} directory.  The script generate an output file where the names of faulty instances are stored (\texttt{TxtdumpErrors.txt}). Afterwards the script \texttt{clean-fetches-input.py} removes the corresponding instances from all formats from the \texttt{input/} directory based on this list to not corrupt our classification result later. Therefore, the desired folders have to be copied from \texttt{compiled/} to \texttt{input/}. All parameters relevant to \texttt{check-fetches.py} and \texttt{clean-fetches-input.py} are located in the configuration file \texttt{WFP\_config} (see Appendix \ref{sec:config_file}), and can be adjusted before executing the script: 
+
+
+\todo[inline]{Adjust the configuration options!}
+\begin{description}
+\item [fetches\_path] A folder that contains raw fetches. Typically, that is \texttt{\$HOME/WFA/ Implementation/fingerprinting/fetches/raw}.
+\item [fetches\_pathcompiled] A folder that contains \ac{TCP} and \ac{TLS} instances created during webpage fetching. Typically, that is \texttt{\$HOME/WFA/Implementation/finger- printing/fetches/compiled}.
+\item [closedWorld] Indicates if we consider closed-world (\texttt{true}) or open-world (\texttt{false}) scenario. \todo{Add what this option does}
+\end{description}
+
+
+\subsection{Merge instances}\label{Merge instances}
+Afterwards, we merge all instances of the same format related to the same webpage, but collected during several fetching executions, into a single file (\texttt{merge-in- put.sh}). The script \texttt{merge-input.sh} creates folder \texttt{merged/} and folders for each format in \texttt{merged/} as output. Then, we check the merged instances for outliers and remove them based on the chosen metric (\texttt{outlier-removal.py}). 
+
+\subsection{Remove outliers}\label{Remove outliers}
+Outliers are instances, which feature extreme observation in comparison to instances of the same class. We regard the removal for each class in the closed-world and foreground class in the open-world scenario. This is reasonable due to the fact that Tor connections are error-prone. For example, the connection can time out before the transmission is finished because of a high load on the Tor circuit. A web server can be under a high load and can therefore skip the delivery of some files. In both cases the size of the recorded sample is smaller than it should be. A high network load can lead to many lost packets and therefore retransmissions, which lead to a higher transmission size. Such corrupt samples may tamper the trace in an undesired way. To avoid this, we search for outliers in the data and remove them. Our script \texttt{outlier-removal.py} provides three outlier detection algorithms.
+
+\paragraph{Outlier detection algorithm proposed by Landa \cite{Landa2013}}
+\label{par:landa_outlier}
+
+The outlier detection proposed by Landa \cite{Landa2013} is three-stage process. First, all webpage instances with a incoming data size smaller or equal
+two Tor cells are removed. This case can only happen, if there occurs an error during the transmission of the webpage. Second, a median of the incoming data sizes of all instances of a webpage is calculated. Then, we remove all instances where the incoming data size differs more than $0.8 \cdot median$ from the median. For example, this could be cases where the connection broke during the transmission or websites which had a huge advertisement in only very few instances. Third, we remove the outliers which are still in the data set. For that purpose, we calculate the first quartile $Q_{1}$ and the third quartile $Q_{3}$ of the incoming data sizes from the remaining instances for each webpage. Then, we remove all instances where the incoming data size does not fulfill the inequation shown in Listing \ref{lst:outlier}.
+
+\paragraph{Outlier detection algorithm proposed by Pennekamp \cite{Pennekamp2014}}
+\label{par:pennekamp_outlier}
+
+The outlier detection proposed by Pennekamp \cite{Pennekamp2014} also excludes all webpage instances with a incoming data size smaller or equal
+two Tor cells. Then, the algorithm computes the quantiles $Q_i$ regarding the incoming data of all instances belonging to a class and then removes all instances which do not satisfy the inequality in Listing \ref{lst:outlier}. Overall, we rely on "synchronized" instances while comparing results between different formats. This means that we want to use exactly the same traces in each format. For this reason, if the approach has to remove a faulty instance in one format (e.g., TCP), it removes that instance from all others as well (e.g., TLS). Pennekamp applies the outlier detection approach for each class in the closed-world and foreground class in the open-world scenario. For background instances, we do not care about unusual page loads because we are only interested in random web traffic. Incomplete or broken page loads are already removed by \texttt{check-fetches.py}.
+
+\paragraph{Outlier detection algorithm proposed by Wang \cite{Wang2014}}
+\label{par:wang_outlier}
+
+\todo[inline]{Add Wang's outlier detection!}
+
+\begin{listing}[t]
+\caption{Outlier detection based on incoming data (based on \cite{Landa2013} and \cite{Pennekamp2014})}
+\hrulefill\\[3mm]
+\centering{
+$Q_1 - 1.5 \cdot (Q_3 - Q_1) <  incomingData < Q_3 + 1.5 \cdot (Q_3 - Q_1)$}
+\vspace{3mm}
+\label{lst:outlier}
+\end{listing}
+
+All parameters relevant to \texttt{outlier-removal.py} are located in the configuration file \texttt{WFP\_config}, Section \texttt{[Outlier\_removal]} (see Appendix \ref{sec:config_file}), and can be adjusted before executing the script: 
+\todo[inline]{Adjust the configuration variables, introduce command line parameter}
+\begin{description}
+\item [input\_outlier\_path] A path that points to files to which an outlier detection has to be applied. Typically, that is \texttt{\$HOME/WFA/Implementation/fingerprinting/ fetches/}.
+\item [ignore\_outlier] If set to \texttt{false} all outliers will be removed, even if this means that \texttt{num\_of\_wished\_instances} is undershot. Contrary, if set to \texttt{true} only as many outliers as possible will be removed without undershooting \texttt{num\_of\_wished\_instances}. Setting \texttt{ignore\_outlier} to \texttt{true} thus ensures that the number of instances is never lower than \texttt{num\_of\_wished\_instances} at the cost that some outliers will remain in the data set.
+\item [outlier\_removal] Indicates the type of the selected outlier detection algorithm. We can select \texttt{Simple} - outlier detection proposed by Pennekamp (see \ref{par:pennekamp_outlier}), \texttt{Strict} - outlier detection proposed by Landa (see \ref{par:landa_outlier}) or \texttt{Wang} - outlier detection proposed by Wang (see \ref{par:wang_outlier}).
+\item [num\_of\_wished\_instances] The number of wished instances that the script has to output. Note, that this number has to be equal or larger than the number of instances in all input files. \textbf{If one input file has less instances, the script will abort with an error.}
+\item[random\_instances] Indicates whether consider the instances randomly or e.g., we consider the first 60, 80, etc.
+\item [reference\_dir] A directory containing the files that outlier removal shall be performed on. The path to this directory is relative starting from \texttt{input\_outlier\_path}.
+\end{description}
+If the user wants to remove all representation of faulty instances, e.g., if a certain \ac{TCP} instance is corrupted and the user wants to remove its corresponding \ac{TLS} instance as well, then a \emph{process directory} has to be also defined. For that purpose, the following code line in \texttt{outlier-removal.py} has to be enabled:
+\begin{verbatim}
+# By default, we delete only these instances 
+# that the outlier-removal was performed on
+# Disable this line if you want to remove 
+# all representation of faulty instances
+# processDirectories = []
+
+# All directories that should have the same instances 
+# removed, separated via commata.
+processDirectories = [ 'output-tls', 'output-tls-legacy' ]
+\end{verbatim}
+As a result, the same instances that are removed for files in the reference directory are also removed from the files in the process directory(s). The output files from \texttt{outlier-removal.py} are saved in the automatically generated folder(s) \texttt{<reference\_dir>-outlierfree/} and \texttt{<process\_dir>-outlierfree/} if \texttt{process\_dir} is previously defined (see Figure \ref{fig:fetchesOrdering}).
+
+\subsection{Generate features}
+
+After we have deleted the instances that may corrupt or influence our classification later, we start generating features using \texttt{generate-feature.py}.
+\begin{verbatim}
+usage: python generate-feature.py
+\end{verbatim}
+This script provides two feature generation approaches:
+
+\paragraph{Cumulative Version}
+\label{par:cumulative_version}
+
+In our cumulative version, we rely on a feature which consists of 100 values to store the trace as accurate as possible. These 100 values are computed from the chronological sequence of incoming and outgoing packets. In order to compose the features, we use the \ac{TCP}, respectively \ac{TLS}, data tuples previously prepared. Thus, we compute a plot and take \emph{n} values with the same distance to each other from the plot. In order to calculate the plot, first we have to calculate two arrays: the absolute size and the cumulated size. The absolute size is the sum of all absolute packet sizes added up:
+\begin{center}
+\hspace{-60mm}$absoluteSize[0] = abs(data[0])$\\
+\hspace{-10mm}$absoluteSize[i] = absoluteSize[i - 1] + abs(data[i])$, $i \geq 1$
+\end{center}
+We calculate the cumulated size array in a similar way, but we subtract the outgoing traffic instead of adding it:
+\begin{center}
+\hspace{-90mm}$cumulatedSize[0] = data[0]$\\
+$cumulatedSize[i] = data[i].isOutgoingData$ ? $cumulatedSize[i - 1] - abs(data[i]) :$\\
+\hspace{-50mm}$cumulatedSize[i - 1] + abs(data[i]), i \geq 1$
+\end{center}
+After the calculation of the arrays, we interpolate a plot from the value pairs (\emph{absoluteSize[i]},\emph{cumulatedSize[i]}) and calculate 100 sample values with the same distance to each other. 
+\todo[inline]{May be, pictures have to be added as well?!}
+
+\paragraph{Separate Version}
+\label{par:separate_version}
+
+In comparison to the cumulative version, in the separate version we divide the information regarding the stream of incoming and outgoing packets. In detail, instead of subtracting outgoing packet sizes for the incoming cumulative list, we duplicate the previous entry. Accordingly, the outgoing cumulative list does not accumulate incoming packet sizes. In order to not lose information in comparison to the cumulative version, we have to increase the overall number of sampling points. Given that we have twice the cumulative length, we simply double the amount from 100 to 200 and interpolate each list like before to obtain our desired 200 sampling points. 
+\todo[inline]{May be, pictures have to be added as well?!}
+
+Finally, \texttt{generate-feature.py} transforms the generated features into a format the \ac{SVM} can work with (see Chapter \ref{chap:classification} for details).
+
+\todo[inline]{Adjust the configuration variables, introduce command line parameter}
+Before executing \texttt{generate-feature.py}, several parameters within \texttt{WFP\_config} (see Appendix \ref{sec:config_file}), have to be adjusted:
+\begin{description}
+\item[input\_path] A path that points to directories to which an the feature generation algorithm has to be applied. Typically, that is \texttt{\$HOME/WFA/Implementation/finger- printing/fetches/}.
+\item[fetch\_input] A directory containing the files that the feature generation algorithm shall be performed on. The path to this directory is relative starting from \texttt{input\_path}.
+\item[feature\_output] A folder where the files with the generated features are saved. Typically, this folder is a subdirectory of folder \texttt{features/} (see Figure \ref{fig:fetchesOrdering}).
+\item[feature\_name] A name of a file containing a generated feature.
+\item[num\_of\_wished\_instances] The number of instances that the script will output. Note that this number has to be equal or larger than the number of instances in all input files. \textbf{If one input file has less instances, the script will abort with an error.} Typically, this number is the same as \texttt{num\_of\_wished\_instances} in section \texttt{[Outlier-removal]}, but it might be also lower. An example for the latter would be that outlier removal is performed for 100 instances, but features should be generated for 60, 80 and 100 instances.
+
+\textbf{Note, that if the number of valid instances is less than \texttt{num\_of\_wished\_instances}, then no (complete) output is generated. On the terminal, the user will get the following error message:}
+\begin{verbatim}
+WARN: output-tls/https___cloud.torproject.org_ only 5/5 of 6
+ERROR: output-tls/https___cloud.torproject.org_ only 5/5 of 6
+\end{verbatim}
+\item[feature\_count] A number of features, e.g., 100, 200. Note, that it should be even. % add check into script for that
+\item[setting] Indicates if we consider open-world foreground (\texttt{OW\_FG}), open-world background (\texttt{OW\_BG}) or closed-world (\texttt{CW}). \todo[inline]{Explain the difference between the scenarios!}
+\item[separate\_classifier] Shows if we generate separate version (\texttt{true}) or cumulative version (\texttt{false}).
+\item[random\_instances] This variable may be either \texttt{true} or \texttt{false}. If it is set to \texttt{true}, the instances used for feature generation are taken at random. Otherwise, they are taken sequentially starting at instance 1.
+\item[data\_set] Can be freely chosen or is set to \texttt{\#}. If a name other than \texttt{\_} is chosen, a single file will be created as output. If \texttt{\_} is chosen, for each webpage a file will be created.
+\end{description}
+
+\todo[inline]{The following examples are all outdated!}
+To illustrate the operation of our feature generation approach, we consider a small example. After we have finished the execution of \texttt{fetch-and-calculate.sh} (see Chapter \ref{chap:webpage_fetching} for details), we move into folder \texttt{fetches/} and remove all transmission errors from the instances previously generated:
+\begin{verbatim}
+# cd ../fetches
+# cd scripts/
+# ./check-fetches.py
+\end{verbatim}
+
+Afterwards, we merge all \ac{TCP}, respectively \ac{TLS}, instances for a given webpage into a single file:
+\begin{verbatim}
+# ./merge-input.sh
+\end{verbatim}
+The output files of \texttt{merge-input.sh} are located in the subfolders \texttt{output/}, \texttt{output-tls/}, \texttt{output-tls-legacy/}, \texttt{output-cells/}, \texttt{output-cells-sendme/} and \texttt{output-tls-no- sendme/} of folder \texttt{merged/}, as we have already described (see Section \ref{Merge instances}).
+
+Then, we execute \texttt{outlier-removal.py} to remove all outliers:
+\begin{verbatim}
+# ./outlier-removal.py
+\end{verbatim}
+The output from this script is saved in folder(s) \texttt{<reference\_dir>-outlierfree/} and \texttt{<process\_dir>-outlierfree/} if \texttt{process\_dir} is previously defined (see Section \ref{Remove outliers}).
+
+Finally, we generate our features:
+\begin{verbatim}
+# ./generate-feature.py
+\end{verbatim}
+The output files from this example can be found in the folder \texttt{fetches/}. Appendix \ref{sec:config_file} shows the configuration file that we use.
+
+The output of \texttt{generate-feature.py} is structured as follows: Each instance is stored in a single line starting with a number indicating the current class label and followed by the corresponding features. In the closed-world scenario, each class has a different unique label. Additionally, every class has the same number of instances and all classes are stored in one file. The classification performed for the closed-world scenario is called an \emph{all-vs-all} approach since each class is evaluated against any other. On the other hand, our open-world scenario follows an \emph{one-vs-all} approach also known as \emph{one-vs-rest} approach. For that purpose, we have separate files for each foreground class. Instances belonging to the foreground are labeled as class \texttt{1} while any instance in the background is labeled as class \texttt{0}. In the background we do not differentiate between different domains because we simply want to determine whether the current instance is an interesting one, i.e., belonging to the foreground, or not. Overall, we obtain two classes in each input file for the open-world scenario. 
+
+The features for both scenarios are stored in the following format $i$:\emph{Feature}$_i$ where $i$ denotes the number of the current feature and \emph{Feature}$_i$ represents the value of the $i$-th feature. See Listing \ref{lst:outputTorprojectFeatures} for an example.
+
+
+%\pagebreak
+\section{Example files}
+%\lstinputlisting[breaklines=true,language=Python,firstline=n1,lastline=n2, firstnumber=n3]{code/FILE}
+
+\subsection{Input files}
+Listing \ref{lst:input1} shows an exemplary input file for \texttt{generate-feature.py}. Its content consists of the URL that was fetched, and timestamps and packet sizes that occurred during fetching.
+
+\subsection{Output files}
+\todo[inline]{Add appended timestamp as comment in generated feature files}
+After running \texttt{generate-feature.py} on the input files, the resulting feature file for \texttt{torproject.org} looks like shown in Listing \ref{lst:outputTorprojectFeatures}.
+\begin{listing}[h!]
+\caption{Output: \texttt{https\_\_\_www.torproject.org\_} (features) (in folder \texttt{fetches/features/output/})}
+\lstinputlisting[breaklines=true,language=Python]{code/https___www.torproject.org_FEATURES}
+\label{lst:outputTorprojectFeatures}
+\end{listing}
+
+\subsection{Input files - closed world}\label{sec:Input files - closed-world}
+For closed-world classification files like shown in Listing \ref{lst:input1} with (typically) more than one line are used. See Listing \ref{lst:input2} for a more realistic example.
+
+\begin{listing}[h!]
+\caption{Input: \texttt{http\_\_\_www.facebook.com\_} (timestamps and sizes)}
+\lstinputlisting[breaklines=true,language=Python]{code/http___www.facebook.com_}
+\label{lst:input2}
+\end{listing}
+
+\subsection{Output files - closed-world}
+In closed-world classification each webpage is assigned an own class. In Listing \ref{lst:output1} the features for \texttt{facebook.com} are shown. The class value is 17, since \texttt{facebook.com} happened to be the 17th webpage used to generate features for. Note that here the number of instances for which features were generated is lower than the number of instances in the input file (as shown in Listing \ref{lst:input2}). Additionally note that this example is taken from a real classification run, so originally there are 104 features for each instance.
+
+\begin{listing}[h!]
+\caption{Output (CW): \texttt{http\_\_\_www.facebook.com\_} (features)}
+\lstinputlisting[breaklines=true,language=Python]{code/http___www.facebook.com_FEATURES}
+\label{lst:output1}
+\end{listing}
+
+\subsection{Input files - open-world}
+The input files for open-world classification are the same as for closed-world classification. Thus, see Section \ref{sec:Input files - closed-world} for an example.
+
+\subsection{Output files - open-world}
+Contrary to closed-world we do not enumerate the webpages in open-world classification. Instead, we differentiate between \ac{FG} and \ac{BG} webpages. Webpages belonging to \ac{FG} get class label 1, those belonging to \ac{BG} get class label 0.
+
+Let us consider three webpages, from which one is monitored (thus it belongs to \ac{FG}) and two are non-monitored (belonging to \ac{BG}). In closed-world classification the resulting features look like in Listing \ref{lst:output2}. For open-world classification the results are shown in Listing \ref{lst:output3} (\ac{FG}) and Listing \ref{lst:output4} (\ac{BG}).
+
+\begin{listing}[h!]
+\caption{Output (CW): artificial example (features)}
+\lstinputlisting[breaklines=true,language=Python]{code/features_CW.txt}
+\label{lst:output2}
+\end{listing}
+
+\begin{listing}[h!]
+\caption{Output (OW\_FG): artificial example (features)}
+\lstinputlisting[breaklines=true,language=Python]{code/features_OW_FG.txt}
+\label{lst:output3}
+\end{listing}
+
+\begin{listing}[ht!]
+\caption{Output (OW\_BG): artificial example (features)}
+\lstinputlisting[breaklines=true,language=Python]{code/features_OW_BG.txt}
+\label{lst:output4}
+\end{listing}
+
+For training of a classifier we need a single input file, so the two files for open-world \ac{FG} and \ac{BG} need to be merged. Thus, the result of feature generation for open-world scenarios needs to look like in Listing \ref{lst:output5}. Note that the differentiation between \ac{FG} and \ac{BG} needs to be done manually.
+
+\begin{listing}[ht!]
+\caption{Output (OW): artificial example (features)}
+\lstinputlisting[breaklines=true,language=Python]{code/features_OW.txt}
+\label{lst:output5}
+\end{listing}

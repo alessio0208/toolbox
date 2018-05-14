@@ -1,0 +1,579 @@
+This tutorial has been created for patching a LibSVM version downloaded from http://www.csie.ntu.edu.tw/~cjlin/libsvm/.
+Both patches are independent of each other.
+
+###############################################################################
+###############################################################################
+##### Patching of Prediction Output during CV.
+###############################################################################
+###############################################################################
+1) Backup svm-train.c as svm-train-q.c
+2) Add svm-train-q to the Makefile(s):
+    a) "all"-line
+        *EXAMPLE BELOW*
+        all: svm-train svm-predict svm-scale svm-train-q
+
+    b) "svm-train-q"-rule (adapt from "svm-train:"-rule)
+        *EXAMPLE BELOW*
+        svm-train-q: svm-train-q.c svm.o
+            $(CXX) $(CFLAGS) svm-train-q.c svm.o -o svm-train-q -lm
+
+    c) "clean"-line
+        *EXAMPLE BELOW*
+        clean:
+            rm -f *~ svm.o svm-train svm-train-q svm-predict svm-scale libsvm.so.$(SHVER)
+3) Modify "svm-train.c" and add parameter support for -x, -y, and -o:
+    a) Add information to "void exit_with_help()" (before the closing bracket of printf):
+    // ADDED
+    "-x cost : set the parameter C of C-SVC, epsilon-SVR, and nu-SVR as 2^x (default 0)\n"
+    "-y gamma : set gamma in kernel function as 2^y (default 2^(1/num_features))\n"
+    "-o : output classifcation results for each parameter in CV\n"
+    // ADDED END
+    b) Add global variables (after int nr_fold;):
+    // ADDED
+    char result_file_name[1024];
+    int output = 0;
+    // ADDED END
+    c) Add parsing options in "void parse_command_line(int argc, char **argv, char *input_file_name, char *model_file_name)":
+        i)   after cross_validation = 0;
+    // ADDED
+    int c;
+    int gamma;
+    int cSet = 0;
+    int gammaSet = 0;
+    // ADDED END
+        ii)  inside the switch statement, after case 'w': [...] break;:
+    // ADDED
+    case 'x':
+        c = atoi(argv[i]);
+        cSet = 1;
+        break;
+    case 'y':
+        gamma = atoi(argv[i]);
+        gammaSet = 1;
+        break;
+    case 'o':
+        output = 1;
+        i--;
+        break;
+    // ADDED END
+        iii) Add code to create output filename at the end of the function:
+    // ADDED
+    if (cSet && gammaSet)
+    {
+        sprintf(result_file_name,"%s.c_%i_g_%i.txt", input_file_name, c, gamma);
+        output = 0;
+    }
+    else
+    {
+        sprintf(result_file_name,"%s.results.txt", input_file_name);
+    }
+    // ADDED END
+4) Modify svm-train.c in "void do_cross_validation()" add after "svm_cross_validation(&prob,&param,nr_fold,target);" the following:
+    // ADDED
+    if (output == 1) // Adjust the filename for each CV
+    {
+        result_file_name[strlen(result_file_name)-12] = 0; // 12 derived from ".results.txt"
+        int c = (int) log2(param.C);
+        int gamma = (int) log2(param.gamma);
+        sprintf(result_file_name,"%s.c_%i_g_%i.txt", result_file_name, c, gamma);
+    }
+    FILE *fout;
+    fout = fopen(result_file_name,"w");
+    // the CC/FP/FN output only works for 2-class evaluation with labels 0 and 1
+    for (i=0; i<prob.l; i++)
+    {
+        // nummer, prediction, real, result
+        fprintf(fout,"%i,%i,%i,",i,(int)target[i],(int)prob.y[i]);
+        if (target[i] == prob.y[i])
+        {
+            fprintf(fout,"CC"); 
+        }
+        else
+        {
+            (target[i] > prob.y[i]) ? fprintf(fout,"FP") : fprintf(fout,"FN"); 
+        }
+        fprintf(fout,"\n");
+    }
+    fclose(fout);
+    // ADDED END
+4i) Check whether the library "math.h" is included in svm-train.c. If not, add the following:
+	// ADDED
+	#include <math.h>
+	// ADDED END
+5) Recommended but not necessary (limit output):
+   Modify easy.py to only output probability when best parameters have been found:
+   a) Add math-import (to provide log-function):
+		# MODIFIED
+		import math # below import os
+		from datetime import datetime
+		# MODIFIED END
+   b) Add:
+        i)
+		# MODIFIED
+		svmtrain_exe_q = "../svm-train-q" # to "if not is_win32:"
+		# MODIFIED END
+        ii)
+		# MODIFIED
+		svmtrain_exe_q = r"..\windows\svm-train-q.exe" # to else-case of "if not is_win32:"
+		# MODIFIED END
+        iii)
+		# MODIFIED
+		assert os.path.exists(svmtrain_exe_q),"svm-train-q executable not found" # below the block of asserts
+		# MODIFIED END
+   c) Add variable for number of folds:
+		# MODIFIED
+		folds = 10 # below the block of asserts
+		# MODIFIED END
+   d) Replace (to print time):
+		print('Cross validation...')
+      with:
+		# MODIFIED
+		time1 = datetime.now()
+		print('[' + str(time1).split('.')[0] + '] Cross validation...')
+		# MODIFIED END
+   e) Replace (to differentiate between two evaluation approaches):
+		cmd = '{0} -c {1} -g {2} "{3}" "{4}"'.format(svmtrain_exe,c,g,scaled_file,model_file)
+		print('Training...')
+		Popen(cmd, shell = True, stdout = PIPE).communicate()
+      with:
+		# MODIFIED
+		time2 = datetime.now()
+		cExp = int(math.log(c,2))
+		gExp = int(math.log(g,2))
+		if len(sys.argv) > 2:
+			cmd = '{0} -c {1} -g {2} "{3}" "{4}"'.format(svmtrain_exe,c,g,scaled_file,model_file)
+			print('[' + str(time2).split('.')[0] + '] Training...')
+		else:
+			cmd = '{0} -v {1} -c {2} -g {3} -x {4} -y {5} "{6}"'.format(svmtrain_exe,folds,c,g,cExp,gExp,scaled_file)
+			print('[' + str(time2).split('.')[0] + '] Training - Cross validating...')
+		Popen(cmd, shell = True, stdout = PIPE).communicate()
+		time3 = datetime.now()
+		# MODIFIED END
+   f) Move print for model-filename into if-switch (to adapt to the new behavior):
+		# MODIFIED
+		print('Output model: {0}'.format(model_file)) # move behind if len(sys.argv) > 2:
+		# MODIFIED END
+   g) Add else-case to the last if-switch (to display the output-file) and print processing times:
+		# MODIFIED
+		else: # below the print('Output prediction: {0}'.format(predict_test_file))
+			print('Output evaluation: {0}'.format(scaled_file + '.c_'+ str(cExp) +'_g_' + str(gExp) + '.txt'))
+		print('[' + str(datetime.now()).split('.')[0] + '] Time: Cross validation (' + str(time2-time1).split('.')[0] + '), Training (' + str(time3-time2).split('.')[0] + ')')
+		# MODIFIED END
+6) Additional patches to easy.py include: Passing grid options, number of workers and ignoring gnuplot.
+   a) Create grid_patched.py with the following changes:
+--- grid.py
++++ grid_patched.py
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env python
+ __all__ = ['find_parameters']
+ 
+-import os, sys, traceback, getpass, time, re
++import os, sys, traceback, getpass, time, re, multiprocessing
+ from threading import Thread
+ from subprocess import *
+ 
+@@ -12,7 +12,7 @@
+ 
+ telnet_workers = []
+ ssh_workers = []
+-nr_local_worker = 4
++nr_local_worker = multiprocessing.cpu_count()
+ 
+ class GridOption:
+ 	def __init__(self, dataset_pathname, options):
+@@ -25,7 +25,8 @@
+ 			self.svmtrain_pathname = os.path.join(dirname, r'..\windows\svm-train.exe')
+ 			# svmtrain_pathname = r'c:\Program Files\libsvm\windows\svm-train.exe'
+ 			self.gnuplot_pathname = r'c:\tmp\gnuplot\binary\pgnuplot.exe'
+-		self.fold = 5
++		self.fold = 10
++		self.nr_local_worker = multiprocessing.cpu_count() ###
+ 		self.c_begin, self.c_end, self.c_step = -5,  15,  2
+ 		self.g_begin, self.g_end, self.g_step =  3, -15, -2
+ 		self.grid_with_c, self.grid_with_g = True, True
+@@ -85,6 +86,9 @@
+ 				else:
+ 					i = i + 1
+ 					self.resume_pathname = options[i]
++			elif options[i] == '-worker': ###
++				i = i + 1 ###
++				self.nr_local_worker = int(options[i]) ###
+ 			else:
+ 				pass_through_options.append(options[i])
+ 			i = i + 1
+@@ -361,6 +365,7 @@
+ 		
+ 	options = GridOption(dataset_pathname, options);
+ 
++	nr_local_worker = options.nr_local_worker ###
+ 	if options.gnuplot_pathname:
+ 		gnuplot = Popen(options.gnuplot_pathname,stdin = PIPE,stdout=PIPE,stderr=PIPE).stdin
+ 	else:
+@@ -473,7 +478,8 @@
+ -log2g {begin,end,step | "null"} : set the range of g (default 3,-15,-2)
+     begin,end,step -- g_range = 2^{begin,...,begin+k*step,...,end}
+     "null"         -- do not grid with g
+--v n : n-fold cross validation (default 5)
++-v n : n-fold cross validation (default 10)
++-worker n : n local workers in cross validation (default #Threads)
+ -svmtrain pathname : set svm executable path and name
+ -gnuplot {pathname | "null"} :
+     pathname -- set gnuplot executable path and name
+
+
+
+   b) Adjust easy_patched.py to support arguments:
+--- "easy_patched.py"
++++ easy_patched.py
+@@ -9,7 +9,8 @@
+ from datetime import datetime
+ from subprocess import *
+ 
+ if len(sys.argv) <= 1:
+-	print('Usage: {0} training_file [testing_file]'.format(sys.argv[0]))
++	print('Usage: {0} [-log2c=begin,end,step] [-log2g=begin,end,step] [-o] [-worker=N ] [-v=N] training_file [testing_file]'.format(sys.argv[0])) ###
++	###print('Usage: {0} training_file [testing_file]'.format(sys.argv[0]))
+ 	raise SystemExit
+ 
+ # svm, grid, and gnuplot executable files
+@@ -22,7 +23,8 @@ if not is_win32:
+ 	svmtrain_exe_q = "../svm-train-q" # to "if not is_win32:"
+ 	# MODIFIED END
+ 	svmpredict_exe = "../svm-predict"
+-	grid_py = "./grid.py"
++	grid_py = "./grid_patched.py" ###
++	###grid_py = "./grid.py"
+ 	gnuplot_exe = "/usr/bin/gnuplot"
+ else:
+         # example for windows
+@@ -33,30 +35,51 @@ else:
+ 	# MODIFIED END
+ 	svmpredict_exe = r"..\windows\svm-predict.exe"
+ 	gnuplot_exe = r"c:\tmp\gnuplot\binary\pgnuplot.exe"
+-	grid_py = r".\grid.py"
++	grid_py = r".\grid_patched.py" ###
++	###grid_py = r".\grid.py"
+ 
+ assert os.path.exists(svmscale_exe),"svm-scale executable not found"
+ assert os.path.exists(svmtrain_exe),"svm-train executable not found"
+ assert os.path.exists(svmpredict_exe),"svm-predict executable not found"
+-assert os.path.exists(gnuplot_exe),"gnuplot executable not found"
+-assert os.path.exists(grid_py),"grid.py not found"
++###assert os.path.exists(gnuplot_exe),"gnuplot executable not found"
++###assert os.path.exists(grid_py),"grid.py not found"
++if not os.path.exists(gnuplot_exe): ###
++	gnuplot_exe = 'null' ###
++assert os.path.exists(grid_py),"grid_patched.py not found" ###
+ # MODIFIED
+ assert os.path.exists(svmtrain_exe_q),"svm-train-q executable not found" # below the block of asserts
+ # MODIFIED END
+ 
+ # MODIFIED
+ folds = 10 # below the block of asserts
++output = False ###
+ # MODIFIED END
+-
+-train_pathname = sys.argv[1]
++for i in range(1, len(sys.argv)): ###
++	if sys.argv[i].startswith('-v='): ###
++		folds = int(sys.argv[i].lstrip('-v=')) ###
++	elif sys.argv[i] == '-o': ###
++		output = True ###
++
++grid_options = '' ###
++if sys.argv[-2].startswith('-') or sys.argv[0] == sys.argv[-2]: ###
++	testing = False ###
++	train_pathname = sys.argv[-1] ###
++	grid_options = ' '.join(el for el in sys.argv[1:-1]).replace('=', ' ') ###
++else: ###
++	testing = True ###
++	train_pathname = sys.argv[-2] ###
++	grid_options = ' '.join(el for el in sys.argv[1:-2]).replace('=', ' ') ###
++###train_pathname = sys.argv[1]
+ assert os.path.exists(train_pathname),"training file not found"
+ file_name = os.path.split(train_pathname)[1]
+ scaled_file = file_name + ".scale"
+ model_file = file_name + ".model"
+ range_file = file_name + ".range"
+ 
+-if len(sys.argv) > 2:
+-	test_pathname = sys.argv[2]
++if testing: ###
++###if len(sys.argv) > 2:
++	test_pathname = sys.argv[-1] ###
++	###test_pathname = sys.argv[2]
+ 	file_name = os.path.split(test_pathname)[1]
+ 	assert os.path.exists(test_pathname),"testing file not found"
+ 	scaled_test_file = file_name + ".scale"
+@@ -66,7 +89,11 @@ cmd = '{0} -s "{1}" "{2}" > "{3}"'.format(svmscale_exe, range_file, train_pathna
+ print('[########## ########] Scaling training data...')
+ Popen(cmd, shell = True, stdout = PIPE).communicate()
+ 
+-cmd = 'python {0} -svmtrain "{1}" -gnuplot "{2}" "{3}"'.format(grid_py, svmtrain_exe_q, gnuplot_exe, scaled_file)
++if output: ###
++	cmd = 'python {0} -svmtrain "{1}" -gnuplot "{2}" {3} "{4}"'.format(grid_py, svmtrain_exe, gnuplot_exe, grid_options, scaled_file) ###
++else: ###
++	cmd = 'python {0} -svmtrain "{1}" -gnuplot "{2}" {3} "{4}"'.format(grid_py, svmtrain_exe_q, gnuplot_exe, grid_options, scaled_file) ###
++###cmd = 'python {0} -svmtrain "{1}" -gnuplot "{2}" "{3}"'.format(grid_py, svmtrain_exe_q, gnuplot_exe, scaled_file)
+ # MODIFIED
+ time1 = datetime.now()
+ print('[' + str(time1).split('.')[0] + '] Cross validation...')
+@@ -86,20 +113,23 @@ print('[########## ########] Best c={0}, g={1} CV rate={2}'.format(c,g,rate))
+ time2 = datetime.now()
+ cExp = int(math.log(c,2))
+ gExp = int(math.log(g,2))
+-if len(sys.argv) > 2:
++if testing: ###
++###if len(sys.argv) > 2:
+ 	cmd = '{0} -c {1} -g {2} "{3}" "{4}"'.format(svmtrain_exe, c, g, scaled_file, model_file)
+ 	print('[' + str(time2).split('.')[0] + '] Training...')
+ else:
+ 	cmd = '{0} -v {1} -c {2} -g {3} -x {4} -y {5} "{6}"'.format(svmtrain_exe, folds, c, g, cExp, gExp, scaled_file)
+ 	print('[' + str(time2).split('.')[0] + '] Training - Cross validating...')
+-Popen(cmd, shell = True, stdout = PIPE).communicate()
++if not output: ###
++	Popen(cmd, shell = True, stdout = PIPE).communicate()
+ time3 = datetime.now()
+ # MODIFIED END
+ 
+ # MODIFIED
+ ##print('Output model: {0}'.format(model_file))
+ # MODIFIED END
+-if len(sys.argv) > 2:
++if testing: ###
++###if len(sys.argv) > 2:
+ 	# MODIFIED
+ 	print('[########## ########] Output model: {0}'.format(model_file)) # move behind if len(sys.argv) > 2:
+ 	# MODIFIED END
+
+
+
+
+###############################################################################
+###############################################################################
+##### Patching of Distance Output during Prediction (check: http://www.csie.ntu.edu.tw/~cjlin/libsvm/faq.html#f4151 ).
+###############################################################################
+###############################################################################
+
+1) Add new struct to svm.h:
+
+    // ADDED
+    struct predict_return
+    {
+        double pred_result;
+        double distance;
+    };
+    // ADDED END
+
+2) Add new member to struct svm_model in svm.h:
+
+    //ADDED
+    double *distanceHelp;        /* distanceHelp is used to calculate the distance at a later point (distanceHelp[k*(k-1)/2]) */
+    //ADDED END
+
+3) Add new function to svm.h:
+
+// ADDED
+predict_return* svm_predict_values_distance(const svm_model *model, const svm_node *x);
+// ADDED END
+
+4) Modify "void predict(FILE *input, FILE *output)" in svm-predict.c:
+    replace:
+
+            predict_label = svm_predict(model,x);
+            fprintf(output,"%g\n",predict_label);
+
+    by the following:
+
+            // OLD
+            /*
+            predict_label = svm_predict(model,x);
+            fprintf(output,"%g\n",predict_label);
+            */
+            // OLD END
+            
+            // ADDED
+            predict_return* predictRes = (struct predict_return *) malloc(sizeof(predict_return));
+            
+            predictRes = svm_predict_values_distance(model,x);
+            predict_label = predictRes->pred_result;
+            double distance = predictRes->distance;
+            free(predictRes);
+            
+            // output prediction, correctClass, distance
+            fprintf(output,"%g,%g,%g\n",predict_label, target_label, distance);
+            // ADDED END        
+
+5) Add function to svm.cpp after "double svm_predict(const svm_model *model, const svm_node *x)":
+
+// ADDED
+predict_return* svm_predict_values_distance(const svm_model *model, const svm_node *x)
+{
+    // COPIED FROM SVM PREDICT
+    predict_return *pr = Malloc(predict_return, 1);;
+    int nr_class = model->nr_class;
+    double *dec_values;
+    if(model->param.svm_type == ONE_CLASS ||
+       model->param.svm_type == EPSILON_SVR ||
+       model->param.svm_type == NU_SVR)
+        dec_values = Malloc(double, 1);
+    else 
+        dec_values = Malloc(double, nr_class*(nr_class-1)/2);
+    double pred_result = svm_predict_values(model, x, dec_values);
+    // COPIED FROM SVM PREDICT END
+    // for output
+    /*
+    //info("decValues =");
+    int label = 0;
+    int lastStart = 0;
+    for(int j=0;j<nr_class*(nr_class-1)/2;j++){
+        info("%d:%g ",model->label[label], dec_values[j]);
+        if (label == nr_class-1){
+            label = lastStart+1;
+            lastStart = lastStart+1;
+            info("\n");
+        } else {
+            label = label+1;
+        }
+    }
+    */
+    // for distanceCalc
+    double w = 0;
+    double dec = 0;
+    for(int j=0;j<nr_class*(nr_class-1)/2;j++){
+        w = w + (model->distanceHelp[j] * model->distanceHelp[j]);
+        dec = dec + (dec_values[j] * dec_values[j]);
+    }
+    pr->pred_result = pred_result;
+    pr->distance = (dec / w);
+    //info("distance = %g\n", (dec / w));
+    free(dec_values);
+    return pr;
+}
+// ADDED END
+
+6) Add the calculation of distanceHelp to "void Solver::Solve(int l, const QMatrix& Q, const double *p_, const schar *y_, double *alpha_, double Cp, double Cn, double eps, SolutionInfo* si, int shrinking)" in svm.cpp:
+    replace:
+
+        // calculate objective value
+        {
+            double v = 0;
+            int i;
+            for(i=0;i<l;i++)
+                v += alpha[i] * (G[i] + p[i]);
+
+            si->obj = v/2;
+        }
+
+    by the following:
+        // OLD
+        /*
+        // calculate objective value
+        {
+            double v = 0;
+            int i;
+            for(i=0;i<l;i++)
+                v += alpha[i] * (G[i] + p[i]);
+
+            si->obj = v/2;
+        }
+        */
+        // OLD END
+    
+        // ADDED 
+        // calculate objective value
+        // Added helper for Calculate Distance (!)
+    
+        {
+            double v = 0;
+            int i;
+            double sumAlpha = 0;
+            for(i=0;i<l;i++)
+            {
+                v += alpha[i] * (G[i] + p[i]);
+                sumAlpha += alpha[i];
+            }
+            si->obj = v/2;
+        
+            double distanceTmp = 2*(si->obj + sumAlpha);
+            si->distanceHelp = sqrt(distanceTmp);
+        }
+        // ADDED END
+
+
+7) Add the additional member for distanceHelp (w) at all necessary places in svm.cpp...:
+    a) Add in class "Solver" to the struct "struct SolutionInfo":
+
+        // ADDED
+        double distanceHelp;
+        // ADDED END
+
+    b) Add in "struct decision_function":
+
+        // ADDED
+        double distanceHelp;
+        // ADDED END
+
+    c) Add in function "static decision_function svm_train_one(const svm_problem *prob, const svm_parameter *param, double Cp, double Cn)" after "f.rho = si.rho;":
+
+        // ADDED
+        f.distanceHelp = si.distanceHelp;
+        // ADDED END
+
+    d1) Add in function "svm_model *svm_train(const svm_problem *prob, const svm_parameter *param)" after "model->rho[0] = f.rho;":
+
+        // ADDED
+        model->distanceHelp = Malloc(double,1);
+        model->distanceHelp[0] = f.distanceHelp;
+        // ADDED END
+
+    d2) and (!) after "for(i=0;i<nr_class*(nr_class-1)/2;i++) model->rho[i] = f[i].rho;":
+
+        // ADDED
+        model->distanceHelp = Malloc(double,nr_class*(nr_class-1)/2);
+        for(i=0;i<nr_class*(nr_class-1)/2;i++)
+            model->distanceHelp[i] = f[i].distanceHelp;
+        // ADDED END
+
+    e) Add in function "int svm_save_model(const char *model_file_name, const svm_model *model)" after "{ fprintf(fp, "rho"); for(int i=0;i<nr_class*(nr_class-1)/2;i++) fprintf(fp," %g",model->rho[i]); fprintf(fp, "\n"); }":
+
+        // ADDED
+        {
+            fprintf(fp, "distance");
+            for(int i=0;i<nr_class*(nr_class-1)/2;i++)
+                fprintf(fp," %g",model->distanceHelp[i]);
+            fprintf(fp, "\n");
+        }
+        // ADDED END
+
+    f) Add in function "bool read_model_header(FILE *fp, svm_model* model)" after "{ int n = model->nr_class * (model->nr_class-1)/2; model->rho = Malloc(double,n); for(int i=0;i<n;i++) FSCANF(fp,"%lf",&model->rho[i]); }":
+
+        // ADDED
+        else if(strcmp(cmd,"distance")==0)
+        {
+            int n = model->nr_class * (model->nr_class-1)/2;
+            model->distanceHelp = Malloc(double,n);
+            for(int i=0;i<n;i++)
+                FSCANF(fp,"%lf",&model->distanceHelp[i]);
+        }
+        // ADDED END
+
+    g1) Add in function "svm_model *svm_load_model(const char *model_file_name)" after "model->rho = NULL;":
+
+        // ADDED
+        model->distanceHelp = NULL;
+        // ADDED END
+
+    g2) and (!) after "free(model->rho);":
+
+        // ADDED 
+        free(model->distanceHelp);
+        // ADDED END
+
+    h) Add in function "void svm_free_model_content(svm_model* model_ptr)" after "model_ptr->rho = NULL;":
+
+        // ADDED
+        free(model_ptr->distanceHelp);
+        model_ptr->distanceHelp = NULL;
+        // ADDED END
+

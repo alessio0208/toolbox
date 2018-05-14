@@ -1,0 +1,127 @@
+%!TEX root = ../documentation.tex
+\section{Troubleshooting}
+\label{sec:troubleshooting}
+
+\subsection{\ac{TBB}-4.x in Ubuntu 14.04}
+\label{sec:tbb_problem}
+
+Due to missing software packages, the following error can occur during executing the scripts:
+
+\emph{XPCOMGlueLoad error for file \$HOME/Documents/Implementation/}\\
+\emph{fingerprinting/binary/tor-browser\_en-US/Browser/libxul.so:
+/usr/lib/x86\_64-linux-gnu/libstdc++.so.6: version `GLIBCXX\_3.4.20' not found (required by }\\
+\emph{\$HOME/Documents/Implementation/fingerprinting/binary/tor-browser\_en-US/}\\
+\emph{Browser/libxul.so)
+Couldn't load XPCOM.}
+
+\underline{Solution:} We have to update our \textbf{gcc} package to the latest one(currently \textbf{gcc-4.9.1}). For that purpose:
+\begin{enumerate}
+\item \begin{verbatim}sudo add-apt-repository ppa:ubuntu-toolchain-r/test\end{verbatim}
+\item \begin{verbatim}sudo apt-get update\end{verbatim}
+\item \begin{verbatim}sudo apt-get install gcc-4.9\end{verbatim}
+\item \begin{verbatim}sudo update-alternatives --remove-all gcc\end{verbatim}\item \begin{verbatim}sudo update-alternatives --install /usr/bin/gcc gcc 
+/usr/bin/gcc-4.9 20\end{verbatim}
+\item Check the current default \textbf{gcc} version though:
+\begin{verbatim}gcc --version\end{verbatim}
+If it is not \textbf{gcc 4.9.1}, repeat step 3 and step 4.
+\item \begin{verbatim}sudo update-alternatives --config gcc\end{verbatim}
+\item \begin{verbatim}sudo apt-get install libstdc++6\end{verbatim}
+\item Check your update:
+\begin{verbatim}strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX\end{verbatim}
+If everything went ok, you should see the following result:
+\begin{verbatim}
+GLIBCXX_3.4
+GLIBCXX_3.4.1
+GLIBCXX_3.4.2
+GLIBCXX_3.4.3
+GLIBCXX_3.4.4
+GLIBCXX_3.4.5
+GLIBCXX_3.4.6
+GLIBCXX_3.4.7
+GLIBCXX_3.4.8
+GLIBCXX_3.4.9
+GLIBCXX_3.4.10
+GLIBCXX_3.4.11
+GLIBCXX_3.4.12
+GLIBCXX_3.4.13
+GLIBCXX_3.4.14
+GLIBCXX_3.4.15
+GLIBCXX_3.4.16
+GLIBCXX_3.4.17
+GLIBCXX_3.4.18
+GLIBCXX_3.4.19
+GLIBCXX_3.4.20
+GLIBCXX_DEBUG_MESSAGE_LENGTH
+\end{verbatim}
+\end{enumerate}
+
+\subsection{32-bit \ac{TBB}-4.x on 64-bit \ac{OS}}
+\label{subsec:tbb_patch}
+
+As we have already introduced, we use Ubuntu 14.04 LTS (64-bit). In order to run 32-bit \ac{TBB}-4.x, you have to install the following software packages:
+\begin{enumerate}
+\item Support of a 32-bit architecture:
+\begin{verbatim}sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0\end{verbatim}
+\item Additional packages:
+\begin{verbatim}
+sudo apt-get install libdbus-glib-1-2:i386 libxt-dev:i386
+sudo apt-get install libxext-dev:i386 libevent-2.0-5:i386
+
+# These libraries are not always needed. Therefore, go to step 3
+# and finally try if you are able to start TBB. If not, you 
+# have to install this package as well.
+sudo apt-get install libgtk2.0-0:i386
+sudo apt-get install lib32stdc++6
+sudo apt-get install libasound2:i386
+sudo apt-get install gtk2-engines-murrine:i386
+sudo apt-get install libssl1.0.0:i386 libssl-dev:i386
+\end{verbatim}
+\item Fixed problems:
+\begin{verbatim}
+# Error: Gtk-WARNING **: Unable to locate theme engine in module_path: "murrine",
+# Solution:
+sudo apt-get install gtk2-engines-murrine:i386
+
+# Error: Gtk-WARNING **: Unable to locate theme engine in module_path: "pixmap",
+# Solution:
+sudo apt-get install gtk2-engines-pixbuf:i386
+
+# Error: $HOME/WFA/Implementation/fingerprinting/binary/tor-browser_en-US/Browser/firefox: /usr/lib/i386-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by $HOME/WFA/Implementation/fingerprinting/binary/tor-browser_en-US/Browser/firefox),
+# Solution:
+sudo sudo apt-get install libstdc++6
+\end{verbatim}
+\item Unfixed problems:
+\begin{verbatim}
+# Error: GLib-CRITICAL **: g_slice_set_config: assertion 'sys_page_size == 0' failed
+# Error: Gtk-Message: Failed to load module "overlay-scrollbar"
+\end{verbatim}
+
+
+\item Adjust the following line in the file \texttt{start-tor-browser}\footnote{The file \texttt{start-tor-browser} is usually located in the folder \texttt{tor-browser\_en-US/}.}:
+\begin{verbatim}
+# Original version
+# SYSARCHITECTURE=$(getconf LONG_BIT)
+
+SYSARCHITECTURE=32
+\end{verbatim}
+Thus, the error message \emph{"Wrong architecture? 32-bit vs. 64-bit."} will not be shown any more.
+\end{enumerate}
+If everything went ok, you should be able to start \ac{TBB}: \texttt{./start-tor-browser}.
+
+\subsection{Start \acs{TBB} by using \texttt{Browser/firefox}}
+\label{subsec:tbb_start}
+
+When executing the script \texttt{run-client-torbrowser.sh}, you may have problems with the following line:
+\vspace{-2mm}
+\begin{verbatim}
+FIREFOXBIN="${dir_BIN_TBB}Browser/firefox"
+\end{verbatim}
+\vspace{-2mm}
+To prevent them, you need to update your \texttt{libevent} library. The required version should be at least 2.0.22 or newer. Otherwise, you cannot run Tor properly.
+
+\emph{Solution:} Download and install manually libevent-2.0.22 (\url{http://libevent.org/}). Remove all older versions in your \acs{OS} if any existing!
+
+If everything went ok, you should be able to start \ac{TBB}: \texttt{Browser/firefox}.
+
+
+

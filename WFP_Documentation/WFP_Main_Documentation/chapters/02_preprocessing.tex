@@ -1,0 +1,70 @@
+%!TEX root = ../documentation.tex
+\chapter{Website Fingerprint Toolbox}
+\label{chap:folder_organization}
+
+This chapter introduces the toolbox of our website fingerprint approach illustrated in Figure \ref{fig:folderOrdering}. Before executing the scripts, the user should be aware of the main directories and the files which our \ac{WFP} attack consists of:
+
+\begin{description}
+\item[WFP\_config] A configuration file loaded before running the tools in order to set all required paths to directories and files. Thus, the scripts rely on environmental variables instead of absolute paths. Additionally, this file offers default values for most scripts. Appendix \ref{sec:config_file} shows an example of \texttt{WFP\_config} which we use in the examples in this work.
+\item[fingerprinting/] The main folder containing our website fingerprint attack.
+\item[binary/] A folder containing external programs necessary for executing the tools. Note, that they have to be installed before starting the scripts.
+\begin{description}
+\item[tcpflow-(latest)/] A \ac{TCP} flow recorder\footnote{\url{https://github.com/simsong/tcpflow}} used to extract \ac{TLS} records (see Chapter \ref{chap:configuration} for installation).
+\item[tor-browser\_en-US/] Tor Browser Bundle (\acs{TBB}). It consists of a pre-configured Tor version with Firefox, which works independent from the remaining system and does not require installation\footnote{\url{https://www.torproject.org/projects/torbrowser.html.en}}.
+\item[tor-control/] A folder containing scripts which are used to extract specific information from Tor network (for details, see~Chapter \ref{chap:webpage_fetching}).
+\item[tor-browser-selenium/] A Python library to automate Tor Browser with Selenium.
+\end{description}
+\item[crawling/] A folder containing our fetching tool used to record page traces (for details, see~Chapter \ref{chap:webpage_fetching}).
+\item[evaluation/] A folder used for evaluation (classification). Contains the program LIBSVM.
+\todo[inline]{Update content of folder evaluation, once it has been updated!}
+\begin{description}
+\item[input/] In this folder the input files for classification are placed.
+\item[libsvm-(latest)/] An integrated software for support vector classification, regression and distribution estimation\footnote{\url{http://www.csie.ntu.edu.tw/~cjlin/libsvm/}} used to classify recorded samples (see Chapter \ref{chap:configuration} for installation).
+\item[output/] This folder contains the output files created during classification. Note that the files are created within the folder \texttt{tools/} in \texttt{libsvm-3.xx/} and we manually copy them to this \texttt{output/}-folder.
+\todo[inline]{Adjust once the evaluation scripts have been modified, move to Chapter \ref{chap:classification}}
+\end{description}
+\item[fetches/] A folder containing our feature generation tools (for details, see~Chapter \ref{chap:feature_generation}).
+\item[storage/] A folder containing our fetched traces. The traces are split up in a \texttt{compiled/} and \texttt{raw/} folder.
+\begin{description}
+\item[raw/] The raw folder is used for storage and by the script \texttt{check-fetches.py} to remove faulty traces.
+\item[compiled/] The content of the compiled folder is used for the remaining experiments (for details, see Chapter~\ref{chap:feature_generation}).
+\end{description}
+\item[websiteCrawlingUrls/] A folder containing the tool for automatic generation of a valid link list (for details, see~Chapter \ref{chap:list_generation}).
+\end{description}
+
+\textbf{Note, that the structure shown in Figure \ref{fig:folderOrdering} should not be changed unless \texttt{WFP\_config} is adjusted accordingly. Otherwise, unexpected behavior is possible.}
+
+\begin{figure}
+\dirtree{%
+.1 \HandRight \, Implementation.
+.2 \HandRight \, fingerprinting.
+.3 \HandRight \, binary.
+.4 \HandRight \, tcpflow-X.X.X.
+.4 \HandRight \, tor-browser\_en-US.
+.5 \HandRight \, Browser.
+.5 \HandRight \, Misc.
+.6 $\star$ BlockUnloadEvents.js.
+.6 $\star$ OverwriteAlert.js.
+.6 $\star$ PatchTBB.sh.
+.6 $\star$ ./.../ unknownContentType.xul.
+.5 $\star$ Tor Browser.
+.4 \HandRight \, tor-control.
+.5 $\star$ tor-control-stem.py.
+.5 $\star$ tor-kill-streams-stem.py.
+.5 $\star$ tor-streamstatus-stem.py.
+.5 $\star$ tor-hsConnStatus-stem.py.
+.4 \HandRight \, tor-browser-selenium.
+.3 \HandRight \, crawling.
+.3 \HandRight \, evaluation.
+.3 \HandRight \, fetches.
+.3 \HandRight \, storage.
+.4 \HandRight \, compiled.
+.4 \HandRight \, raw.
+.3 \HandRight \, temp.
+.3 \HandRight \, websiteCrawlingUrls.
+.2 $\star$ WFP\_config.
+}
+\caption{\ac{WFP} toolbox}
+\label{fig:folderOrdering}
+\end{figure}
+

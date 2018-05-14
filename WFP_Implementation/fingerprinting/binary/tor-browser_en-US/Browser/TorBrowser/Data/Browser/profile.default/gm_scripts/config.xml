@@ -1,0 +1,10 @@
+<UserScriptConfig>
+	<Script basedir="BlockUnloadEvents" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="BlockUnloadEvents.user.js" installTime="1521736020000" modified="1521801042000" name="BlockUnloadEvents" namespace="BlockUnloadEvents" noframes="false" runAt="document-end" updateMetaStatus="unknown" uuid="c03a295c-c8c3-4784-911f-558166d432bc" version="1" installurl="file:///home/mitseva/Downloads/tor-browser_en-US/Browser/TorBrowser/Data/Browser/profile.default/gm_scripts/BlockUnloadEvents/BlockUnloadEvents.user.js" updateurl="file:///home/mitseva/Downloads/tor-browser_en-US/Browser/TorBrowser/Data/Browser/profile.default/gm_scripts/BlockUnloadEvents/BlockUnloadEvents.user.js">
+		<Grant>none</Grant>
+		<Include>*</Include>
+	</Script>
+	<Script basedir="OverwriteAlert" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="OverwriteAlert.user.js" installTime="1521736158000" modified="1521801042000" name="OverwriteAlert" namespace="OverwriteAlert" noframes="false" runAt="document-start" updateMetaStatus="unknown" uuid="8a75203a-c693-4489-afbd-649c6933e996" version="1" installurl="file:///home/mitseva/Downloads/tor-browser_en-US/Browser/TorBrowser/Data/Browser/profile.default/gm_scripts/OverwriteAlert/OverwriteAlert.user.js" updateurl="file:///home/mitseva/Downloads/tor-browser_en-US/Browser/TorBrowser/Data/Browser/profile.default/gm_scripts/OverwriteAlert/OverwriteAlert.user.js">
+		<Grant>none</Grant>
+		<Include>*</Include>
+	</Script>
+</UserScriptConfig>

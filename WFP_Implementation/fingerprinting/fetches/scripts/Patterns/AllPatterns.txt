@@ -1,0 +1,66 @@
+The connection was reset
+Unable to connect
+<p id="errorShortDescText">Firefox can’t establish a connection to the server
+moz-neterror:page?e=error&u=url&d=desc
+chrome://browser/content/newtab/newTab.css
+503 Service Unavailable
+504 Gateway Time-out
+404 - Not Found
+404 Not Found
+403 Forbidden
+401 Authorization Required
+>Forbidden
+>Not Found
+>Authorization Required
+>Fatal error
+>Critical Error
+>The page cannot be found
+>Error 403 Access is denied
+HTTP Status 403 - Access is denied
+>Error. Page cannot be displayed
+>Object not found!
+<title>Untrusted Connection</title>
+401 - Unauthorized
+401 Unauthorized
+<h1>Unauthorized</h1>
+HTTP 401 Unauthorized
+Erro HTTP 404
+HTTP Error 404. The requested resource is not found.
+404: Not Found
+Authentication required
+401: Unauthorized
+Error 401
+Error 404
+Error 403 : Forbidden
+Authorization Required
+400 Bad Request
+Access forbidden!
+403 - Forbidden
+403 - Forbidden: Access is denied.
+<h2>Error 403</h2>
+<h1>Acess Denied</h1>
+Access Denied
+<title>Acces Denied</title>
+Bad Request (400)
+Not Found
+Page not found
+{""error"": 404}
+{"error": 404}
+500 Internal Server Error
+Internal Server Error
+502 Bad Gateway
+<h1 id=""errorTitleText"">Server not found</h1>
+503 Service Temporarily Unavailable
+<title>502 Proxy Error</title>
+<h1>Proxy Error</h1>
+502 Server dropped connection
+Service Temporarily Unavailable
+No server is available to handle this request.
+<title>Proxy error: 502 Read from server failed: Timeout.</title>
+<h1>502 Read from server failed: Timeout</h1>
+<h1>504 Connect to
+<title>Proxy error: 504 Connect to
+SOCKS error: host unreachable
+<h1 id=""errorTitleText"">The connection has timed out</h1>
+<h1 id=""errorTitleText"">Unable to connect</h1>
+<h1 id=""errorTitleText"">This Connection is Untrusted</h1>

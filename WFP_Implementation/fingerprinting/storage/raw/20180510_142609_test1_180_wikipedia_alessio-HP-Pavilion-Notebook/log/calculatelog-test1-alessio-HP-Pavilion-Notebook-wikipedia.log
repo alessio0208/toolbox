@@ -1,0 +1,43 @@
+-------------------- NEW CALCULATION --------------------
+Starting
+gio 10 mag 2018, 14.26.09, AEST
+----------
+raw-to-tcp.py:
+----------
+parse-tcp.py:
+----------
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7,8G     0  7,8G   0% /dev
+tmpfs           1,6G   18M  1,6G   2% /run
+/dev/sdb3       197G  122G   66G  65% /
+tmpfs           7,8G   74M  7,8G   1% /dev/shm
+tmpfs           5,0M  4,0K  5,0M   1% /run/lock
+tmpfs           7,8G     0  7,8G   0% /sys/fs/cgroup
+/dev/loop2       87M   87M     0 100% /snap/core/4407
+/dev/loop0      147M  147M     0 100% /snap/skype/30
+/dev/loop1       87M   87M     0 100% /snap/core/4486
+/dev/loop6      102M  102M     0 100% /snap/skype/23
+/dev/loop5      102M  102M     0 100% /snap/skype/22
+/dev/loop4      136M  136M     0 100% /snap/gimp/30
+/dev/loop3       87M   87M     0 100% /snap/core/4571
+/dev/sda1       256M   90M  167M  35% /boot/efi
+tmpfs           1,6G   80K  1,6G   1% /run/user/1000
+/dev/loop7      208M  208M     0 100% /snap/gimp/38
+----------
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7,8G     0  7,8G   0% /dev
+tmpfs           1,6G   18M  1,6G   2% /run
+/dev/sdb3       197G  122G   66G  65% /
+tmpfs           7,8G   74M  7,8G   1% /dev/shm
+tmpfs           5,0M  4,0K  5,0M   1% /run/lock
+tmpfs           7,8G     0  7,8G   0% /sys/fs/cgroup
+/dev/loop2       87M   87M     0 100% /snap/core/4407
+/dev/loop0      147M  147M     0 100% /snap/skype/30
+/dev/loop1       87M   87M     0 100% /snap/core/4486
+/dev/loop6      102M  102M     0 100% /snap/skype/23
+/dev/loop5      102M  102M     0 100% /snap/skype/22
+/dev/loop4      136M  136M     0 100% /snap/gimp/30
+/dev/loop3       87M   87M     0 100% /snap/core/4571
+/dev/sda1       256M   90M  167M  35% /boot/efi
+tmpfs           1,6G   80K  1,6G   1% /run/user/1000
+/dev/loop7      208M  208M     0 100% /snap/gimp/38

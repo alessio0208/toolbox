@@ -1,0 +1,439 @@
+<html lang="it"><head>		
+				
+					
+							<!-- title 2 -->
+				<title></title>
+							
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	    
+				
+			<!-- desc 3 -->
+			<meta name="description" content="">
+			
+				
+		<meta name="author" content="">
+	    
+		<link rel="shortcut icon" href="/img/MG/favicon.ico">
+	    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:400,700,300">
+	    <link rel="stylesheet" type="text/css" href="/css/RS/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="/css/RS/default.css">
+		<link rel="stylesheet" type="text/css" href="/css/RS/slider.css">
+		<link rel="stylesheet" type="text/css" href="/css/RS/datepicker3.css"> 
+		
+		<link rel="stylesheet" type="text/css" href="/css/RS/style_MG.css"> 
+		
+	    <script async="" data-jsonpid="" src="https://cdn-gl.imrworldwide.com/novms/js/2/nlsSDK600.bundle.min.js"></script><script async="" src="https://cdn-gl.imrworldwide.com/conf/config250.js#name=v60Bsdk__1526203199000&amp;ns=NOLBUNDLE"></script><script async="" src="//tags.bkrtx.com/js/bk-coretag.js"></script><script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+		
+					<script type="text/javascript" src="//utils.cedsdigital.it/js/cookieLaw.js"></script>
+				
+		<script src="/js/bootstrap.min.js"></script>
+	    <script src="/js/slider.js"></script>
+		<script src="/js/RS/prettify.min.js"></script>
+		<script src="/js/RS/bootstrap-datepicker.js"></script> 
+		<script src="/js/RS/locales/bootstrap-datepicker.it.js" charset="UTF-8"></script> 
+	
+		<!-- plugins -->
+		<script src="/js/jquery.cookie.js"></script>
+					 
+			
+	
+				
+				
+		<!-- 	GOOGLE TAG MANAGER - SEZIONE HEAD			-->
+					 
+	
+		<script type="text/plain" class="cookieLaw">
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		
+			})(window,document,'script','dataLayer','GTM-K6XJLH');
+		</script>
+		<!--	FINE GOOGLE TAG MANAGER - SEZIONE HEAD		-->
+		
+	</head>
+
+    <body class="mg "><iframe style="width: 1px; height: 1px; position: absolute; top: -7px; left: -7px; border: 0px none;" src="https://secure-it.imrworldwide.com/storageframe.html" id="LOCSTORAGE" scrolling="no" name="empty" hidden="true"></iframe>
+	
+		
+	
+	
+		
+		
+		<!-- 	GOOGLE TAG MANAGER - SEZIONE BODY			-->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6XJLH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!--	FINE GOOGLE TAG MANAGER - SEZIONE BODY		-->
+	
+		
+		
+		
+	<div class="modal fade" id="loginModal" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title" id="loginModalLabel" style="color: #444">Accedi o registra un nuovo account</h4>
+				</div>
+				
+				<div class="modal-body" style="color:#444; ">
+					<form id="loginForm" name="formLogin" method="post" action="/php/SD/login.php" class="form-horizontal">
+						<input name="menu-login" value="1" type="hidden">
+						
+										
+					
+						<div class="input-group">
+						  <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+						  <input name="username_box" class="form-control" id="username" placeholder="Username o telefono" type="text">
+						</div>
+
+						<p></p>
+					
+						<div class="input-group">
+						  <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+						  <input name="password_box" class="form-control" id="password" placeholder="Password" type="password">
+						</div>
+						<p></p>
+						
+						<button type="submit" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary" style="width:100%">Accedi</button>
+							
+						<br><br><br>
+						<div class="col-sm-6 col-md-6 col-xs-6"><a title=" " href="password"><span class="highlighted" style="font-size: 12px">Password smarrita ?</span></a></div>
+						<div class="col-sm-6 col-md-6 col-xs-6 text-right"><a title=" " href="profilo?page=register&amp;mode=register"><span class="highlighted" style="font-size: 12px">Registrati</span></a></div>
+					</form>
+				</div> 
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper">
+	    		
+				    <header>
+			<div class="topnav"></div>
+			<!-- Static navbar -->
+			<div class="navbar navbar-default" role="navigation">
+			    				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				</button>
+			    			    <div class="container-fluid container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/">
+						<figure>
+							<img src="../img/RS/digital-logo-mg.png" alt="logo" title="logo.">
+						</figure>
+						</a>
+					</div>
+					
+					<div class="navbar-collapse collapse bs-navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+						
+														
+							
+	
+			<li class="active pointer">
+			<a href="" target="blank"></a>
+		</li>
+		
+		
+	<li><a href="/aziende">Aziende</a></li>
+    
+	<li><a href="/archivio">Arretrati</a></li>
+	
+	
+	
+	<li><a href="/cartadigitale">Abbonamenti</a></li>
+	
+	<li>
+		<a class="dropdown-toggle" data-toggle="dropdown-menu-offerte">Altre Offerte<b class="caret"></b></a>
+		
+		<ul class="dropdown-menu dropdown-menu-offerte">
+		    <li><a href="/registrazione?prodotto=39_CTMPAY_NOPROMO">Copia Singola - MobilePay</a></li>
+    <li><a href="/registrazione?prodotto=39_CARCRE_NOPROMO">Copia Singola </a></li>
+    <!-- <li><a href="/registrazione?prodotto=153_CTMPAY_GRATIS007CT">Abb.to SETTIMANALE - MobilePay (1a Settimana Gratis)</a></li> -->
+    <li><a href="/registrazione?prodotto=978_CTMPAY_NOPROMO">Abb.to SETTIMANALE - MobilePay</a></li> 
+    <li><a href="/registrazione?prodotto=973_CARCRE_NOPROMO">Abb.to SETTIMANALE </a></li>
+    <li><a href="/registrazione?prodotto=11_CARCRE_NOPROMO">Abb.to MENSILE </a></li>
+    <li><a href="/registrazione?prodotto=947_CARCRE_GRATIS3MESICC">Sfoglia 15 Mesi con 3 Mesi in regalo</a></li>     
+   
+		</ul>
+	</li>
+	
+			<li><a href="/promozioni">Promozioni</a></li>
+		
+			<li><a href="/store">Store</a></li>
+		
+	
+	<li><a href="/faq">FAQ</a></li>
+	
+			<li><a class="dropdown-toggle" href="#" onclick="openLoginModal()" id="navLogin">Accedi</a></li>
+		<script>
+			function openLoginModal()
+			{
+				$('.modal').modal('hide');
+				$('#loginModal').modal();
+			}
+		</script>
+		
+	
+
+
+
+
+							
+											
+					
+							<li>
+															
+							
+							<ul class="dropdown-menu dropdown-login">
+								<form id="loginForm" name="formLogin" method="post" action="/php/SD/login.php">
+								    								<input name="username_box" id="username" placeholder="Username" type="text"> 
+								<input name="password_box" id="password" placeholder="Password" type="password">
+								<input name="menu-login" value="1" type="hidden">
+								<div row="" style="text-align:center;margin:10px 0px">
+								    <button type="submit" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">
+									Login
+								    </button>
+								</div>
+								<div class="rememb-pass">
+								
+								<a title=" " href="password"><span class="highlighted">Password smarrita ?</span></a>
+								</div>
+								<div class="rememb-pass">
+								
+								<a title=" " href="profilo?page=register&amp;mode=register"><span class="highlighted">Registrati</span></a>
+								</div>
+							    </form>
+							</ul>
+														</li>
+						</ul>
+						
+						
+					</div><!--/.nav-collapse -->
+			    </div><!--/.container-fluid -->
+			</div>
+		    </header>
+			    		
+	    <section id="content" class="container mainContainer superHead">
+		
+			<div class="container">
+		
+		<div class="row">
+			<div class="col-xs-12 col-sm-8">
+				<div class="row">
+					<h3 class="nero"><small>Sunday 13 May 2018</small><br>Il Giornale di Domani </h3>
+				</div>
+			
+			
+				<div class="row">
+					<div class="blu s19">Quei parti sospetti delle romane a Kiev: il giallo in Procura</div>
+					
+					<p></p>
+					
+					<div class="rosso s14">di Lorenzo De Cicco</div>
+					<p></p>
+					
+					<div class="nero s18 text-justify">Nel palazzone davanti al Tempio di Portuno che ospita l’Anagrafe di Roma, c’è una pila di 40 fascicoli, cresciuta solo nell’ultimo anno. Ma si arriva a 250, forse anche di più, facendo partire il conteggio dal 2009, quando queste strane trasferte verso Kiev hanno avuto inizio. Funziona così: partono in due - coppie regolarmente sposate - tornano in tre, anzi più spesso in quattro, perché il più delle volte si tratta di parti gemellari.</div>
+				</div>
+				
+				<div class="row"><hr></div>
+				
+				<div class="row text-justify">
+					<span class="rosso s16">Per continuare a leggere <span class="evidenzia">l'articolo</span>, l'edizione del <span class="evidenzia">Messaggero dalla mezzanotte</span> e <span class="evidenzia">tutte le edizioni del giornale</span>, attiva subito la promozione a te dedicata.</span>
+				</div>
+				
+				<hr>
+			
+				<div class="row">
+											<div class="col-xs-12 text-center">	
+							<p class="s18 blu"></p>
+							<div class="bianco bblu rounded clickable text-center p10" onclick="document.location.href='http://shop.ilmessaggero.it/php/WS/serviceGatewayWWW.php?param={&quot;app&quot; : &quot;shop.ilmessaggero.it&quot;, &quot;ssid&quot; : &quot;&quot;, &quot;userid&quot; : null, &quot;pwd&quot; : null, &quot;hashcode&quot; : &quot;Re7nYz2u5TdksN0VTqjsxw==&quot;, &quot;idSito&quot; : 11, &quot;idCampagna&quot; : 29, &quot;backUrl&quot; : &quot;&quot;}'" }="">
+								<h3>Scopri la Promo<br><small class="bianco"></small></h3>
+							</div>
+						</div>
+									</div>
+			</div>
+			
+			<div class="col-xs-12 col-sm-4">
+				<div class="col-xs-12 brosso bianco text-center rounded p5">
+					<em>Il Giornale di Domani</em> edizione solo in digitale dalle 00:00 compreso nell' abbonamento digital
+				</div>
+				
+				<div class="col-xs-12 text-center m15">
+					<img class="img-responsive shadow" src="http://tablet.ilmessaggero.it/_deploy/MGD/20180513/jpegipad/DOM_1_ca48e3c32b.jpg" alt="Il giornale di Domani">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div style="height:100px"></div>
+	
+		
+		
+					<div class="push"></div>
+				
+		
+	    </section>
+		
+		
+			
+							
+			<section id="footer" style="border-top: 1px solid #999">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-4 clickable text-center" onclick="changeVersion('tablet')">
+							<center><img class="img-responsive" src="../img/RS/tablet.png" alt="" title=""></center>
+						</div>
+						
+						<div class="col-xs-4 clickable text-center" onclick="changeVersion('smartphone')">
+							<center><img class="img-responsive" src="../img/RS/smartphone.png" alt="" title=""></center>
+						</div>
+						
+						<div class="col-xs-4 clickable text-center" onclick="changeVersion('pc')">
+							<center><img class="img-responsive" src="../img/RS/pc.png" alt="" title=""></center>
+						</div>	
+					</div>
+					
+					<div class="row">
+						<div class="col-xs-12 highlighted m15">
+								© 2018 Ced Digital &amp; Servizi S.r.l. Via Barberini 28, 00187 Roma P.IVA 11476541005
+						</div>
+					</div>
+				</div>
+			</section>			
+	    	</div>
+	
+    
+
+    <script src="/js/RS/webtrekk.min.js"></script><div id="webtrekk-image" style="width: 0px; height: 0px; overflow: hidden;"></div>
+    <script src="/js/manager.evt.js"></script>
+	
+	<!--	WEBTREKK	-->
+<script>
+	function getContentIdByURL()
+	{
+		var url = document.location.href;
+
+		if(url && url !== null)
+		{
+			var contentId = url.split("?")[0].toLowerCase();
+			var params = url.split("?")[1];
+			var prodottoId = params.match("prodotto=[a-zA-Z0-9_]+");
+			if(prodottoId && prodottoId !== null)
+			{
+				contentId = contentId + "?" + prodottoId;
+			}
+
+			return contentId;
+	   }
+
+	   return "no_content";
+	};
+
+
+	function getExistsParameterByName(name)
+	{
+		var match = RegExp('[?&]' + name).exec(window.location.search);
+		if (match)
+			return name;
+		else
+			return 'no-refresh';
+	}
+	
+	editore = document.domain.split(".");
+
+	var pageConfig =
+	{
+		linkTrack 	: "link",							heatmap 	: "", 								form 		: "", 								contentId	: document.location.href
+	};
+
+
+	var wt_map_tree= document.location.href;
+
+	
+	var wt = new webtrekkV3(pageConfig);
+
+
+	wt.contentGroup = {	1 : "Aggregato Caltagirone Editore",
+						2 : "web",
+						3 : "web - " + editore[0] + "." + editore[1],
+						4 : "web - " + editore[0] + "." + editore[1] + " -  HOME "						};
+
+	refresh = getExistsParameterByName("refresh_ce");
+
+	wt.customParameter = {	1 : document.title,
+							2 : refresh,
+							3 : "na" 					};
+
+
+
+	wt.product 			= "Edizione Digitale - "; 		wt.productCategory = 	{	1 : editore, 															2 : "" 											};
+
+
+	
+	wt.ignorePrerendering = "true";
+	wt.sendinfo();
+</script>
+
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2012 Nielsen Online -->
+
+
+<script src="//secure-it.imrworldwide.com/v60.js"></script>
+<script>
+	var pvar = { cid: "ilmessaggero-it", content: "0", server: "secure-it" };
+	var feat = { check_cookie: 0 };
+	var trac = nol_t(pvar, feat);
+	trac.record().post();
+</script>
+
+<noscript>
+<div><img src="//secure-it.imrworldwide.com/cgi-bin/m?ci=ilmessaggero-it&amp;cg=0&amp;cc=0&amp;ts=noscript" width="1" height="1" alt=""/></div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 -->
+
+
+<!--	BLUEKAY				-->
+<!-- 	Begin BlueKai Tag 	-->
+<script type="text/javascript">
+    window.bk_async = function()
+	{							
+			
+					BKTAG.doTag( 31493, 1);
+		    };
+
+    (function()
+		{
+        var scripts = document.getElementsByTagName('script')[0];
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = "//tags.bkrtx.com/js/bk-coretag.js";
+        scripts.parentNode.insertBefore(s, scripts);
+    }());	
+	
+		
+</script>
+<!-- End BlueKai Tag -->
+	
+	<noscript><div><img src="http://shopilgazzettinoitalia01.wt-eu02.net/957551111539418/wt.pl?p=326,0" height="1" width="1"  alt=' ' title=' ' /></div></noscript>
+	<!-- /Webtrekk -->
+	
+	<style>
+		/*	modifica per surface	*/
+		@-ms-viewport { width: device-width; }
+	</style>	
+	
+	
+		
+
+<div id="cookieLawBanner" style="font-family: sans-serif; position:fixed; z-index:1000000; font-size: 14px; color: #fff; bottom:0; left:0; right:0; text-align:center; background: rgba(0,0,0,0.8); padding: 20px;">            <a href="javascript:cookieLaw.acceptCookies();void(0);" class="close" style="position: absolute; font-size: 24px; top: 5px; right: 10px; color: #fff; text-decoration: none;">×</a>            <div class="messaggio">                Questo sito utilizza i <b>cookie</b> per migliorare la tua esperienza di navigazione ed inviarti pubblicità e servizi in linea con le tue preferenze.                 <a href="//utils.cedsdigital.it/cookies/informativa.pdf" class="moreinfo" target="_blank" style="color: #00CCBD; display: inline-block;">Se vuoi saperne di più clicca qui</a>.<br>                <b>Chiudendo questo banner, scorrendo questa pagina o cliccando qualunque suo elemento acconsenti all'uso dei cookie.</b>            </div>        </div><iframe name="__bkframe" id="__bkframe" title="bk" style="border: 0px none; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px, 0px, 0px, 0px);" src="about:blank"></iframe><iframe src="https://cdn-gl.imrworldwide.com/novms/html/ls.html" style="display: none;" id="lsframe" height="0" width="0"></iframe></body></html>

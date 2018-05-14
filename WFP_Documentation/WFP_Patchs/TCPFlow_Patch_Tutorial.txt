@@ -1,0 +1,237 @@
+This tutorial has been created for patching a TCPFlow version downloaded from http://digitalcorpora.org/downloads/tcpflow/old/, http://digitalcorpora.org/downloads/tcpflow/, or https://github.com/simsong/tcpflow/releases (more effort).
+
+In order to match positions in the TCP flow (i.e. offset in the
+file) to TCP packets and thus timestamps, we modified tcpflow as follows. Whenever a TLS record is written to the corresponding file, we write the offset in the file and the timestamp of the TCP packet to the .time file for this flow.
+
+###############################################################################
+###############################################################################
+##### Patching of Timestamp Output of TLS Streams (>= 1.4.0)
+##### 1), 2a), 3) not necessary in >= 1.4.5
+###############################################################################
+###############################################################################
+1) In tcpip.h modify the function signature of store_packet():
+void store_packet(const u_char *data, uint32_t length, int32_t delta);
+
+---->>>>
+
+void store_packet(const u_char *data, uint32_t length, int32_t delta, struct timeval ts);
+
+
+2) In tcpip.cpp 
+   a) modify the function signature of store_packet():
+void tcpip::store_packet(const u_char *data, uint32_t length, int32_t delta)
+
+---->>>>
+
+void tcpip::store_packet(const u_char *data, uint32_t length, int32_t delta, struct timeval ts)
+
+
+   b) write time-information to a file in the function store_packet():
+    /* Update the database of bytes that we've seen */
+    if(seen) update_seen(seen,pos,length);
+
+    /* Update the position in the file and the next expected sequence number */
+    pos += length;
+    nsn += length;			// expected next sequence number
+---->>>>
+    /* Update the database of bytes that we've seen */
+    if(seen) update_seen(seen,pos,length);
+
+    FILE* fptime = fopen((flow_pathname + ".time").c_str(), "a");
+    fprintf(fptime, "%u %lu %lu\n", offset, ts.tv_sec, ts.tv_usec);
+    fclose(fptime);
+
+    /* Update the position in the file and the next expected sequence number */
+    pos += length;
+    nsn += length;			// expected next sequence number
+
+
+3) In tcpdemux.cpp change the function call of store_packet():
+state->store_packet(data, length, seq, syn_set);
+
+---->>>>
+
+state->store_packet(data, length, seq, ts, syn_set);
+
+
+###############################################################################
+###############################################################################
+##### Patching of Timestamp Output of TLS Streams (>= 1.1.0 < 1.4.0)
+###############################################################################
+###############################################################################
+1) In flow.h modify the function signature of store_packet():
+void store_packet(const u_char *data, u_int32_t length, u_int32_t seq, int syn_set);
+
+---->>>>
+
+void store_packet(const u_char *data, u_int32_t length, u_int32_t seq, const struct timeval *ts, int syn_set);
+
+
+2) In tcpip.cpp
+   a) add an else case to process_tcp():
+	    } else if (IS_SET(tcp_header->th_flags, TH_SYN)) {
+		state->dir = dir_cs;
+		DEBUG(50) ("packet is handshake SYN");
+		state->isn++;
+	    }
+	}
+	DEBUG(50) ("got TCP segment with no data");
+    }
+
+---->>>>
+
+	    } else if (IS_SET(tcp_header->th_flags, TH_SYN)) {
+		state->dir = dir_cs;
+		DEBUG(50) ("packet is handshake SYN");
+		state->isn++;
+	    }
+	} else {
+	    if (IS_SET(tcp_header->th_flags, TH_SYN) && IS_SET(tcp_header->th_flags, TH_ACK)) {
+		state->dir = dir_sc;
+		DEBUG(50) ("packet is handshake SYN/ACK");
+		/* If the SYN flag is set the first data byte is offset by one,
+		 * account for it (note: if we're here we have just created
+		 * state, so it's safe to change isn).
+		 */
+		state->isn = seq - state->pos +1;
+		} else if (IS_SET(tcp_header->th_flags, TH_SYN)) {
+		state->dir = dir_cs;
+		DEBUG(50) ("packet is handshake SYN");
+		state->isn = seq - state->pos +1;
+		}
+	}
+	DEBUG(50) ("got TCP segment with no data");
+    }
+
+   b) change the function call of store_packet():
+state->store_packet(data, length, seq, syn_set);
+
+---->>>>
+
+state->store_packet(data, length, seq, ts, syn_set);
+
+   c) modify the function signature of store_packet():
+void tcpip::store_packet(const u_char *data, u_int32_t length, u_int32_t seq, int syn_set)
+
+---->>>>
+
+void tcpip::store_packet(const u_char *data, u_int32_t length, u_int32_t seq, const struct timeval *ts, int syn_set)
+
+
+   d) write time-information to a file in the function store_packet():
+	fflush(fp);
+    }
+
+    /* remember the position for next time */
+    pos = offset + length;
+
+---->>>>
+	fflush(fp);
+    }
+
+    FILE* fptime = fopen((flow_pathname + ".time").c_str(), "a");
+    fprintf(fptime, "%u %lu %lu\n", offset, ts->tv_sec, ts->tv_usec);
+    fclose(fptime);
+
+    /* remember the position for next time */
+    pos = offset + length;
+
+
+###############################################################################
+###############################################################################
+##### Patching of Timestamp Output of TLS Streams (< 1.1.0)
+###############################################################################
+###############################################################################
+1) In "util.c" add output directory to case AF_INET:
+snprintf(ring_buffer[ring_pos],sizeof(ring_buffer[ring_pos]),
+	    "%03d.%03d.%03d.%03d.%05d-%03d.%03d.%03d.%03d.%05d%s",
+	    flow.src[12], flow.src[13], flow.src[14], flow.src[15],
+	    flow.sport,
+	    flow.dst[12], flow.dst[13], flow.dst[14], flow.dst[15],
+	    flow.dport,vlan);
+
+---->>>>
+
+snprintf(ring_buffer[ring_pos],sizeof(ring_buffer[ring_pos]),
+	    "%s/%03d.%03d.%03d.%03d.%05d-%03d.%03d.%03d.%03d.%05d%s",
+	    outdir,
+	    flow.src[12], flow.src[13], flow.src[14], flow.src[15],
+	    flow.sport,
+	    flow.dst[12], flow.dst[13], flow.dst[14], flow.dst[15],
+	    flow.dpo
+
+2) In tcpflow.h modify the function signature of store_packet():
+void store_packet(flow_t flow, flow_state_t *state, const u_char *data, u_int32_t length, u_int32_t seq, int syn_set);
+
+---->>>>
+
+void store_packet(flow_t flow, flow_state_t *state, const u_char *data, u_int32_t length, u_int32_t seq, const struct timeval *ts, int syn_set);
+
+
+3) In tcpip.c
+   a) add an else case to process_tcp():
+      } else if (IS_SET(tcp_header->th_flags, TH_SYN)) {
+	SET_BIT(state->flags, FLOW_DIR_CS);
+	DEBUG(50) ("packet is handshake SYN");
+	state->isn++;
+      }
+    }
+    DEBUG(50) ("got TCP segment with no data");
+    return;
+  }
+
+---->>>>
+
+      } else if (IS_SET(tcp_header->th_flags, TH_SYN)) {
+	SET_BIT(state->flags, FLOW_DIR_CS);
+	DEBUG(50) ("packet is handshake SYN");
+	state->isn++;
+      }
+    } else {
+      if (IS_SET(tcp_header->th_flags, TH_SYN)
+	  && IS_SET(tcp_header->th_flags, TH_ACK)) {
+	SET_BIT(state->flags, FLOW_DIR_SC);
+	DEBUG(50) ("packet is handshake SYN/ACK");
+	/* If the SYN flag is set the first data byte is offset by one,
+	   account for it (note: if we're here we have just created
+	   state, so it's safe to change isn). */
+	state->isn = seq - state->pos +1;
+      } else if (IS_SET(tcp_header->th_flags, TH_SYN)) {
+	SET_BIT(state->flags, FLOW_DIR_CS);
+	DEBUG(50) ("packet is handshake SYN");
+	state->isn = seq - state->pos +1;
+      }
+    }
+    DEBUG(50) ("got TCP segment with no data");
+    return;
+  }
+
+   b) change the function call of store_packet():
+store_packet(this_flow, state, data, length, seq, IS_SET(tcp_header->th_flags, TH_SYN));
+
+---->>>>
+
+store_packet(this_flow, state, data, length, seq, ts, IS_SET(tcp_header->th_flags, TH_SYN));
+
+   c) modify the function signature of store_packet():
+void store_packet(flow_t flow, flow_state_t *state, const u_char *data, u_int32_t length, u_int32_t seq, int syn_set);
+
+---->>>>
+
+void store_packet(flow_t flow, flow_state_t *state, const u_char *data, u_int32_t length, u_int32_t seq, const struct timeval *ts, int syn_set);
+
+   d) write time-information to a file in the function store_packet():
+  fflush(state->fp);
+
+  /* remember the position for next time */
+  state->pos = offset + length;
+
+---->>>>
+  fflush(state->fp);
+  
+  FILE* fptime = fopen (strcat(flow_filename(state->flow), ".time"), "a");
+  fprintf(fptime, "%u %lu %lu\n", offset, ts->tv_sec, ts->tv_usec);
+  fclose(fptime);
+
+  /* remember the position for next time */
+  state->pos = offset + length;

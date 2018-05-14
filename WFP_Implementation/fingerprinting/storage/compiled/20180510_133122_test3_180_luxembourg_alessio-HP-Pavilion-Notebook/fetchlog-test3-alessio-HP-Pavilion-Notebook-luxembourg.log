@@ -1,0 +1,20 @@
+-------------------- NEW RUN --------------------
+Starting
+gio 10 mag 2018, 13.31.22, AEST
+Script: saving information about used TBB
+pref("torbrowser.version", "7.5.2");
+user_pref("extensions.enabledAddons", "torbutton%40torproject.org:1.9.8.6,tor-launcher%40torproject.org:0.2.14.4,%7Be4a8a97b-f2ed-450b-b12d-ee082ba24781%7D:3.17,%7B972ce4c6-7e08-4474-a285-3208198ce6fd%7D:52.7.2");
+Script: emptying status file
+Script: initializing number of streams and kill streams status file
+Script: saving own ip
+Script: continuosly saving ips of tor entry nodes
+Script: checking for duplicate urls
+Script: randomize url file and remove duplicates
+Script: starting tcpdump
+Script: starting Firefox
+Processing file run-luxembourg-random-00000000.txt
+everything went ok
+Script: killing programs
+-------------------Fetched 2 URLs once
+Finished
+gio 10 mag 2018, 13.34.32, AEST

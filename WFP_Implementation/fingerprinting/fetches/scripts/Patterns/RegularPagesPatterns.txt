@@ -1,0 +1,22 @@
+<p id="errorShortDescText">Firefox can’t establish a connection to the server
+moz-neterror:page?e=error&u=url&d=desc
+chrome://browser/content/newtab/newTab.css
+503 Service Unavailable
+504 Gateway Time-out
+404 - Not Found
+404 Not Found
+403 Forbidden
+401 Authorization Required
+>Forbidden
+>Not Found
+>Authorization Required
+>Fatal error
+>Critical Error
+>The page cannot be found
+>Error 403 Access is denied
+HTTP Status 403 - Access is denied
+>Error. Page cannot be displayed
+>Object not found!
+<title>Untrusted Connection</title>
+Unable to connect
+The connection was reset

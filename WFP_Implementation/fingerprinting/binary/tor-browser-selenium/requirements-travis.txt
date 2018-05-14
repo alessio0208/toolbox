@@ -1,0 +1,4 @@
+stem
+pytest-cov
+pytest-rerunfailures
+psutil

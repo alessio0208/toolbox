@@ -1,0 +1,3 @@
+addons.mozilla.org:HPKP	0	17612	1526919875834,1,1,WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=
+addons.mozilla.org:HSTS	0	17612	1553271875833,1,0
+www.torproject.org:HSTS	0	17612	1537503431912,1,0

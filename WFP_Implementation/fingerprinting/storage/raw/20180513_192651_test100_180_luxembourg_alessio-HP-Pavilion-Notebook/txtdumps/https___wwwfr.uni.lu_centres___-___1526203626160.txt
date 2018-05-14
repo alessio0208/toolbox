@@ -1,0 +1,1473 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+			<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+
+
+									<link rel="stylesheet" type="text/css" href="/design/plain/stylesheets/cupertino/jquery-ui-1.10.2.custom.min.css">
+							<link rel="stylesheet" type="text/css" href="/design/plain/stylesheets/jquery-ui-override.min.css?2">
+							<link rel="stylesheet" type="text/css" href="/design/plain/stylesheets/org_ul.css?2">
+							<link rel="stylesheet" type="text/css" href="/design/plain/stylesheets/classes.min.css">
+							<link rel="stylesheet" type="text/css" href="/design/plain/stylesheets/uniLu.min.css?3">
+			
+
+			<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+
+			
+				<script async="" src="//www.google-analytics.com/analytics.js"></script><script id="facebook-jssdk" src="//connect.facebook.net/fr_FR/sdk.js"></script><script src="https://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-tools/1.2.7/jquery.tools.min.js" type="text/javascript"></script>
+				<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+				<script src="/design/plain/javascript/js.cookie.js"></script>
+						
+
+
+							<script type="text/javascript" src="/design/plain/javascript/tools/bul.min.js"> </script>
+							<script type="text/javascript" src="/design/plain/javascript/track_downloads.js"> </script>
+							<script type="text/javascript" src="/design/plain/javascript/uniLu.min.js"> </script>
+			
+			
+						    			
+			
+ 
+
+<title>Centres</title>
+
+    
+    
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-language" content="fr-FR">
+    
+    
+    
+    
+
+        <meta name="author" content="Université du Luxembourg">
+        <meta name="copyright" content="Université du Luxembourg">
+        
+<link rel="Home" href="/" title="UL Home">
+<link rel="Index" href="/">
+<link rel="Top" href="/" title="UL Home">
+<link rel="Shortcut icon" href="/design/plain/images/ul.ico" type="image/x-icon">
+
+			
+
+			
+			
+
+			
+<!--[if IE 7]> <style type="text/css"> @import url(/design/plain/stylesheets/uni.lu.ie7.css); </style> <![endif]-->
+<!--[if IE 8]> <style type="text/css"> @import url(/design/plain/stylesheets/uni.lu.ie8.css); </style> <![endif]-->
+<!--[if IE 9]> <style type="text/css"> @import url(/design/plain/stylesheets/uni.lu.ie9.css); </style> <![endif]-->
+
+			 
+			
+			
+			
+			
+
+			
+			<meta property="fb:app_id" content="130849203923139">
+			<meta property="og:site_name" content="Université du Luxembourg">
+			<meta property="og:title" content="Centres">
+			<meta property="og:url" content="https://wwwfr.uni.lu/centres">
+							
+						<meta property="og:type" content="article">
+			<meta property="article:publisher" content="https://www.facebook.com/uni.lu">
+			
+			
+			<meta name="twitter:card" content="summary">
+			<meta name="twitter:site" content="@uni_lu">
+			<meta name="twitter:title" content="Centres">
+						
+
+			
+			
+							<link rel="canonical" href="https://wwwfr.uni.lu/centres">
+				
+
+		<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in{animation-duration:250ms;animation-name:fb_bounce_in}.fb_customer_chat_bounce_out{animation-duration:250ms;animation-name:fb_fade_out}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_fade_out{from{opacity:1}to{opacity:0}}@keyframes fb_bounce_in{0%{opacity:0;transform:scale(.8, .8);transform-origin:100% 100%}10%{opacity:.1}20%{opacity:.2}30%{opacity:.3}40%{opacity:.4}50%{opacity:.5}60%{opacity:.6}70%{opacity:.7}80%{opacity:.8;transform:scale(1.03, 1.03)}90{opacity:.9}100%{opacity:1;transform:scale(1, 1)}}</style></head>
+
+		<body>
+		    
+		    
+		    <script>
+			  window.fbAsyncInit = function() {
+			    FB.init({
+			      appId      : '130849203923139',
+			      xfbml      : true,
+			      version    : 'v2.4'
+			    });
+			  };
+			
+			  (function(d, s, id){
+			     var js, fjs = d.getElementsByTagName(s)[0];
+			     if (d.getElementById(id)) {return;}
+			     js = d.createElement(s); js.id = id;
+			     js.src = "//connect.facebook.net/fr_FR/sdk.js";
+			     fjs.parentNode.insertBefore(js, fjs);
+			   }(document, 'script', 'facebook-jssdk'));
+			</script>
+		    
+            
+
+			<div id="all">
+			<div id="wrap">
+			<div id="header">							
+<div id="langues_box">
+	<div id="langues">
+	  <table>
+	  <tbody><tr>
+	  <td class="focus">
+	  <a href="https://wwwfr.uni.lu/centres">FR</a>
+	  </td>
+	  <td>
+	  <a href="https://wwwde.uni.lu/centres">DE</a>
+	  </td>
+	  <td>
+	  <a href="https://wwwen.uni.lu/centres">EN</a>
+	  </td></tr>
+	  </tbody></table>
+	</div>
+</div>
+
+<a href="/">
+
+			<img src="/design/plain/images/title.uni.lu.Centres_fr.png" alt="University of Luxembourg">
+	</a>
+
+ 
+</div>
+
+
+
+			<div id="topmenu">
+
+
+			<div id="menu">
+			<ul id="nav">
+															
+									
+
+
+
+			
+
+
+
+																
+
+
+
+																
+
+
+
+																
+
+
+
+																
+
+
+
+																
+
+
+
+																
+
+
+
+																
+
+
+
+																
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+							
+
+
+
+																																																																													
+																					
+											<li class="paddingFR_1">
+						<div class="blue_line"></div>
+																	<a href="/universite">
+									Université</a>
+								
+										
+																					<ul class="paddingFR_1">
+																																																																	<li>
+															<div>
+																<div class="inner">
+																																			<a href="/universite/presentation">Présentation</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/universite/documents_officiels">Documents officiels</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/bibliotheque"> Bibliothèque</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/centre_de_langues_de_l_universite_du_luxembourg_ullc"> Centre de Langues</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/universite/science_public">Science &amp; public</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/etudiants/culture_sports"> Cultures &amp; Sports</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/sustainability"> Sustainability</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/universite/high_performance_computing">High Performance Computing</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/universite/belval_nous_voici">Belval, nous voici !</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/universite/soutenir_l_universite">Soutenir l'Université</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/universite/actualites">Actualités</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/la_vie_au_luxembourg"> La vie au Luxembourg</a>
+																																																			</div>
+															</div>
+														</li>
+																																																													</ul>
+																	</li>
+
+					
+
+
+																																																								
+																					
+											<li class="paddingFR_2">
+						<div class="blue_line"></div>
+																	<a href="/international">
+									International</a>
+								
+										
+																					<ul class="paddingFR_2">
+																																																																	<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/international"> Accueil</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/a_la_une">À la une</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/mobilite">Mobilité</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/euraxess">EURAXESS</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/accords_interuniversitaires">Accords interuniversitaires</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/partenaires">Partenaires</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/universite_de_la_grande_region_unigr">Université de la Grande Région - UniGR</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/programmes_europeens">Programmes européens</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/courses_taught_in_english">Courses taught in English</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/centre_de_langues_de_l_universite_du_luxembourg_ullc"> Multilinguisme</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																					<a href="https://tad17.uni.lu/" target="_blank">Transatlantic Dialogue</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/confucius_institute">Confucius Institute</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/liens">Liens</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/international/videos">Vidéos</a>
+																																	</div>
+															</div>
+														</li>
+																																				</ul>
+																	</li>
+
+					
+
+
+																																																								
+																					
+											<li class="paddingFR_3">
+						<div class="blue_line"></div>
+																	<a href="/recherche">
+									Recherche</a>
+								
+										
+																					<ul class="paddingFR_3">
+																																																																	<li>
+															<div>
+																<div class="inner">
+																																			<a href="/recherche/priorites_de_recherche">Priorités de recherche</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/recherche/research_in_numbers">Research in numbers </a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/recherche/unites_centres_de_recherche">Unités &amp; centres de recherche</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/recherche/chaires">Chaires</a>
+																																	</div>
+															</div>
+														</li>
+																																																																																											<li>
+															<div>
+																<div class="inner">
+																																																					<a href="http://orbilu.uni.lu/" target="_blank">Publications - ORBilu</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/formations/doctoral_education"> Études doctorales</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/recherche/robert_schuman_institute_of_european_affairs">Robert Schuman Institute of European Affairs</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/recherche/chercheurs_recherche">Chercheurs &amp; recherche</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/recherche/contact_service">Contact &amp; Service</a>
+																																	</div>
+															</div>
+														</li>
+																																																																																																															</ul>
+																	</li>
+
+					
+
+
+																																																								
+																																		
+											<li class="paddingFR_4 selected">
+							<div class="blue_line_selected"></div>
+															<a href="/centres">
+								Centres</a>
+							
+									
+																			<ul class="paddingFR_4">
+																																																												<li>
+														<div>
+															<div class="inner">
+																																																																					<a href="/snt"> Interdisciplinary Centre for Security, Reliability and Trust </a>
+																																																</div>
+														</div>
+													</li>
+																																																													<li>
+														<div>
+															<div class="inner">
+																																																																					<a href="/lcsb"> Luxembourg Centre for Systems Biomedicine</a>
+																																																</div>
+														</div>
+													</li>
+																																																													<li>
+														<div>
+															<div class="inner">
+																																																																					<a href="/c2dh"> Luxembourg Centre for Contemporary and Digital History</a>
+																																																</div>
+														</div>
+													</li>
+																																	</ul>
+															</li>
+
+					
+
+
+																																																								
+																					
+											<li class="paddingFR_5">
+						<div class="blue_line"></div>
+																	<a href="/facultes">
+									Facultés</a>
+								
+										
+																					<ul class="paddingFR_5">
+																																																																	<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/fstc"> Faculté des Sciences, de la Technologie et de la Communication</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/fdef"> Faculté de Droit, d’Économie et de Finance</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/flshase"> Faculté des Lettres, des Sciences Humaines, des Arts et des Sciences de l’Éducation</a>
+																																																			</div>
+															</div>
+														</li>
+																																				</ul>
+																	</li>
+
+					
+
+
+																																																								
+																					
+											<li class="paddingFR_6">
+						<div class="blue_line"></div>
+																	<a href="/formations">
+									Formations</a>
+								
+										
+																					<ul class="paddingFR_6">
+																																																																	<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/etudiants/demandes_d_admission_reinscriptions"> Demandes d'admission &amp; réinscriptions</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/formations/bachelors">Bachelors</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/formations/masters">Masters</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/formations/doctoral_education">Doctoral Education</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/formations/incubator">Incubator</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/formations/formations_qualifiantes">Formations qualifiantes</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/formations/formations_continues">Formations continues</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/formations/auditeurs_libres">Auditeurs libres </a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/formations/temoignages">Témoignages</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/formations/brochures_etudes">Brochures études</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/universite/presentation/rankings_accreditations"> Rankings &amp; accreditations</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/universite/presentation/organigrammes/organigramme_rectorat_administration_centrale/service_des_etudes_et_de_la_vie_etudiante"> Contact</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																																																																																								</ul>
+																	</li>
+
+					
+
+
+																																																								
+																					
+											<li class="paddingFR_7">
+						<div class="blue_line"></div>
+																	<a href="/etudiants">
+									Étudiants</a>
+								
+										
+																					<ul class="paddingFR_7">
+																																																																	<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/demandes_d_admission_reinscriptions">Demandes d'admission &amp; réinscriptions</a>
+																																	</div>
+															</div>
+														</li>
+																																																																																											<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/bureau_d_accueil">Bureau d'accueil</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/informations_utiles_de_a_a_z">Informations utiles de A à Z</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/decouvrir_l_universite">Découvrir l'Université</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/career_centre">Career Centre</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/formations/incubator"> Incubator</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/brochures_etudes">Brochures études</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/les_etudiants_et_l_argent">Les étudiants et l'argent</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/mobilite">Mobilité</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/logement">Logement</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/culture_sports">Culture &amp; Sports</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/student_associations">Student Associations</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/etudiants/refugees">Refugees</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/universite/presentation/organigrammes/organigramme_rectorat_administration_centrale/service_des_etudes_et_de_la_vie_etudiante"> Contact</a>
+																																																			</div>
+															</div>
+														</li>
+																																				</ul>
+																	</li>
+
+					
+
+
+																																																								
+																					
+											<li class="paddingFR_8">
+						<div class="blue_line"></div>
+																	<a href="/contact">
+									Contact</a>
+								
+										
+																					<ul class="paddingFR_8">
+																																																																	<li>
+															<div>
+																<div class="inner">
+																																			<a href="/contact/rechercher_une_personne">Rechercher une personne</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																																																									<a href="/presse"> Presse</a>
+																																																			</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/contact/campus_de_belval">Campus de Belval</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/contact/campus_de_kirchberg">Campus de Kirchberg</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/contact/campus_de_limpertsberg">Campus de Limpertsberg</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/contact/batiment_k2">Bâtiment K2</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/contact/batiment_weicker">Bâtiment Weicker</a>
+																																	</div>
+															</div>
+														</li>
+																																																																		<li>
+															<div>
+																<div class="inner">
+																																			<a href="/contact/organising_an_event_on_belval_campus">Organising an event on Belval Campus</a>
+																																	</div>
+															</div>
+														</li>
+																																				</ul>
+																	</li>
+
+					
+
+
+																																																																																																																																																																																																																																																																																																</ul>
+
+
+
+
+
+
+		</div>
+	
+						<div class="search_box">
+
+						<div class="search_image">
+						  <a href="#" onclick="javascript:submitform()"><img src="/design/plain/images/search_16.png" alt="Search" title="Search"></a>
+						</div>
+
+						<div class="search_field">
+						<form name="f1" action="/content/search" method="post">
+						<input class="searchbox" name="SearchText" value="Recherche" onclick="this.value='';" type="text">
+						</form>
+						</div>
+
+
+						</div>
+</div>
+			<div id="topmenu_shadow"> </div>
+
+			<div id="content">
+																								<div id="leftmenu">
+					
+          
+  
+  
+      
+              
+    
+    
+
+
+    
+    
+    
+    
+
+  
+   
+    
+
+   
+    
+   
+    
+
+   
+    
+   
+    
+    
+    
+    
+    
+
+  
+  
+
+        
+    
+        
+        
+    <ul class="level2">
+       
+                  
+                  
+    <!-- 1 -->
+
+     
+       
+
+      <li>
+
+                                          
+                 <a href="/snt" id="a1">
+                     Interdisciplinary Centre for Security, Reliability and Trust </a>
+                    
+ </li>
+
+
+
+
+            
+                        
+            
+                       
+                  
+                  
+    <!-- 1 -->
+
+     
+       
+
+      <li>
+
+                                          
+                 <a href="/lcsb" id="a2">
+                     Luxembourg Centre for Systems Biomedicine</a>
+                    
+ </li>
+
+
+
+
+            
+                        
+            
+                       
+                  
+                  
+    <!-- 1 -->
+
+     
+       
+
+      <li>
+
+                                          
+                 <a href="/c2dh" id="a3">
+                     Luxembourg Centre for Contemporary and Digital History</a>
+                    
+ </li>
+
+
+
+
+            
+                        
+            
+                  
+
+  </ul>
+
+  
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+  
+  
+
+       
+       
+    
+   
+  
+
+
+
+
+
+
+
+
+
+
+    
+
+
+                                
+                                                
+                    
+
+
+
+  				</div>
+				<div id="main">
+					<div class="path">
+ <div class="path_text">
+              
+              <a href="/" title="Page d'accueil">
+           Page d'accueil
+        </a> //
+                          <span class="path-last">
+          Centres
+      </span>
+          
+
+	</div>
+<div class="print">        
+	<a href="https://twitter.com/uni_lu" target="_blank"><img src="/design/plain/images/uni_twitter2.png" title="The University on Twitter"></a>
+	<a href="https://www.facebook.com/uni.lu" target="_blank"><img src="/design/plain/images/uni_facebook2.png" title="The University on Facebook"></a>
+	<a href="https://wwwfr.uni.lu/universite_du_luxembourg_rss" target="_blank"><img src="/design/plain/images/uni_rss2.png" title="The University RSS"></a>
+	<a href="/layout/set/print/centres" target="new">
+		<img src="/design/plain/images/uni_print2.png" alt="Imprimer" title="Imprimer cet écran">
+	</a>
+    
+</div>
+
+</div>
+
+
+					
+																																						<div id="module_result">
+<div class="linedivh1"></div>
+
+               <h1>Centres</h1>
+
+ 	
+	
+
+           
+
+
+
+      <p>Groundbreaking research increasingly requires to cross disciplinary boundaries and to tear down thought silos. Scientists of multidisciplinary backgrounds more and more work together in interdisciplinary teams to address today’s grand challenges and research questions.</p>
+
+<h2>Three interdisciplinary centres</h2><p>The University of Luxembourg has set up three interdisciplinary centres (IC) <b>to ease the cooperation between different scientific disciplines </b>and <b>to exploit the benefits of collaborative research</b>. The ICs bring together teaching and research on cross-cutting issues in several disciplines promoting innovative approaches and new perspectives.</p>
+
+<p>This interdisciplinary approach helps to increase Luxembourg’s footprint by achieving high credibility and international recognition in the academic world. It fosters interaction between academia and industry in the country.</p>
+
+
+<table class="no_padding" cellspacing="0" cellpadding="2" width="100%" border="0">
+
+<tbody><tr>
+<td>  
+<div class="object-left"><div class="content-view-embeddedmedia">
+<div class="class-image">
+
+<div class="attribute-image">
+<p>      
+
+    
+        
+    
+    
+    <a href="/snt" target="_self">                <img src="/var/storage/images/media/images/securityandtruste_logo_carre_802/303057-2-fre-FR/securityandtruste_logo_carre_80.jpg" alt="SnT - Interdisciplinary Centre for Security, Reliability and Trust" title="SnT - Interdisciplinary Centre for Security, Reliability and Trust" height="100" width="100"></a>        
+    
+    
+      </p>
+</div>
+</div>
+</div>
+
+</div>
+
+  </td>
+<td>  <p>The <a href="/snt" target="_self">SnT - Interdisciplinary Centre for Security, Reliability and Trust</a> conducts internationally competitive research in <b>information and communication technology</b> (ICT) with high relevance creating socio-economic impact. In addition to long-term, high-risk research, SnT engages in demand driven collaborative projects with industry and the public sector.</p>
+
+
+  </td>
+
+</tr>
+
+<tr>
+<td>  
+<div class="object-left"><div class="content-view-embeddedmedia">
+<div class="class-image">
+
+<div class="attribute-image">
+<p>      
+
+    
+        
+    
+    
+    <a href="/lcsb" target="_self">                <img src="/var/storage/images/media/images/lcsb_kurz_rgb_mittel/303047-2-fre-FR/lcsb_kurz_rgb_mittel.jpg" alt="LCSB - Luxembourg Centre for Systems Biomedicine" title="LCSB - Luxembourg Centre for Systems Biomedicine" height="100" width="100"></a>        
+    
+    
+      </p>
+</div>
+</div>
+</div>
+
+</div>
+
+  </td>
+<td>  <p>The <a href="/lcsb" target="_self">LCSB - Luxembourg Centre for Systems Biomedicine</a> is accelerating biomedical research by closing the link between <b>systems biology</b> and medical research. Collaboration between biologists, medical doctors, computer scientists, physicists and mathematicians is offering new insights in complex systems like cells, organs, and organisms. These insights are essential for understanding principal mechanisms of disease pathogenesis and for developing new tools in diagnostics and therapy.</p>
+
+
+  </td>
+
+</tr>
+
+<tr>
+<td>  
+<div class="object-left"><div class="content-view-embeddedmedia">
+<div class="class-image">
+
+<div class="attribute-image">
+<p>      
+
+    
+        
+    
+    
+    <a href="/c2dh" target="_self">                <img src="/var/storage/images/media/images/logo_80/1154093-2-fre-FR/logo_80.jpg" alt="Luxembourg Centre for Contemporary and Digital History" title="Luxembourg Centre for Contemporary and Digital History" height="100" width="100"></a>        
+    
+    
+      </p>
+</div>
+</div>
+</div>
+
+</div>
+
+  </td>
+<td>  <p>The <a href="/c2dh" target="_self">C<sup>2</sup>
+DH - Luxembourg Centre for Contemporary and Digital History</a> will be composed of researchers and experts committed to investigating, analysing and promoting the <b>contemporary history of Luxembourg and Europe</b>. The interdisciplinary centre will give new momentum to historical research in Luxembourg. It will pave the way for new methodological and epistemological approaches by applying digital methods to the discipline of contemporary history.</p>
+
+
+  </td>
+
+</tr>
+
+</tbody></table>
+
+
+
+
+
+
+
+
+</div>
+									</div>
+							</div>
+			</div>
+			<div id="footer"><div class="footer1">
+
+	<div class="unilu">
+		<div class="white_line"></div>
+								<h1>Université</h1>
+				<a href="/universite">
+L’Université du Luxembourg est multilingue, internationale et centrée sur la recherche. Le Grand-Duché de Luxembourg est un pays multiculturel, une importante place financière et est le siège de nombreuses institutions de l’Union Européenne et d’entreprises internationales.
+		</a>
+	</div>
+
+	<div class="newsletter">
+		<div class="white_line"></div>
+				<h1>Newsletter</h1>
+				<h2>Abonnez-vous à notre lettre d'information électronique bimensuelle.</h2>
+				<!-- <h3>Sign Up text</h3> -->
+
+				<form method="post" action="/newsletter/subscribe">
+					
+					<div class="nl_button" style="margin:0;">
+					<input class="button" value="S'abonner" type="submit">
+					</div>
+				</form>
+	</div>
+
+	<div class="stayconnected" itemscope="" itemtype="http://schema.org/Organization">
+    <link itemprop="url" href="https://www.uni.lu">
+		<div class="white_line"></div>
+				<h1>Restez branchés!</h1>
+				<!-- L’université dans les médias -->
+
+										    <div class="sn_icon">
+										        <a itemprop="sameAs" href="https://www.facebook.com/uni.lu" target="_blank"><img src="/design/plain/images/sc_facebook.png" alt="L’Université du Luxembourg sur Facebook" title="L’Université du Luxembourg sur Facebook"></a>
+										    </div>
+
+
+
+										    <div class="sn_icon">
+										        <a itemprop="sameAs" href="https://twitter.com/uni_lu" target="_blank"><img src="/design/plain/images/sc_twitter.png" alt="L’Université du Luxembourg sur Twitter" title="L’Université du Luxembourg sur Twitter"></a>
+										    </div>
+
+										    <div class="sn_icon">
+										        <a itemprop="sameAs" href="https://www.linkedin.com/school/university-of-luxembourg/" target="_blank"><img src="/design/plain/images/sc_linkedinv2.png" alt="L’Université du Luxembourg sur Linkedin" title="L’Université du Luxembourg sur Linkedin"></a>
+										    </div>
+										    <div class="sn_icon">
+										        <a itemprop="sameAs" href="https://www.instagram.com/uni.lu" target="_blank"><img src="/design/plain/images/sc_instagramv2.png" alt="L’Université du Luxembourg sur Instagram" title="L’Université du Luxembourg sur Instagram"></a>
+										    </div>
+										    <div class="sn_icon">
+										        <a itemprop="sameAs" href="https://www.youtube.com/luxuni" target="_blank"><img src="/design/plain/images/sc_youtube.png" alt="L’Université du Luxembourg sur YouTube" title="L’Université du Luxembourg sur YouTube"></a>
+										    </div>
+										    <div class="sn_icon"><a href="/universite_du_luxembourg_rss"><img src="/design/plain/images/sc_rss.png" alt="Le flux RSS de l’Université du Luxembourg" title="Le flux RSS de l’Université du Luxembourg"></a>
+										    </div>
+										    										    <div class="sn_icon"><a href="/universite/presentation/galerie_de_photos"><img src="/design/plain/images/sc_photo_gallery.png" alt="La Galerie de photos de l’Université du Luxembourg" title="La Galerie de photos de l’Université du Luxembourg"></a>
+										    </div>
+										    										    <div class="sn_icon"><a href="/universite/presentation/galerie_de_videos"><img src="/design/plain/images/sc_video_gallery.png" alt="La Galerie de vidéos de l’Université du Luxembourg" title="La Galerie de vidéos de l’Université du Luxembourg"></a>
+										    </div>
+										    										    <div class="sn_icon"><a href="/presse/l_universite_dans_les_medias"><img src="/design/plain/images/sc_media.png" alt="L’Université du Luxembourg dans les médias" title="L’Université du Luxembourg dans les médias"></a>
+										    </div>
+
+	</div>
+
+	<div class="contacts">
+		<div class="white_line"></div>
+		<h1>Contact</h1>
+				<ul>
+                   <li>
+                                                        <a href="/contact/rechercher_une_personne">
+                            Rechercher une personne
+                            </a>
+                    </li>
+					<li>
+														<a href="/presse">
+							Presse
+							</a>
+					</li>
+                    <li>
+                                                        <a href="/contact">
+                            Campus &amp; bâtiments
+                            </a>
+                    </li>
+				</ul>
+	</div>
+
+</div>
+
+<div class="footer2">
+<table class="footer">
+   <tbody><tr>
+    <td class="menu">
+          <table>
+            <tbody><tr>
+                                           <td>
+                                           <a href="/universite">
+                           Université</a>
+                                  </td>
+                                                         <td>
+                                           <a href="/international">
+                           International</a>
+                                  </td>
+                                                         <td>
+                                           <a href="/recherche">
+                           Recherche</a>
+                                  </td>
+                                                         <td>
+                                           <a href="/centres">
+                           Centres</a>
+                                  </td>
+                                                         <td>
+                                           <a href="/facultes">
+                           Facultés</a>
+                                  </td>
+                                                         <td>
+                                           <a href="/formations">
+                           Formations</a>
+                                  </td>
+                                                         <td>
+                                           <a href="/etudiants">
+                           Étudiants</a>
+                                  </td>
+                                                         <td>
+                                           <a href="/contact">
+                           Contact</a>
+                                  </td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <td>|</td>
+            <td>  
+          <a href="/notice_legale">
+               Notice légale</a></td>
+            </tr>
+          </tbody></table>
+    </td>
+
+
+<td class="copyright">
+	<table>
+        <tbody><tr>
+            <td>
+      			
+			Copyright © Université du Luxembourg 2018. All rights reserved
+			</td>
+        </tr>
+	</tbody></table>
+</td>
+
+
+
+</tr>
+</tbody></table>
+</div>
+</div>
+
+			</div>
+
+
+<!-- overlayed element, which is styled with external stylesheet -->
+
+
+<!-- make all links with the 'rel' attribute open overlays -->
+
+
+
+
+<script type="text/javascript">
+
+		jQuery(document).ready(function($) {
+			$("div#module_result table.expand_table tr").hide().filter(":first-child").show();
+
+			$("div#module_result table.expand_table tr:first-child td").click(function(){
+				$(this).parent().parent().children("tr").not(":first-child").toggle(400);
+				$(this).toggleClass("expand_tables_up",300);
+			});
+		});
+
+</script>
+
+
+
+
+<script type="text/javascript">
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12854133-1', 'auto');
+  ga('create', 'UA-46770690-1', 'auto', {'name': 'MastersTracker'}); 
+  ga('create', 'UA-48633381-1', 'auto', {'name': 'BachelorsTracker'}); 
+  ga('send', 'pageview');
+  ga('MastersTracker.send', 'pageview');
+  ga('BachelorsTracker.send', 'pageview');
+ 
+</script>
+
+
+
+
+
+
+		
+	
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="https://staticxx.facebook.com/connect/xd_arbiter/r/RQ7NiRXMcYA.js?version=42#channel=f1073cf955c7b72&amp;origin=https%3A%2F%2Fwwwfr.uni.lu" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div></body></html>

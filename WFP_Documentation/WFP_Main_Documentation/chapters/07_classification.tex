@@ -1,0 +1,70 @@
+%!TEX root = ../documentation.tex
+\chapter{Classification}
+\label{chap:classification}
+
+After we generated the features for each webpage, we need to train a classifier on it. For that purpose we use LIBSVM\footnote{\url{http://www.csie.ntu.edu.tw/~cjlin/libsvm/}}, a library for SVMs. LIBSVM provides us with two possibilities to train and test a classifier: manual and automated. If done manually, the user needs to
+\begin{itemize}
+\item Scale the data,
+\item Choose a kernel,
+\item Determine the kernel's best parameters,
+\item Train the SVM using those parameters and the training data,
+\item Test the SVM on the training data.
+\end{itemize}
+
+More information can be found in the guideline\footnote{\url{http://www.csie.ntu.edu.tw/~cjlin/papers/guide/guide.pdf}} for beginners, published by Hsu et al.
+
+LIBSVM is located in folder \texttt{evaluation/}. See Figure \ref{fig:evaluationFolder} for its structure.
+
+\begin{figure}
+\dirtree{%
+.1 \HandRight \, evaluation.
+.2 \HandRight \, <folder>.
+.2 $\star$ <file>.
+}
+\caption{Structure of folder \texttt{evaluation/} \todo[inline]{Adjust structure to represent the real implementation!}}
+\label{fig:evaluationFolder}
+\end{figure}
+
+For an easier start with classification, the process outlined above is completely automated by the script \texttt{easy.py} (can be found in folder \texttt{tools/} in \texttt{libsvm-3.20}). This script only needs a training file and optionally takes a testing file. 
+\begin{verbatim}
+usage: ./easy.py training_file [testing_file]
+
+     Program for automated classification.
+
+training file        Dataset used for training the SVM.
+[testing file]       Dataset used for testing the SVM (optional).
+                     Instances in testing file have to be
+                     distinct from instances in training file!
+\end{verbatim}
+
+Given training and testing files, \texttt{easy.py} trains an SVM according to the process given above and tests it using the data in the testing file. If no testing file is provided, \texttt{easy.py} uses cross-validation. The training file needs to consist of all instances that shall be used for training. Similar, for testing the testing file needs to consist of all those instances intended for testing. As \texttt{generate-feature.py} might have created one output file per webpage, depending on the settings, one needs to merge the output into one file. The resulting file should look like Listing \ref{lst:output2} for \ac{CW} and Listing \ref{lst:output5} for \ac{OW}, respectively.
+
+For this documentation we will limit ourselves to automated classification with \texttt{easy.py}. Note that we have created several enhancements of \texttt{easy.py}, each of which is intended to be used for a special use-case only. \todo[inline]{Which scripts shall be included in the folder, which of them should maybe be explained here or in the appendix?}
+
+\section{Small example for usage of \texttt{easy.py}}
+
+In the following we will show a small example using the data from Listing \ref{lst:output2} which we save in a file \texttt{features\_CW}. This file is copied into the \texttt{tools/}-folder where \texttt{easy.py} is located. Then we execute \texttt{easy.py} with \texttt{features\_CW} as input file.
+
+\begin{verbatim}
+./easy.py features_CW 
+Scaling training data...
+Cross validation...
+Best c=0.03125, g=0.0078125 CV rate=33.3333
+Training...
+Output model: features_CW.model
+\end{verbatim}
+
+As we do not input a file for testing, \texttt{easy.py} performes cross-validation on the training data. The output shown above gives us the resulting parameters for the SVM and the accuracy (rate) in the third line of output:
+\begin{verbatim}
+Best c=0.03125, g=0.0078125 CV rate=33.3333
+\end{verbatim}
+
+Furthermore, \texttt{easy.py} outputs the classifier model \texttt{features\_CW.model}. This is the \emph{classifier} which can be used in \texttt{svm-predict} to classify new test data.
+
+\todo[inline]{Enhance file management of Eval scripts!}
+
+\textbf{OLD STUFF:}\\
+%After generating the features for each webpage trace, we have to input the data into the classifier. For classification we use LIBSVM, the data has to be in a certain format. Therefore, we have performed a certain preprocessing of the features using \texttt{generate-feature.py}. We have stored our generated instances and the matching features accordingly. Each instance is stored in a single line starting with a number indicating the current class label and followed by the corresponding features. In the closed-world scenario, each class has a different unique label. Additionally, every class has the same number of instances and all classes are stored in one file. The classification performed for the closed-world scenario is called an \emph{all-vs-all} approach since each class is evaluated against any other. On the other hand, our open-world scenario follows an \emph{one-vs-all} approach also known as \emph{one-vs-rest} approach. For that purpose, we have separate files for each foreground class. Instances belonging to the foreground are labeled as \texttt{Class 1} while any instance in the background is labeled as \texttt{Class 0}. In the background we do not differentiate between different domains because we simply want to determine whether the current instance is an interesting one, i.e., belonging to the foreground, or not. Overall, we obtain two classes in each input file for the open-world scenario. The features for both scenarios are stored in the following format $i:Feature_i$ where $i$ denotes the number of the current feature and $Feature_i$ represents the value of the $i$-th feature.
+
+%\todo{To filter and remove pages with the same domain from our background data sets in the open-world scenario, we use the Python package tldextract. --> This is done by \texttt{Process.py} that we do not use. May be we stll need some parts from this script?}
+\todo[inline]{Add Process.py to explain Open World Eval}

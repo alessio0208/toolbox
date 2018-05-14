@@ -1,0 +1,261 @@
+%!TEX root = ../documentation.tex
+\section{iMacro Script for Browser Automation}
+\label{sec:imacro_script}
+
+\todo[inline]{Completely outdated! We do not use iMacros anymore!}
+
+% What does the script do with long links or links containing strange characters?
+% Does the script provide an option to set it to WSC mode to restart TBB for each link?
+% Is the torproject website still being fetched at the beginning? If so, maybe we could use that to remove faulty instances of the same circuit.
+
+\begin{verbatim}
+//--------------------------------------------------------------
+// Parameters according to the user's configuration
+// and the list of URL links. 
+
+var path = "/home/asya/Implementation/fingerprinting/crawling/";
+var runidentifier = "1";
+var scriptname ="00000000";
+var timeout = 180;
+var hostname = "asya-Aspire-E1-571";
+var urlfile = "Urls";
+
+var urls = [
+	"check.torproject.org",
+	"http://google.de/",
+];
+
+//--------------------------------------------------------------
+
+var starttime; // Start webpage loading.
+var endtime;   // End webpage loading.
+
+function getMainWindow() {
+  var windowManager = Components.classes['@mozilla.org/appshell/
+         window-mediator;1'].getService();
+  var windowManagerInterface = windowManager.QueryInterface
+        (Components.interfaces.nsIWindowMediator);
+  var eb = windowManagerInterface.getEnumerator("navigator:browser");
+  if (eb.hasMoreElements()) {
+    return eb.getNext().QueryInterface
+        (Components.interfaces.nsIDOMWindow);
+  }
+  return null;
+}
+
+function getBrowser() {
+  return getMainWindow().getBrowser();
+}
+
+// Indicates if a progress change during
+// webpage loading is registered.
+var lastaction = 0;
+
+var firstaction = 0;
+var hardtimeout = 2 * timeout;
+
+const STATE_START = Components.interfaces.
+      nsIWebProgressListener.STATE_START;  
+const STATE_STOP = Components.interfaces.
+      nsIWebProgressListener.STATE_STOP;
+
+var myListener =  
+{  
+  QueryInterface: function(aIID)  
+  {  
+     if (aIID.equals(Components.interfaces.nsIWebProgressListener) ||  
+       aIID.equals(Components.interfaces.nsISupportsWeakReference) ||  
+       aIID.equals(Components.interfaces.nsISupports))  
+       return this;  
+     throw Components.results.NS_NOINTERFACE;  
+  },  
+
+  onProgressChange: function(aWebProgress, aRequest, curSelf, maxSelf, 
+     curTot, maxTot)
+  {
+    lastaction = 0;
+  },  
+
+  onStateChange: function(aWebProgress, aRequest, aFlag, 
+     aStatus) { },   
+  onLocationChange: function(aProgress, aRequest, aURI) { },  
+  onStatusChange: function(aWebProgress, aRequest, aStatus, 
+     aMessage) { },  
+  onSecurityChange: function(aWebProgress, aRequest, aState) { }  
+}	
+
+for (u in urls) {
+	
+   blankurl = "CODE:TAB T=1\n";
+   blankurl += "TAB CLOSEALLOTHERS\n";
+   blankurl += "URL GOTO=about:blank\n";
+   iimPlay(blankurl);
+		
+   var breakTimeout = false;
+   var breakStreamTimeout = false;
+		
+   // Read number of streams
+   // wait until there is no traffic flowing through tor anymore
+   iimDisplay("Wait until no traffic flowing through tor.");
+   while(true) {
+     numberStreams = "CODE:set !extract null\n";
+     numberStreams += "SET !DATASOURCE " + path + "tmp/number-
+        streams" + "\n"; 
+     numberStreams += "SET !DATASOURCE_COLUMNS 1\n"; 
+     numberStreams += "SET !DATASOURCE_LINE 1\n"; 
+     numberStreams += "SET !extract {{!COL1}}" + "\n";
+     iimPlay(numberStreams);
+     if (iimGetLastExtract(1) == '0') {
+       break;
+     }
+     iimPlay("CODE:WAIT SECONDS=1");
+   }
+	
+   starttime = Date.now();
+	
+   try {
+       getBrowser().addProgressListener(myListener);
+        
+       iimDisplay("Start loading a webpage.");
+		
+       // Busy-waiting while page is loading
+       lastaction = 0;
+       firstaction = 0;
+			
+       gourl = iimPlay("CODE:URL GOTO=" + urls[u], 180);
+       if(gourl < 0) {
+          breakTimeout = true;
+       }
+		
+       while(true) {
+			
+          // Document might have finished loading
+          if(getBrowser().webProgress.isLoadingDocument == false) { 
+				
+             iimDisplay("It seems like loading is completed. Let us 
+                  take some extra seconds for possible redirects.");
+				
+             // Some ugly redirects might be in place
+             // Let us take some extra seconds
+             safesleep = 0;
+					
+             while (!getBrowser().webProgress.isLoadingDocument) {
+                if (safesleep > 5) {
+                   break;
+                }
+					
+                safesleep += 0.1;
+						
+                iimPlay("CODE:WAIT SECONDS=0.1");
+             }
+					 
+             if(getBrowser().webProgress.isLoadingDocument == false) { 
+                iimDisplay("Document has finished loading.");
+                break;
+             }
+				
+             // Check soft and hard timeouts
+             else if (lastaction > timeout || firstaction > hardtimeout) {
+                breakTimeout = true;
+                iimDisplay("Document has terminated loading because 
+                   of soft and/or hard timeout.");
+                break;
+             }
+
+             else if (breakTimeout) {
+                iimDisplay("Document has terminated loading because of soft and/or hard timeout.");
+                break;
+             }
+          }
+			
+          lastaction += 0.1;
+          firstaction += 0.1;
+          iimPlay("CODE:WAIT SECONDS=0.100");
+       }
+		
+       if ((lastaction > timeout || firstaction > hardtimeout) && 
+            breakTimeout) {
+          // Loading timeout
+          endtime = -1;
+       } 
+		
+       else if (window.content.document.documentElement.baseURI.
+            indexOf("about:blank") == 0) {
+          // Loaded empty page
+          endtime = -2;
+       } 
+		
+       else if (window.content.document.readyState == "loading") {
+          // Loading failed (didn't finish)
+          endtime = -3;
+       } 
+		
+       else if (breakStreamTimeout) {
+          endtime = -5;
+       } 
+		
+       else {
+          // Loading successful
+          endtime = Date.now();
+          endtime = endtime - 5000;
+			
+          if (urls[u] == "check.torproject.org") {
+             // handle "check.torproject.org" separately
+             urlname = urls[u].replace(":","_").replace(/\//g,"_") 
+                + "_" + scriptname;
+             saveWebpage = "CODE:TAB T=1\n";
+             saveWebpage += "TAB CLOSEALLOTHERS\n";
+             saveWebpage += "SAVEAS TYPE=PNG FOLDER=" + path 
+                + "screenshots/" + " FILE=" + urlname + ".png\n";
+             saveWebpage += "SAVEAS TYPE=HTM FOLDER=" + path 
+                + "txtdumps/" + " FILE=" + urlname + "\n";
+             iimPlay(saveWebpage);
+          } 
+			
+          else {
+             urlname = urls[u].replace(":","_").replace(/\//g,"_");
+             saveWebpage = "CODE:TAB T=1\n";
+             saveWebpage += "TAB CLOSEALLOTHERS\n";
+             saveWebpage += "SAVEAS TYPE=PNG FOLDER=" + path 
+                + "screenshots/" + " FILE=" + urlname + ".png\n";
+             saveWebpage += "SAVEAS TYPE=HTM FOLDER=" + path 
+                + "txtdumps/" + " FILE=" + urlname + "\n";
+             iimPlay(saveWebpage);
+         }
+      }
+		
+   } catch (err) {
+     iimDisplay("Error: " + err.message);
+     // Javascript threw error
+     endtime = -4;
+     try {
+       getBrowser().removeProgressListener(myListener);
+     } catch (err) {}
+   }
+	
+   urlname = urls[u].replace(":","_").replace(/\//g,"_");
+   saveTimestamp = "CODE:SET !EXTRACT " + urlname + "\n";
+   saveTimestamp += "SAVEAS TYPE=EXTRACT FOLDER=" + path + "timestamps/" 
+      + " FILE=" + runidentifier + "-" + hostname + "-" + urlfile + "\n";
+   saveTimestamp += "SET !EXTRACT " + starttime + "\n";
+   saveTimestamp += "SAVEAS TYPE=EXTRACT FOLDER=" + path + "timestamps/" 
+      + " FILE=" + runidentifier + "-" + hostname + "-" + urlfile + "\n";
+   saveTimestamp += "SET !EXTRACT " + endtime + "\n";
+   saveTimestamp += "SAVEAS TYPE=EXTRACT FOLDER=" + path + "timestamps/" 
+      + " FILE=" + runidentifier + "-" + hostname + "-" + urlfile + "\n";
+   iimPlay(saveTimestamp);
+	
+   saveEnd = "CODE:SET !EXTRACT 1\n";
+   saveEnd += "SAVEAS TYPE=EXTRACT FOLDER=" + path + "tmp/" 
+      + " FILE=tmp-kill-streams\n";
+   iimPlay(saveEnd);
+	
+   iimPlay("CODE:WAIT SECONDS=5");
+}
+
+// Signal termination
+terminate = "CODE:SET !EXTRACT 1\n";
+terminate += "SAVEAS TYPE=EXTRACT FOLDER=" + path + "tmp/" 
+   + " FILE=tmp-.lock-" + hostname + "\n";
+iimPlay(terminate);
+\end{verbatim}
